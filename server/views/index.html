@@ -1,40 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-        <head>
-                <meta charset="utf-8">
-                <meta name = "description" content ="Project purpose, topo secreto">
-                <title> Strona zarzadzania projektem Plantie </title> 
-                <link rel="stylesheet" type="text/css" href="css/main.css">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project purpose, topo secreto" />
+    <title>Strona zarzadzania projektem Plantie</title>
 
-        <!-- <sup><small><small>TM</small></small></sup> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
 
-        <body  text="black" >
-                <div id="header">
-                        <a>Plantie</a>
-                        <div id="tm"> 
-                             <a>TM</a>   
-                        </div>
-                         <a> - panel zarządzania</a>
-                </div>
+  <!-- <sup><small><small>TM</small></small></sup> -->
 
-                
-                <div class="content">
-                                <div id="options">
-                                        <button id="Water" class="button" >Water</button>
-                                        <button id="Fertilize" class="button" >Fertilize</button>
-                                        <button id="Light" class="button" >Light</button>
-                                        <button id="Buttonx" class="button">Whatever</button>
-                                </div>
-                        </div>
+  <body text="black">
+    <header>
+      <nav id="main-navigation" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Plantie TM - panel zarządzania</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </header>
 
+    <div id="main-container">
+      <div class="container-fluid options-container auto">
+        <div class="row">
+          <div class="offset-sm-2 col-sm-4">
+            <button id="Water" class="btn btn-info btn-lg btn-block">
+              Water
+            </button>
+          </div>
+          <div class="col-sm-4">
+            <button id="Fertilize" class="btn btn-info btn-lg btn-block">
+              Fertilize
+            </button>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="offset-sm-2 col-sm-4">
+            <button id="Light" class="btn btn-info btn-lg btn-block">
+              Light
+            </button>
+          </div>
+          <div class="col-sm-4">
+            <button id="Buttonx" class="btn btn-info btn-lg btn-block">
+              Whatever
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                <!-- <figure>
-                <img src="images/images.jpg" width="1920" height="1080" alt="Background">
-                </figure> -->
-                <!-- <a href="http://www.facebook.com"><img src ="images/images.jpg" alt ="meh" border ="0"></a> -->
-                
-
-        </body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -3,72 +3,85 @@
  .klasa {}  klasa
  shift alt a komentuje */
 
-
-
 #header {
-    display: flex;  /* do centrowania w pionie */
-    align-items: center; 
-    position: absolute;
-    top: 4.2%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) ;
-    width: fit-content;
-    height: 0.9em; /* jednostka em jest wyrazona w procentach w stosunku do czcionki elementu */
-    padding: 10px;
-    border: 3px solid gray;
-    font-size: 4vh; /* uzaleznienie rozmiaru czcionki od rozmiaru okna, a co za tym idzie rozmiar headera tez sie zmniejsza */
-    background: linear-gradient(to top right,lightblue, green); /* zwykly gradient na logo */ 
-    border-radius: 20px;
-    
+  display: flex; /* do centrowania w pionie */
+  align-items: center;
+  position: absolute;
+  top: 4.2%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  height: 0.9em; /* jednostka em jest wyrazona w procentach w stosunku do czcionki elementu */
+  padding: 10px;
+  border: 3px solid gray;
+  font-size: 4vh; /* uzaleznienie rozmiaru czcionki od rozmiaru okna, a co za tym idzie rozmiar headera tez sie zmniejsza */
+  background: linear-gradient(
+    to top right,
+    lightblue,
+    green
+  ); /* zwykly gradient na logo */
+  border-radius: 20px;
 }
 
-.content{
-    align-self: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) ;
-    border: 3px solid gray;
-    padding: 1em;
-    background-color:green;
-    opacity: 0.9;
-    /* box-shadow: -0.3125em 0.3125em 0 0 rgba(0, 0, 0, 0.15); */
-    font-size: 4vh;
-    height: 60%;
+#main-navigation {
+  background-color: #696990;
 }
 
+.options-container {
+  margin-top: 40px;
+  max-width: 70%;
+  border: 1px solid #757575;
+  padding: 24px;
+  background-color: #9e9e9e;
+}
 
+.btn {
+  border-radius: 0;
+}
 
-body{
-    background-image: url("./../images/images.jpg");
+.content {
+  align-self: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid gray;
+  padding: 1em;
+  background-color: darkslategray;
+  opacity: 0.9;
+  /* box-shadow: -0.3125em 0.3125em 0 0 rgba(0, 0, 0, 0.15); */
+  font-size: 4vh;
+  height: 60%;
+}
+
+body {
+  /*   background-image: url("./../images/images.jpg");
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+    background-size: 100vw 100vh; */
+  background-color: #616161;
 }
 
-.button{ /* parametry klasy guzik */
-background-color: #4CAF50;
-border: none;
-color: white;
-opacity:1;
-padding: 15px 25px;
-width: 50%;
-float:right;
-border: 3px solid gray;
-text-align: center;
-font-size: 3vh;
-cursor: pointer;
+/* .button {
+   parametry klasy guzik 
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  opacity: 1;
+  padding: 15px 25px;
+  width: 50%;
+  float: right;
+  border: 3px solid gray;
+  text-align: center;
+  font-size: 3vh;
+  cursor: pointer;
+} */
+
+#tm {
+  font-size: 30%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
 }
-
-.button:hover { /* parametry guzika po najechaniu na niego */
-    background-color: green;
-  }
-
-#tm{
-    font-size: 30%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-    top: -0.5em;
-  }

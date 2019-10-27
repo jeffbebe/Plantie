@@ -9,10 +9,10 @@ http.createServer(function (req, res) {
     res.end(); // end the response
     })
 }).listen(8080); // the server object listens on port 8080
-penis 2
-*/
-// git test
 
+*/
+
+/*
 var http = require('http');
 var fs   = require('fs');
 var express = require('express');
@@ -26,3 +26,28 @@ http.createServer(function (req, res) {
     res.end();
   });
 }).listen(8080);
+*/
+
+var express = require('express');
+var path = require('path');
+var app = express();
+var port = 8080;
+
+//Getiing css file
+app.use('/views/css',express.static(__dirname + '/views/css'));
+
+
+//Getting html file
+app.get('/',function(req,resp)
+{
+  resp.sendFile('index.html', {root: path.join(__dirname, './views')});
+})
+
+//bootstrap usage?
+//app.use('/views/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+
+//Listening on port
+app.listen(port,function()
+{
+  console.log('Listening at port ' + port);
+})

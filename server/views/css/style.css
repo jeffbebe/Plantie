@@ -50,7 +50,7 @@ html, body{
   color: #E44D26;
   
 }
-.fa-bold{
+.fa-bootstrap{
   color: #563d7c;
 }
 .fa-css3{
@@ -61,8 +61,12 @@ html, body{
   color: #3C873A;
 }
 
+.fa-font-awesome{
+  color: #1664bd;
+}
 
-.fa-html5, .fa-bold, .fa-css3, .fa-node-js {
+
+.fa-html5, .fa-bootstrap, .fa-css3, .fa-node-js, .fa-font-awesome {
   font-size: 4em;
   margin: .3em;
 

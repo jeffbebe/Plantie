@@ -26,6 +26,15 @@ http.createServer(function (req, res) {
     res.end();
   });
 }).listen(8080);
+
+
+For node express usage (in project folder - cmd)
+
+npm install express --save
+
+For bootstrap usage
+
+npm install --save bootstrap
 */
 
 var express = require('express');
@@ -34,7 +43,10 @@ var app = express();
 var port = 8080;
 
 //Getiing css file
-app.use('/views/css',express.static(__dirname + '/views/css'));
+//app.use('/views/css',express.static(__dirname + '/views/css'));
+app.use(express.static(path.join(__dirname, 'views'))); 
+
+
 
 
 //Getting html file

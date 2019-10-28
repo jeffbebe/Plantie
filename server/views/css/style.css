@@ -1,17 +1,125 @@
-/* not used */
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');  /* imported google font */
+
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #1d1c1c;
+
+
+}
+
+
+/* padding fix */
+.padding {
+  padding-bottom: 2rem;
+}
+
+ /* Navbar customisation */
+.navbar{
+  padding: .8rem;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.navbar-nav li {
+  padding-right: 20px;
+}
+
+.nav-link{
+  font-size: 1.1em !important; /* font size on navbar */
+}
+
+/* Welcome Section customisation */
+.welcome{
+  width:75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.welcome hr{
+  border-top: 2px solid #b4b4b4;
+  width: 95%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+
+/* 4 Column Section customisation */
+/* Icons */
+.fa-html5{
+  color: #E44D26;
+  
+}
+.fa-bold{
+  color: #563d7c;
+}
+.fa-css3{
+  color: #2163af;
+}
+
+.fa-node-js{
+  color: #3C873A;
+}
+
+.fa-html5, .fa-bold, .fa-css3, .fa-node-js {
+  font-size: 4em;
+  margin: .3em;
+
+} 
+
+/* Social media  */
+.social a{
+  font-size: 4.5em;
+  padding: 3rem;
+}
+
+/* Icons customisation - add relevant stuff */
+.fa-facebook{
+  color: #3b5998;
+}
+
+
+
+/* Footer  */
+footer{
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+
+hr.light {
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
 
 
 
 /*---Media Queries --*/
-@media (max-width: 992px) {
 
+@media (max-width: 992px) {
+  /* Social media icons are smaller on smaller screen */
+  .social a {
+    font-size: 4em;
+    padding: 2rem;
+  }
   }
 @media (max-width: 768px) {
-  
+  .display-4 {
+    font-size: 200%; /* doesn't work ;c */
+  }
 }
 @media (max-width: 576px) {
-  
+  /* Social media icons are smaller on smaller screen */
+  .social a {
+    font-size: 2.5em;
+    padding: 1.2rem;
+  }
+
+  .display-4 {
+    font-size: 160%; /* doesn't work ;c */
+  }
 }
 
 

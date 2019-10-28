@@ -61,6 +61,7 @@ html, body{
   color: #3C873A;
 }
 
+
 .fa-html5, .fa-bold, .fa-css3, .fa-node-js {
   font-size: 4em;
   margin: .3em;
@@ -73,12 +74,17 @@ html, body{
   padding: 3rem;
 }
 
-/* Icons customisation - add relevant stuff */
-.fa-facebook{
-  color: #3b5998;
+/* Icons customisation */
+.fa-blog{
+  color: #ff5722;
+}
+.fa-github{
+  color: #333;
 }
 
-
+.fa-youtube{
+  color: #FF0000;
+}
 
 /* Footer  */
 footer{

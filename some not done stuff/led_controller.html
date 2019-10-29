@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<title>LED Controller</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" media="(min-width: 600px)" href="css/basic.css" />
+	<link rel="stylesheet" media="(max-width: 600px)" href="css/small.css" />
+	<script src="js/jscolor.js"></script>
+</head>
+
+<body>
+	<div class="menu">
+		<a class="active" href="">Home</a>
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+	</div>
+
+	<div class="content">
+		<h1>LED strip</h1>
+		<label class="switch">
+			<input id="optionsCheckbox" type="checkbox" onclick="changeState()">
+			<span class="slider round"></span>
+		</label>
+
+		<div id="options">
+			<h2 id="mode">Mode: Err</h2>
+			<button id="nextMode" class="button" onclick="changeMode('NEXT')">Next</button>
+			<button id="previousMode" class="button" onclick="changeMode('PREV')">Previous</button>
+
+
+			<button id="lightMode" class="button" onclick="changeMode('LIGHT')">Light</button>
+			<button id="thermometerMode" class="button" onclick="changeMode('THERM')">Thermometer</button>
+			<button class="button jscolor {valueElement:'chosen-value', onFineChange:'sendRGBColor(this)'}">
+				LED color
+			</button>
+
+			<h2>Brightness: <b id="brightness">0</b></h2>
+			<div class="slidecontainer">
+				<input type="range" min="0" max="255" value="0" class="slider" id="myRange">
+			</div>
+		</div>
+	</div>
+	<script>
+		let slider = document.getElementById("myRange");
+		let output = document.getElementById("brightness");
+
+		ledData = {};
+
+		setInterval(() => {
+
+		}, 60*1000)
+
+		slider.oninput = function () {
+			output.innerHTML = this.value;
+			sendMessage("BRIGHT:" + this.value);
+		}
+
+		function changeMode(mode) {
+			if(!isNaN(mode)){
+				ledData.mode = mode;
+			} else {
+				if (mode == "NEXT")
+					ledData.mode++;
+				if (mode == "PREV")
+					ledData.mode--;
+				if (mode == "LIGHT")
+					ledData.mode = 6;
+				if (mode == "THERM")
+					ledData.mode = 7;
+				if (ledData.mode < 0)
+					ledData.mode = 7;
+				if (ledData.mode > 7)
+					ledData.mode = 0;
+			}
+			
+			document.getElementById("mode").innerHTML = `Mode: ${ledData.mode}`;
+			sendMessage("MODE:" + ledData.mode)
+		}
+
+		function changeState() {
+			let options = document.getElementById("options");
+			if (ledData.state)
+				options.style = "display:none;";
+			else
+				options.style = "display:inline;";
+			ledData.state = !ledData.state;
+			if (ledData.state)
+				sendMessage("ON");
+			else
+				sendMessage("OFF");
+		}
+
+		function sendRGBColor(picker) {
+			changeMode(5);
+			let red = Math.round(picker.rgb[0]);
+			let green = Math.round(picker.rgb[1]);
+			let blue = Math.round(picker.rgb[2]);
+			//console.log(`Red: ${red}, Green: ${green}, Blue: ${blue}`);
+
+			sendMessage(`RGB${red},${green},${blue}`);
+		}
+
+		const url = "ws://192.168.0.110:81";
+		let socket = new WebSocket(url, "chat");
+
+		socket.onmessage = function (message) {
+			let data = message.data;
+			if (data.indexOf("mode") > -1) {
+				ledData = JSON.parse(data);
+				document.getElementById("mode").innerHTML = `Mode: ${ledData.mode}`;
+				slider.setAttribute("value", ledData.brightness);
+				slider.stepUp();
+				output.innerHTML = ledData.brightness;
+				if (ledData.state) {
+					document.getElementById("optionsCheckbox").checked = true;
+					document.getElementById("options").style = "display:inline;";
+				}
+			}
+		}
+
+		function sendMessage(message) {
+			socket.send(message);
+		}
+	</script>
+</body>
+
+</html>

@@ -28,6 +28,15 @@ html, body{
 
 .nav-link{
   font-size: 1.1em !important; /* font size on navbar */
+
+}
+
+/* Clock  */
+.clock{
+  /* text-decoration: underline; */
+  color: white;
+  letter-spacing: -0.8px;
+  font-size: 1.5em;
 }
 
 /* Welcome Section customisation */
@@ -129,6 +138,9 @@ hr.light {
 
   .display-4 {
     font-size: 160%; /* doesn't work ;c */
+  }
+  .clock{
+    font-size: 1.2em;
   }
 }
 

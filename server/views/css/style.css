@@ -75,7 +75,8 @@ body {
     color: #563d7c;
 }
 
-.fa-css3 {
+.fa-css3,
+.fa-glass-whiskey {
     color: #2163af;
 }
 
@@ -99,7 +100,8 @@ body {
 .fa-font-awesome,
 .fa-tint,
 .fa-medrt,
-.fa-lightbulb {
+.fa-lightbulb,
+.fa-glass-whiskey {
     font-size: 4em;
     margin: .3em;
 }

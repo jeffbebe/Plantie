@@ -14,9 +14,11 @@
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <!-- Social media icons -->
 
-    <script type="text/javascript" src="/js/clock.js"></script>
+    <script type="text/javascript" src="js/clock.js"></script>
     <!-- Load clock -->
-
+<!-- scripts
+ -->
+    <script type="text/javascript" src="js/main_script.js"></script>
 
 </head>
 
@@ -33,7 +35,7 @@
         <a class="navbar-brand nav-item" href="index.html"><img src="img/logo_plantie2_green_2.png" alt="logo" style="width:160px"></a>
         <!-- logo display and go back to home  -->
 
-        <div class="clock">
+        <div id="clock_id" class="clock">
             <span id="hr">00</span>
             <span> : </span>
             <span id="min">00</span>
@@ -61,6 +63,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="control.html">Control</a>
                 </li>
+              <!--   <li>  
+                        <button type="button" onclick="clock_visibiity()">Toggle clock visibility</button>
+                </li>   -->
             </ul>
         </div>
     </nav>
@@ -184,6 +189,7 @@
         </div>
     </div>
 </footer>
+
 
 
 

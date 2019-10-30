@@ -1,194 +1,233 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');  /* imported google font */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
-html, body{
-  height: 100%;
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
-  color: #1d1c1c;
+/* imported google font */
 
-
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #1d1c1c;
 }
 
 
 /* padding fix */
+
 .padding {
-  padding-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
- /* Navbar customisation */
-.navbar{
-  padding: .8rem;
-  padding-bottom: 0;
-  padding-top: 0;
+
+/* Navbar customisation */
+
+.navbar {
+    padding: .8rem;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .navbar-nav li {
-  padding-right: 20px;
+    padding-right: 20px;
 }
 
-.nav-link{
-  font-size: 1.1em !important; /* font size on navbar */
-
+.nav-link {
+    font-size: 1.1em !important;
+    /* font size on navbar */
 }
+
 
 /* Clock  */
-.clock{
-  /* text-decoration: underline; */
-  color: white;
-  letter-spacing: -0.8px;
-  font-size: 1.5em;
+
+.clock {
+    /* text-decoration: underline; */
+    color: white;
+    letter-spacing: -0.8px;
+    font-size: 1.5em;
 }
+
 
 /* Welcome Section customisation */
-.welcome{
-  width:75%;
-  margin: 0 auto;
-  padding-top: 2rem;
+
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
 }
 
-.welcome hr{
-  border-top: 2px solid #b4b4b4;
-  width: 95%;
-  margin-top: .3rem;
-  margin-bottom: 1rem;
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
 }
+
 
 /* 4 Column Section customisation */
+
+
 /* Icons */
-.fa-html5{
-  color: #E44D26;
-  
-}
-.fa-bootstrap{
-  color: #563d7c;
-}
-.fa-css3{
-  color: #2163af;
+
+.fa-html5 {
+    color: #E44D26;
 }
 
-.fa-node-js{
-  color: #3C873A;
+.fa-bootstrap {
+    color: #563d7c;
 }
 
-.fa-font-awesome{
-  color: #1664bd;
+.fa-css3 {
+    color: #2163af;
 }
 
+.fa-node-js {
+    color: #3C873A;
+}
 
-.fa-html5, .fa-bootstrap, .fa-css3, .fa-node-js, .fa-font-awesome {
-  font-size: 4em;
-  margin: .3em;
+.fa-font-awesome,
+.fa-tint {
+    color: #1664bd;
+}
 
-} 
+.fa-lightbulb {
+    color: yellow;
+}
+
+.fa-html5,
+.fa-bootstrap,
+.fa-css3,
+.fa-node-js,
+.fa-font-awesome,
+.fa-tint,
+.fa-medrt,
+.fa-lightbulb {
+    font-size: 4em;
+    margin: .3em;
+}
+
 
 /* Social media  */
-.social a{
-  font-size: 4.5em;
-  padding: 3rem;
+
+.social a {
+    font-size: 4.5em;
+    padding: 3rem;
 }
+
 
 /* Icons customisation */
-.fa-blog{
-  color: #ff5722;
-}
-.fa-github{
-  color: #333;
+
+.fa-blog {
+    color: #ff5722;
 }
 
-.fa-youtube{
-  color: #FF0000;
+.fa-github {
+    color: #333;
 }
+
+.fa-youtube,
+.fa-medrt {
+    color: #FF0000;
+}
+
 
 /* Footer  */
-footer{
-  background-color: #3f3f3f;
-  color: #d5d5d5;
-  padding-top: 2rem;
+
+footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 2rem;
 }
 
 hr.light {
-  border-top: 1px solid #d5d5d5;
-  width: 75%;
-  margin-top: .8rem;
-  margin-bottom: 1rem;
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
 }
-
 
 
 /*---Media Queries --*/
 
 @media (max-width: 992px) {
-  /* Social media icons are smaller on smaller screen */
-  .social a {
-    font-size: 4em;
-    padding: 2rem;
-  }
-  }
-@media (max-width: 768px) {
-  .display-4 {
-    font-size: 200%; /* doesn't work ;c */
-  }
+    /* Social media icons are smaller on smaller screen */
+    .social a {
+        font-size: 4em;
+        padding: 2rem;
+    }
 }
-@media (max-width: 576px) {
-  /* Social media icons are smaller on smaller screen */
-  .social a {
-    font-size: 2.5em;
-    padding: 1.2rem;
-  }
 
-  .display-4 {
-    font-size: 160%; /* doesn't work ;c */
-  }
-  .clock{
-    font-size: 1.2em;
-  }
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 200%;
+        /* doesn't work ;c */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Social media icons are smaller on smaller screen */
+    .social a {
+        font-size: 2.5em;
+        padding: 1.2rem;
+    }
+    .display-4 {
+        font-size: 160%;
+        /* doesn't work ;c */
+    }
+    .clock {
+        font-size: 1.2em;
+    }
 }
 
 
 /*---Firefox Bug Fix --*/
+
 .carousel-item {
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
 }
+
+
 /*--- Fixed Background Image --*/
+
 figure {
-  position: relative;
-  width: 100%;
-  height: 60%;
-  margin: 0!important;
+    position: relative;
+    width: 100%;
+    height: 60%;
+    margin: 0!important;
 }
+
 .fixed-wrap {
-  clip: rect(0, auto, auto, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
 #fixed {
-  background-image: url('img/mac.png');
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  will-change: transform;
+    background-image: url('img/mac.png');
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
 }
+
+
 /*--- Bootstrap Padding Fix --*/
+
 [class*="col-"] {
     padding: 1rem;
 }
-
-
-
 
 
 /*
@@ -207,11 +246,3 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
-
-
-
-
-
-
-
-

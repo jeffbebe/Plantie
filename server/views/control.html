@@ -74,6 +74,23 @@
         <hr>
         <div class="col-12">
             <p class="lead">Technologies used to create website</p>
+            <button id ="upload_to_db" class="btn btn-success" >Upload test data to db</button>
+            <script>
+            const button = document.getElementById('upload_to_db');
+            button.addEventListener('click', async _ => {
+            try {     
+                const response = await fetch('/control', {
+                method: 'post',
+                body: {
+                    // Your body
+                }
+                });
+                console.log('Completed!', response);
+            } catch(err) {
+                console.error(`Error: ${err}`);
+            }
+            });
+            </script>
         </div>
 
     </div>

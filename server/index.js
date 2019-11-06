@@ -14,7 +14,7 @@ var mysql = require("mysql");
 var app = express();
 var Sequelize = require("sequelize");
 var port = 3000;
-//czy sie doda
+//finale versione forke
 // connecting to our database
 var con = mysql.createConnection({
   host: "localhost",

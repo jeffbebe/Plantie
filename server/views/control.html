@@ -81,9 +81,10 @@
             try {     
                 const response = await fetch('/control', {
                 method: 'post',
-                body: {
-                    // Your body
-                }
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action : "button.content" })
                 });
                 console.log('Completed!', response);
             } catch(err) {

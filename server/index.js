@@ -12,14 +12,20 @@ var express = require("express");
 var path = require("path");
 var mysql = require("mysql");
 var app = express();
+var Sequelize = require("sequelize");
 var port = 3000;
-var axios = require("axios");
+
 // connecting to our database
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "asder12345",
   database: "mydb"
+});
+// connecting via sequelize, sqlite file is required
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "/database/baza.sqlite"
 });
 
 con.connect(function(err) {

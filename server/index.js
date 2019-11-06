@@ -25,8 +25,20 @@ var con = mysql.createConnection({
 // connecting via sequelize, sqlite file is required
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "/database/baza.sqlite"
+  storage: "database/baza.sqlite"
 });
+
+sequelize.getQueryInterface().showAllSchemas().then((tableObj) => {
+  console.log('// Tables in database','==========================');
+  console.log(tableObj);
+})
+.catch((err) => {
+  console.log('showAllSchemas ERROR',err);
+})
+
+//getting current date for the table
+var datetime = new Date();
+    console.log(datetime.toISOString());
 
 con.connect(function(err) {
   if (err) console.log("not Connected!"); //throw err;

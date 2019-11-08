@@ -10,52 +10,31 @@ npm install --save bootstrap
 
 var express = require("express");
 var path = require("path");
-var mysql = require("mysql");
 var app = express();
 var Sequelize = require("sequelize");
 var port = 3000;
-//finale versione forke
-// connecting to our database
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "asder12345",
-  database: "mydb"
-});
+
 // connecting via sequelize, sqlite file is required
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "database/baza.sqlite"
 });
 
-sequelize.getQueryInterface().showAllSchemas().then((tableObj) => {
-  console.log('// Tables in database','==========================');
-  console.log(tableObj);
-})
-.catch((err) => {
-  console.log('showAllSchemas ERROR',err);
-})
+// Some table display read from database
+sequelize
+  .getQueryInterface()
+  .showAllSchemas()
+  .then(tableObj => {
+    console.log("// Tables in database", "==========================");
+    console.log(tableObj);
+  })
+  .catch(err => {
+    console.log("showAllSchemas ERROR", err);
+  });
 
 //getting current date for the table
 var datetime = new Date();
-    console.log(datetime.toISOString());
-
-con.connect(function(err) {
-  if (err) console.log("not Connected!"); //throw err;
-  // console.log("Connected!");
-  // that makes our new database
-  /*  con.query("CREATE DATABASE mydb", function (err, result) {    
-        if (err) throw err;
-        console.log("Database created");
-      }); */
-});
-
-// creating a new table, can be outside the con.connect
-/*   var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("Table created");
-  }); */
+console.log(datetime.toISOString());
 
 //Getting css file
 //app.use('/views/css',express.static(__dirname + '/views/css'));
@@ -73,6 +52,8 @@ app.get("/", function(req, resp) {
 app.post("/control", (req, res) => {
   let action = req.body.action; // let is sth like var
   console.log(action);
+  res = 1;
+  return res;
   /* var sql = "INSERT INTO requests (Water, Fertilise) VALUES ('1', '1')";
   con.query(sql, function(err, result) {
     if (err) throw err;

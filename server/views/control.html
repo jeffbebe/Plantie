@@ -14,6 +14,7 @@
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <!-- Social media icons -->
 
+    <script type="text/javascript" src="/js/main_script.js"></script>
 
 </head>
 
@@ -74,8 +75,34 @@
         <hr>
         <div class="col-12">
             <p class="lead">Technologies used to create website</p>
-            <button id ="upload_to_db" class="btn btn-success" >Upload test data to db</button>
-            <script>
+            <button id ="upload_to_db" class="btn btn-success"  onclick="push_to_database('Water')">Water</button>
+
+<script>
+
+async function push_to_database(data) {
+    try {
+      const response = await fetch("/control", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ action: data })
+      });
+      console.log("Completed!", response);
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    }
+}
+
+    </script>
+
+
+
+
+
+
+
+           <!--  <script>
             const button = document.getElementById('upload_to_db');
             button.addEventListener('click', async _ => {
             try {     
@@ -91,7 +118,7 @@
                 console.error(`Error: ${err}`);
             }
             });
-            </script>
+            </script> -->
         </div>
 
     </div>

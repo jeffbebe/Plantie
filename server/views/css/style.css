@@ -1,96 +1,90 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
 
 /* imported google font */
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    color: #1d1c1c;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: #1d1c1c;
 }
-
 
 /* padding fix */
 
 .padding {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
-
 
 /* Navbar customisation */
 
 .navbar {
-    padding: .8rem;
-    padding-bottom: 0;
-    padding-top: 0;
+  padding: 0.8rem;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .navbar-nav li {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 
 .nav-link {
-    font-size: 1.1em !important;
-    /* font size on navbar */
+  font-size: 1.1em !important;
+  /* font size on navbar */
 }
-
 
 /* Clock  */
 
 .clock {
-    /* text-decoration: underline; */
-    color: white;
-    letter-spacing: -0.8px;
-    font-size: 1.5em;
+  /* text-decoration: underline; */
+  color: white;
+  letter-spacing: -0.8px;
+  font-size: 1.5em;
 }
-
 
 /* Welcome Section customisation */
 
 .welcome {
-    width: 75%;
-    margin: 0 auto;
-    padding-top: 2rem;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 
 .welcome hr {
-    border-top: 2px solid #b4b4b4;
-    width: 95%;
-    margin-top: .3rem;
-    margin-bottom: 1rem;
+  border-top: 2px solid #b4b4b4;
+  width: 95%;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
 }
 
-
 /* 4 Column Section customisation */
-
 
 /* Icons */
 
 .fa-html5 {
-    color: #E44D26;
+  color: #e44d26;
 }
 
 .fa-bootstrap {
-    color: #563d7c;
+  color: #563d7c;
 }
 
 .fa-css3,
 .fa-glass-whiskey {
-    color: #2163af;
+  color: #2163af;
 }
 
 .fa-node-js {
-    color: #3C873A;
+  color: #3c873a;
 }
 
 .fa-font-awesome,
 .fa-tint {
-    color: #1664bd;
+  color: #1664bd;
 }
 
 .fa-lightbulb {
-    color: yellow;
+  color: yellow;
 }
 
 .fa-html5,
@@ -102,135 +96,127 @@ body {
 .fa-medrt,
 .fa-lightbulb,
 .fa-glass-whiskey {
-    font-size: 4em;
-    margin: .3em;
+  font-size: 4em;
+  margin: 0.3em;
 }
-
 
 /* Social media  */
 
 .social a {
-    font-size: 4.5em;
-    padding: 3rem;
+  font-size: 4.5em;
+  padding: 3rem;
 }
-
 
 /* Icons customisation */
 
 .fa-blog {
-    color: #ff5722;
+  color: #ff5722;
 }
 
 .fa-github {
-    color: #333;
+  color: #333;
 }
 
 .fa-youtube,
 .fa-medrt {
-    color: #FF0000;
+  color: #ff0000;
 }
-
 
 /* Footer  */
 
 footer {
-    background-color: #3f3f3f;
-    color: #d5d5d5;
-    padding-top: 2rem;
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
 }
 
 hr.light {
-    border-top: 1px solid #d5d5d5;
-    width: 75%;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
 }
-
 
 /*---Media Queries --*/
 
 @media (max-width: 992px) {
-    /* Social media icons are smaller on smaller screen */
-    .social a {
-        font-size: 4em;
-        padding: 2rem;
-    }
+  /* Social media icons are smaller on smaller screen */
+  .social a {
+    font-size: 4em;
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .display-4 {
-        font-size: 200%;
-        /* doesn't work ;c */
-    }
+  .display-4 {
+    font-size: 200%;
+    /* doesn't work ;c */
+  }
 }
 
 @media (max-width: 576px) {
-    /* Social media icons are smaller on smaller screen */
-    .social a {
-        font-size: 2.5em;
-        padding: 1.2rem;
-    }
-    .display-4 {
-        font-size: 160%;
-        /* doesn't work ;c */
-    }
-    .clock {
-        font-size: 1.2em;
-    }
+  /* Social media icons are smaller on smaller screen */
+  .social a {
+    font-size: 2.5em;
+    padding: 1.2rem;
+  }
+  .display-4 {
+    font-size: 160%;
+    /* doesn't work ;c */
+  }
+  .clock {
+    font-size: 1.2em;
+  }
 }
-
 
 /*---Firefox Bug Fix --*/
 
 .carousel-item {
-    transition: -webkit-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
 }
-
 
 /*--- Fixed Background Image --*/
 
 figure {
-    position: relative;
-    width: 100%;
-    height: 60%;
-    margin: 0!important;
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0 !important;
 }
 
 .fixed-wrap {
-    clip: rect(0, auto, auto, 0);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #fixed {
-    background-image: url('img/mac.png');
-    position: fixed;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: transform;
+  background-image: url("img/mac.png");
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
-
 
 /*--- Bootstrap Padding Fix --*/
 
 [class*="col-"] {
-    padding: 1rem;
+  padding: 1rem;
 }
-
 
 /*
 Extra small (xs) devices (portrait phones, less than 576px)

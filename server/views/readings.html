@@ -7,7 +7,6 @@
     <title>PlantieProject</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="./css/style.css" rel="stylesheet" type="text/css"></link>
-    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -15,12 +14,15 @@
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <!-- Social media icons -->
 
-    <script type="text/javascript" src="js/clock.js"></script>
+    <script type="text/javascript" src="/js/clock.js"></script>
+    <script type="text/javascript" src="/js/main_script.js"></script>
 
 </head>
 
-<body>
-
+<body onload="get_from_database(), init()">
+<script>
+    setInterval(get_from_database, 5000);
+    </script>
     <!-- Navigation -->
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -54,16 +56,15 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link" href="control.html">Control</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="readings.html">Readings</a>
                 </li>
-
             </ul>
         </div>
     </nav>
@@ -73,8 +74,6 @@
 
     </div>
 
-</body>
-
 </html>
 
 
@@ -82,55 +81,59 @@
 <div class="container-fluid padding">
     <div class="row welcome text-center">
         <div class="col-12">
-            <h1 class="display-4">About</h1>
+            <h1 class="display-4">Readings</h1>
             <!-- Main title -->
         </div>
         <hr>
         <div class="col-12">
-            <p class="lead">This project was created for the purpose of taking care of our beloved plants while we - their caretakers are somewhere away but still want to give life giving water and resources to our plant.</p>
-        </div>
+                <div class="padding">
+                        <div class="d-inline-flex p-2 justify-content-center" style="max-width: 80%;">
+                            <div class="card"> 
+                                <div style="overflow:hidden; width:inherit; height:200px">
+                                <img class ="card-img-top"  src="https://wallpapersmug.com/download/2560x1024/d11097/leaf-big-and-green.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-img-overlay shadow p-3" style="height:110px;">
+                                    <h3 class="card-title text-white m-b-0 dl " style ="font-size:3em">Plantie parameters</h3> 
+                                    <small class="card-text text-white font-light">Whatever</small>
+                                </div>
+                                <div class="card-body weather-small" >
+                                    <div class="row">
+                                                <div class="col-sm m-l-20">
+                                                    <h1 id="Soil_moisture" style ="font-size:4vw" class="font-light text-info m-b-0">32%</h1>
+                                                    <small>Soil moisture</small>
+                                                 </div>
+                                                 <div class="col-sm m-l-20">
+                                                    <h1 id="Air_temperature" style ="font-size:4vw" class="font-light text-info m-b-0">32<sup>o</sup></h1>
+                                                    <small>Air temperature</small>
+                                                </div>
+                                                <div class="col-sm m-l-20">
+                                                    <h1 id="Brightness_level" style ="font-size:4vw" class="font-light text-info m-b-0">sth</h1>
+                                                    <small >Brightness</small>
+                                               </div>
+                                               <div class="col-sm m-l-20">
+                                                    <h1 id="Water_tank_level" style ="font-size:4vw" class="font-light text-info m-b-0">32%</h1>
+                                                   <small>Water tank level</small>
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+
+            <p class="lead">Technologies used to create website</p>
+            <button id ="download_from_db" class="btn btn-success"  onclick="get_from_database()">Update values</button>
+        </div> 
     </div>
-
+   
 </div>
 
-<!--- Column Section - technologies that project offers -->
+<!--- 4 Column Section - technologies used to do the website, add font awsome? -->
 <div class="container-fluid padding">
-    <div class="row text-center justify-content-center mx-auto padding ">
 
-        <!-- 
-		text-center - center text
-		mx-auto - center column
-		-->
-
-        <!-- Technologies used with usage of font awsome  - add details what each tech do?-->
-        <div class="col-xs-12 col-sm-6  col-md-4 ">
-            <i class="fab fa-medrt"></i>
-            <h3>Monitor </h3>
-            <p>Monitor the plant vital signs like it's moisture and air tempreature around the plant</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4  ">
-            <i class="fas fa-tint"></i>
-            <h3>Hydrate</h3>
-            <p>Squirt water on your plant remotely! </p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4  ">
-            <i class="fas fa-glass-whiskey"></i>
-            <h3>Water-level monitoring</h3>
-            <p>Monitor how much water is left in our squirt-tank </p>
-        </div>
-
-        <div class="col-xs-12 col-md-4">
-            <i class="far fa-lightbulb"></i>
-            <h3>Light</h3>
-            <p>Control the light that shines on your plant (monitor the intensity of the light outside and if it's not enough power on your own)</p>
-        </div>
-
-
-
-    </div>
-    <hr class="my-4">
-    <!-- Light grey horizontal line on whole page-->
+</div>
+<hr class="my-4">
+<!-- Light grey horizontal line on whole page-->
 </div>
 
 
@@ -138,7 +141,7 @@
 <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-12">
-            <h2>Connect</h2>
+            <h3>Control</h3>
 
         </div>
         <div class="col-12 social padding">
@@ -159,7 +162,7 @@
 <footer>
     <div class="container-fluid padding ">
         <div class="row text-center ">
-            <div class="col-md-4 ">
+            <div class="col-md-4">
                 <img src="img/logo_plantie2_green_2.png" alt="logo" style="width:150px">
                 <hr class="light">
                 <p>555-555-555</p>
@@ -183,7 +186,6 @@
         </div>
     </div>
 </footer>
-
 
 
 

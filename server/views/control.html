@@ -14,6 +14,7 @@
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <!-- Social media icons -->
 
+    <script type="text/javascript" src="js/clock.js"></script>
     <script type="text/javascript" src="/js/main_script.js"></script>
 
 </head>
@@ -30,6 +31,14 @@
 		-->
         <a class="navbar-brand nav-item" href="index.html"><img src="img/logo_plantie2_green_2.png" alt="logo" style="width:160px"></a>
         <!-- logo display and go back to home  -->
+
+        <div id="clock_id" class="clock">
+                <span id="hr">00</span>
+                <span> : </span>
+                <span id="min">00</span>
+                <span> : </span>
+                <span id="sec">00</span>
+            </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<!-- navbar-toggler - toggle switch for navigation
@@ -51,6 +60,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="control.html">Control</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="readings.html">Readings</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -69,60 +81,16 @@
 <div class="container-fluid padding">
     <div class="row welcome text-center">
         <div class="col-12">
-            <h1 class="display-4">HYDRATE</h1>
+            <h1 class="display-4">Control</h1>
             <!-- Main title -->
         </div>
         <hr>
         <div class="col-12">
             <p class="lead">Technologies used to create website</p>
             <button id ="upload_to_db" class="btn btn-success"  onclick="push_to_database('Water')">Water</button>
-
-<script>
-
-async function push_to_database(data) {
-    try {
-      const response = await fetch("/control", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ action: data })
-      });
-      console.log("Completed!", response);
-    } catch (err) {
-      console.error(`Error: ${err}`);
-    }
-}
-
-    </script>
-
-
-
-
-
-
-
-           <!--  <script>
-            const button = document.getElementById('upload_to_db');
-            button.addEventListener('click', async _ => {
-            try {     
-                const response = await fetch('/control', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ action : "button.content" })
-                });
-                console.log('Completed!', response);
-            } catch(err) {
-                console.error(`Error: ${err}`);
-            }
-            });
-            </script> -->
-        </div>
-
+        </div> 
     </div>
-
+   
 </div>
 
 <!--- 4 Column Section - technologies used to do the website, add font awsome? -->

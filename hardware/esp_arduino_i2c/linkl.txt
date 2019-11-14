@@ -1,0 +1,1 @@
+https://www.electronicwings.com/nodemcu/nodemcu-i2c-with-arduino-ide

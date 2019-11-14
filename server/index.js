@@ -107,7 +107,7 @@ app.get("/readings", async function(req, resp) {
 app.post("/control", (req, res) => {
   let action = req.body.action; // let is sth like var
   var datetime = new Date(); // getting date
-  //console.log(datetime.toISOString()); // inner function is converting date to string
+  console.log(datetime.toISOString()); // inner function is converting date to string
   console.log(action);
 
   Sensor_readings.findAll({ raw: true }).then(Sensor_readings => {
@@ -122,6 +122,6 @@ app.post("/control", (req, res) => {
 
 //Listening on port
 //opening on phone/laptop - 192.168.1.61:3000 - device ipv4 address
-app.listen(3000, "192.168.0.106", function() {
+app.listen(3000, "localhost", function() {
   console.log("Application worker " + process.pid + " started...");
 });

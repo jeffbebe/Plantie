@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="./css/style.css" rel="stylesheet" type="text/css"></link>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
-    <!-- Social media icons -->
+    <script type="text/javascript" src="js/main_script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="/js/clock.js"></script>
-    <script type="text/javascript" src="/js/main_script.js"></script>
+    
 
 </head>
 
-<body onload="get_from_database(), init()">
+<body onload="get_from_database()">
 <script>
     setInterval(get_from_database, 5000);
     </script>
@@ -34,14 +33,14 @@
         <a class="navbar-brand nav-item" href="index.html"><img src="img/logo_plantie2_green_2.png" alt="logo" style="width:160px"></a>
         <!-- logo display and go back to home  -->
 
-        <div id="clock_id" class="clock">
+        <!-- <div id="clock_id" class="clock">
                 <span id="hr">00</span>
                 <span> : </span>
                 <span id="min">00</span>
                 <span> : </span>
                 <span id="sec">00</span>
             </div>
-
+ -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<!-- navbar-toggler - toggle switch for navigation
 			data-toggle="collapse" - navigation will be collapsing
@@ -87,33 +86,40 @@
         <hr>
         <div class="col-12">
                 <div class="padding">
-                        <div class="d-inline-flex p-2 justify-content-center" style="max-width: 80%;">
+                        <div class="d-inline-flex p-2 justify-content-center" style="max-width: 80%; min-width:300px">
                             <div class="card"> 
-                                <div style="overflow:hidden; width:inherit; height:200px">
+                                <div style="overflow:hidden; width:inherit; height:100px">
                                 <img class ="card-img-top"  src="https://wallpapersmug.com/download/2560x1024/d11097/leaf-big-and-green.jpg" alt="Card image cap">
                                 </div>
-                                <div class="card-img-overlay shadow p-3" style="height:110px;">
-                                    <h3 class="card-title text-white m-b-0 dl " style ="font-size:3em">Plantie parameters</h3> 
-                                    <small class="card-text text-white font-light">Whatever</small>
+                                <div class="card-img-overlay shadow p-3" style="height:60   px;">
+                                    <h3 class="card-title text-white m-b-0 dl " style ="font-size:3vw">Management panel for Plantie</h3> 
                                 </div>
                                 <div class="card-body weather-small" >
                                     <div class="row">
                                                 <div class="col-sm m-l-20">
-                                                    <h1 id="Soil_moisture" style ="font-size:4vw" class="font-light text-info m-b-0">32%</h1>
+                                                    <h1 id="Soil_moisture" style ="font-size:4vw" class="font-light text-info m-b-0">-</h1>
                                                     <small>Soil moisture</small>
                                                  </div>
                                                  <div class="col-sm m-l-20">
-                                                    <h1 id="Air_temperature" style ="font-size:4vw" class="font-light text-info m-b-0">32<sup>o</sup></h1>
+                                                    <h1 id="Air_temperature" style ="font-size:4vw" class="font-light text-info m-b-0">-</h1>
                                                     <small>Air temperature</small>
                                                 </div>
                                                 <div class="col-sm m-l-20">
-                                                    <h1 id="Brightness_level" style ="font-size:4vw" class="font-light text-info m-b-0">sth</h1>
+                                                    <h1 id="Brightness_level" style ="font-size:4vw" class="font-light text-info m-b-0">-</h1>
                                                     <small >Brightness</small>
                                                </div>
                                                <div class="col-sm m-l-20">
-                                                    <h1 id="Water_tank_level" style ="font-size:4vw" class="font-light text-info m-b-0">32%</h1>
+                                                    <h1 id="Water_tank_level" style ="font-size:4vw" class="font-light text-info m-b-0">-</h1>
                                                    <small>Water tank level</small>
                                             </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm m-l-20">
+                                            <button id ="water_to_db" class="btn btn-success"  onclick="push_to_database(Water)">Water plant</button>
+                                        </div>
+                                        <div class="col-sm m-l-20">
+                                            <button id ="fertilise_to_db" class="btn btn-success"  onclick="push_to_database(Fertilise)">Fertilise plant</button>
+                                        </div>
                                     </div>
                             </div>
                         </div>
@@ -122,7 +128,6 @@
 
 
             <p class="lead">Technologies used to create website</p>
-            <button id ="download_from_db" class="btn btn-success"  onclick="get_from_database()">Update values</button>
         </div> 
     </div>
    
@@ -186,7 +191,6 @@
         </div>
     </div>
 </footer>
-
 
 
 </body>

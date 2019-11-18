@@ -134,7 +134,7 @@ void loop()
         
         if (dataRecivedFromWeb.length() > 0)
         {
-            Serial.print("Data to send to arduino: ");
+            Serial.print("Data received from website: ");
             Serial.println(dataRecivedFromWeb);
             //Serial.print("Sending data to arduino...\n" );
             dataRecivedFromWeb = dataToSend;
@@ -146,7 +146,7 @@ void loop()
 
             //*************send log data to server in certain interval************************************
             //currentMillis=millis();
-          //  if (abs(currentMillis - previousMillis) >= interval) 
+          //  if (abs(currentMillis - previousMillis) >= interval) // to wasd=dasjbiafsdbiasdfbiujsad
            // {
                 //previousMillis = currentMillis;
                 //data = (String)analogRead(A0); //read adc values, this will give random value, since no sensor is connected.
@@ -175,7 +175,7 @@ void loop()
                 // webSocketClient.sendData("random test");
                  if( stringComplete == true)
                         {
-                          Serial.println("Received from arduino: " );  
+                          Serial.println("Received: " );  
                           delay(2); 
                           stringComplete = false;
                           Serial.println(serialMessage);

@@ -5,7 +5,6 @@ void setup(){
 	
 
 }
-int incomingByte = 0; // for inco0ming serial data
 
 void loop(){
 
@@ -30,22 +29,16 @@ while (Serial.available()) // jesli cos ma w buforze
     }
     if( stringComplete == true)
     {
+      Serial.println("<HelloFromUNO>");
+      delay(1);
+      //Serial.println("<HelloFromUNO>");
       //Serial.print("Received text: " );
       //Serial.println(serialMessage);
       stringComplete = false;
       Serial.println(serialMessage);
-      //String outMessage = "HelloFromUno "; 
-     // writeString(outMessage);
-      int outInt = 88;
-      //Serial.write(outInt);
-      
-      Serial.println("HelloFromUNO\n");
-      delay(100);
-       Serial.println("HelloFromUNO\n");
+
         delay(100);
-       Serial.println("HelloFromUNO\n");
-        delay(100);
-       Serial.println("HelloFromUNO\n");
+
     }
   
   
@@ -60,14 +53,14 @@ while (Serial.available()) // jesli cos ma w buforze
 //         Serial.println("slash n detected");
 //         val = "";
 //        }
-  delay(500);
+
    }
   
-void writeString(String stringData) { // Used to serially push out a String with Serial.write()
-
-  for (int i = 0; i < stringData.length(); i++)
-  {
-    Serial.write(stringData[i]);   // Push each char 1 by 1 on each loop pass
-  }
-
-}// end writeString
+//void writeString(String stringData) { // Used to serially push out a String with Serial.write()
+//
+//  for (int i = 0; i < stringData.length(); i++)
+//  {
+//    Serial.write(stringData[i]);   // Push each char 1 by 1 on each loop pass
+//  }
+//
+//}// end writeString

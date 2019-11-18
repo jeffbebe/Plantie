@@ -10,9 +10,19 @@ npm install --save bootstrap
 
 var express = require("express");
 var path = require("path");
+var http = require("http");
 var app = express();
 var Sequelize = require("sequelize");
 var port = 3000;
+var bodyParser = require("body-parser"); //do wyjebania
+
+const server = http.createServer(app); //create a server
+
+app.use(bodyParser.urlencoded({ extended: false })); //do wyjebania
+app.use(bodyParser.json()); //do wyjebania
+
+const WebSocket = require("ws");
+const wsServer = new WebSocket.Server({ server });
 
 // connecting via sequelize, sqlite file is required
 const sequelize = new Sequelize({
@@ -119,9 +129,36 @@ app.post("/control", (req, res) => {
 
 //bootstrap usage?
 //app.use('/views/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+require("dns").lookup(require("os").hostname(), function(err, localhost, fam) {
+  console.log("addr: " + localhost);
+});
+
+wsServer.on("connection", function(ws, req) {
+  /******* when server receives messsage from client trigger function with argument message *****/
+  ws.on("message", function(message) {
+    console.log("Received: " + message);
+    wsServer.clients.forEach(function(client) {
+      //broadcast incoming message to all clients (s.clients)
+      if (client != ws && client.readyState) {
+        //except to the same client (ws) that sent this message
+        client.send("broadcast: " + message);
+      }
+    });
+
+    //console.log(message); ify
+
+    // ws.send("From Server only to sender: "+ message); //send to client where message is from
+  });
+  ws.on("close", function() {
+    console.log("lost one client");
+  });
+  //ws.send("new client connected");
+  console.log("new client connected");
+});
 
 //Listening on port
 //opening on phone/laptop - 192.168.1.61:3000 - device ipv4 address
 app.listen(3000, "localhost", function() {
   console.log("Application worker " + process.pid + " started...");
 });
+server.listen(3000);

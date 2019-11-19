@@ -107,7 +107,25 @@ app.get("/readings", async function(req, resp) {
       raw: true,
       order: [["ID", "DESC"]]
     });
-    resp.send(JSON.stringify(data));
+    let datachart = await Sensor_readings.findAll({
+      raw: true,
+      order: [["ID"]]
+    }); // datachart is an array of arrays, we can use datachart[] to show them in console
+    console.log(datachart[0]);
+    /*  var str = "Apple, Banana, Kiwi";
+    var res = str.slice(7, 13);    /// for future slicing some strings and pants
+    var text1 = "Hello";
+    var text2 = "World";
+    var text3 = text1.concat(" ", text2); / concatenate strings
+    https://www.w3schools.com/js/js_string_methods.asp
+    for (var i = 0; i < arrayLength; i++) {
+    console.log(myStringArray[i]);
+    //Do something
+}
+
+    */
+    var resptable = [data, datachart];
+    resp.send(JSON.stringify(resptable));
   } catch (err) {
     resp.sendStatus(500);
   }

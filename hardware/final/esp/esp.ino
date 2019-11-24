@@ -6,12 +6,12 @@
 
 
 
+const int esp_led = 2;
 //Wifi config
 boolean handshakeFailed = 0;
 String dataRecivedFromWeb = "";
 String dataToSend = "";
 
-uint8_t pin_led = 2;
 char path[] = "/"; //identifier of this device
 
 const char *ssid = "Internet";
@@ -28,6 +28,7 @@ unsigned long interval = 2000; //interval for sending data to the websocket serv
 WiFiClient client;
 
 //Esp-arduino config
+//Declaring the rx and tx Pin of ESP
 const int rxPin = 3;
 const int txPin = 2;
 SoftwareSerial NodeMCU(rxPin, txPin); //(rxPin, txPin);
@@ -39,9 +40,9 @@ String serialMessage = "";
 bool stringComplete = false;
 
 
+//Method to connect to the websocket server
 void wsconnect()
 {
-    // Connect to the websocket server
     if (client.connect(host, espport))
     {
         Serial.println("Connected");
@@ -86,12 +87,11 @@ void setup()
 {
     //wifi config
     Serial.begin(9600); //for debuging
-    pinMode(pin_led, INPUT); // Initialize the LED_BUILTIN pin as an output
+    pinMode(esp_led, INPUT); // Initialize the esp builtin led pin as an output
 
     delay(10);
 
     //Connecting to a WiFi network
-
     Serial.println();
     Serial.println();
     Serial.print("Connecting to ");
@@ -134,7 +134,7 @@ void loop()
         
         if (dataRecivedFromWeb.length() > 0)
         {
-            Serial.print("Data received from website: ");
+            Serial.print("Data to send to arduino: ");
             Serial.println(dataRecivedFromWeb);
             //Serial.print("Sending data to arduino...\n" );
             dataRecivedFromWeb = dataToSend;
@@ -146,41 +146,40 @@ void loop()
 
             //*************send log data to server in certain interval************************************
             //currentMillis=millis();
-          //  if (abs(currentMillis - previousMillis) >= interval) // to wasd=dasjbiafsdbiasdfbiujsad
+          //  if (abs(currentMillis - previousMillis) >= interval) 
            // {
                 //previousMillis = currentMillis;
                 //data = (String)analogRead(A0); //read adc values, this will give random value, since no sensor is connected.
-                
-      // if (NodeMCU.isListening()) {
-         // Serial.println("NodeMCU is listening !@");
-        
+
+         //When there is something in serial buffer
          while (NodeMCU.available()) 
                 {
                   //Serial.println("NodeMCU available !@");
                     char serialChar = NodeMCU.read();  //gets one byte from serial buffer
-                        if (serialChar == '<') // jesli jest poczatkiem to zresetuj stringa
+                        if (serialChar == '<') //if < is the beginning of the received char reset the buffer
                         {
                             serialMessage = "";
                         }
-                        else if (serialChar == '>')
+                        else if (serialChar == '>') 
                         {
                             stringComplete = true;
                         }
                         else
                         {
-                            if ((serialChar >= 48 && serialChar <= 122) || serialChar == ',') // zbiera literki dopoki nie sklei calego stringa
+                            //Append the message within specified ascii section 
+                            if ((serialChar >= 48 && serialChar <= 122) || serialChar == ',') 
                                 serialMessage += serialChar;
                         }               
                  }
                 // webSocketClient.sendData("random test");
-                 if( stringComplete == true)
+                 if(stringComplete == true)
                         {
-                          Serial.println("Received: " );  
+                          Serial.println("Received from arduino: " );  
                           delay(2); 
                           stringComplete = false;
                           Serial.println(serialMessage);
                           
-                          webSocketClient.sendData(serialMessage); //send sensor data to websocket server
+                          webSocketClient.sendData(serialMessage); //send received data to websocket server
                           serialMessage = "";
                         }
        

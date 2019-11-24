@@ -14,14 +14,21 @@
 \author{Kamil Choiński, Oskar Stabla}
 \maketitle
 
-\section{Opis projektu}
-Nasza koncepcja opiera się na systemie zdalnego zarządzania rośliną.
-Chcemy mierzyć parametry gleby i otoczenia takie jak wilgotność, nasłonecznienie.
-W zależności od odczytanych wartości przez płytkę rozwojową UNO połączoną z modułem ESP8266 będzie możliwe sterowanie pompką wody, lampą.
-Mamy zamiar połączyć projekt z IT, dlatego panel sterowania będzie umieszczony na stronie internetowej.
-\section{Cel}
-Nasz projekt ma na celu pomoc zabieganym ludziom, którzy nie mają czasu na zajmowanie się swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy dostęp do internetu, nic więcej.
-\section{Harmonogram}
+\section{Raport wstępny}
+Podczas ostatnich tygodni skupiliśmy się na realizacji stabilnego połączenia między płytką rozwojową UNO i modułem ESP8266, a także między modułem ESP8266 i panelem sterowania na serwerze.
+
+Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
+
+Płytka rozwojowa UNO cały czas czeka na przychodzące dane które będą zawarte w wskaźnikach początku ''<'' i końca ''>'' danej komendy, aby wykonać określoną czynność lub odesłać pomiary wykonane przez czujnik wilgotności i temperatury do ESP8266, które jest połączone z UNO poprzez piny RX i TX. UNO odsyła swoje komendy również w wskaźnikach początku i końca, aby zapobiec ''gubieniu'' danych.
+
+ESP8266 jest naszym tzw. ''mostem'' i w każdym momencie czeka na dane czy to z UNO czy ze strony internetowej i w zależności od kogo dane otrzymuje przerzuca je do danego odbiorcy.
+Program na ESP jest zrealizowany z użyciem bibliotek ESP8266WiFi, WebSocketClient, SoftwareSerial, które kolejno służą do: umożliwieniu połączenia się ESP do sieci WiFi zadeklarowanej w naszym kodzie, połączeniu się poprzez websocket jako klient do naszego serwera postawionego na laptopie, połączenia się poprzez piny RX i TX do płytki rozwojowej UNO.
+
+Zaimplementowaliśmy testowy kod, aby pokazać postępy naszej dotychczasowej pracy. Po naciśnięciu przycisku Water na stronie przesyłana jest komenda do UNO, które zapala diodę LED. Po naciśniuęciu przycisku Fertilise gasi ją i wysyła obecne pomiary czujnika DHT11 do serwera poprzez websocket.
+
+
+
+\section{Zgodność z harmonogramem}
 \subsection{4.11}
 Przeanalizowanie schematów płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza, czujnika nasłonecznienia oraz rozwiązanie techniczne doświetlania rośliny. Stworzenie schematu elektrycznego gotowego projektu. Testowanie poprawności działania posiadanych czujników w warunkach domowych. Implementacja komunikacji z modułem ESP8266. Dopasowywanie czasów działania. 
 Dokupienie brakujących komponentów gotowego projektu. 
@@ -33,13 +40,6 @@ Wstępna prezentacja gotowego projektu i ocena błędów.
 \subsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
-
-\section{Schemat blokowy}
-Przedstawiony na stronie 3.
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{schemat_blokowy}
-\end{figure}
 
 
 \end{document}

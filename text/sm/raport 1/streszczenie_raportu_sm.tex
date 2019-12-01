@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
@@ -8,13 +8,57 @@
 \usepackage{graphicx} 
 
 
+
+usepackage{polski}
+usepackage{graphicx}
+usepackage{graphics}
+usepackage{bbm}
+usepackage[utf8]{inputenc}
+usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=3.5cm, headsep=1.2cm]{geometry} 
+usepackage{setspace}
+usepackage{amsthm}
+usepackage{amsmath}
+
 \begin{document}
 
 \title{Plantie™}
 \author{Kamil Choiński, Oskar Stabla}
 \maketitle
 
-\section{Raport wstępny}
+\section{Opis projektu}
+Nasza koncepcja opiera się na systemie zdalnego zarządzania rośliną. Chcemy mierzyć parametry
+gleby i otoczenia takie jak wilgotność, nasłonecznienie. W zależności od odczytanych wartości przez
+płytkę rozwojową UNO połączoną z modułem ESP8266 będzie możliwe sterowanie pompką wody,
+lampą. Mamy zamiar połączyć projekt z IT, dlatego panel sterowania będzie umieszczony na stronie
+internetowej.
+
+\section{Cel}
+Nasz projekt ma na celu pomoc zabieganym ludziom, którzy nie mają czasu na zajmowanie się
+swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy dostęp do internetu,
+nic więcej.
+
+\section{Kosztorys}
+Suma: 58 PLN
+
+Płytka rozwojowa UNO - 10 PLN
+
+Moduł ESP8266 - 18 PLN
+
+Czujnik wilgotności powietrza 5 PLN
+
+Czujnik wilgotności gleby 5 PLN
+
+Czujnik nasłonecznienia 5 PLN
+
+Przetwornik 5 PLN
+
+Żarówka 5 PLN
+
+Kabelki, płytka uniwersalna, cyna, klej na gorąco - 10 PLN
+
+
+
+\section{Raport prostępów prac na dzień 25.11}
 Podczas ostatnich tygodni skupiliśmy się na realizacji stabilnego połączenia między płytką rozwojową UNO i modułem ESP8266, a także między modułem ESP8266 i panelem sterowania na serwerze.
 
 Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
@@ -28,12 +72,36 @@ Zaimplementowaliśmy testowy kod, aby pokazać postępy naszej dotychczasowej pr
 
 
 
-\section{Zgodność z harmonogramem}
+\section{Wstępny harmonogram}
 \subsection{4.11}
 Przeanalizowanie schematów płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza, czujnika nasłonecznienia oraz rozwiązanie techniczne doświetlania rośliny. Stworzenie schematu elektrycznego gotowego projektu. Testowanie poprawności działania posiadanych czujników w warunkach domowych. Implementacja komunikacji z modułem ESP8266. Dopasowywanie czasów działania. 
 Dokupienie brakujących komponentów gotowego projektu. 
 \subsection{25.11}
-Realizacja połączeń elektrycznych na płytce stykowej i ostateczne testowanie poprawności działania. Przeniesienie projektu na płytkę uniwersalną. Przygotowanie ewentualnej obudowy i realizacja montażu systemu doświetlania. Stworzenie prezentacji na zajęcia
+Realizacja połączeń elektrycznych na płytce stykowej i ostateczne testowanie poprawności dzia-
+łania. Przeniesienie projektu na płytkę uniwersalną. Przygotowanie ewentualnej obudowy i realiza-
+cja montażu systemu doświetlania. Stworzenie prezentacji na zajęcia
+
+\subsection{Plany na 16.12}
+Wstępna prezentacja gotowego projektu i ocena błędów.
+
+\subsection{Plany na 20.01}
+Ostateczna prezentacja z poprawką błędów.
+
+\section{Zgodność z harmonogramem}
+\subsection{4.11}
+Rozpoczęliśmy prace nad naszym projektem. Postanowiliśmy skorzystać z aplikacji internetowej Trello do utworzenia tabel, które pozwoliły by nam na lepsze zarządzanie podziałem prac nad projektem.
+
+Przeanalizowaliśmy schematy płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza oraz czujnika nasłonecznienia. Przeanalizowaliśmy działanie każdego z czujników poprzez wykonanie przykładowych kodów na płytce rozwojowej UNO. Dowiedzieliśmy się jakich komponentów projektu nam brakuje i zamówiliśmy je w wybranych sklepach.
+Stworzyliśmy wstępny schemat blokowy projektu, aby ukazać działanie poszczególnych elementów zawartych w naszym projekcie. Na ten moment postanowiliśmy nie tworzyć schematu elektrycznego, gdyż nie wiedzieliśmy jak dokładnie zrealizujemy poszczególne połączenia.
+
+Ze względu na obszerność testowania i planowanie realizacji planu działania na nadchodzące tygodnie nie zajęliśmy się komunikacją z modułem ESP8266, ani problemem związanym z doświetlaniem naszej rośliny.
+
+
+\subsection{25.11}
+Do tego dnia zajmowaliśmy się komunikacją między płytką rozwojową UNO, ESP8266, a stroną internetową. Napotkaliśmy wiele problemów co nieplanowanie wydłużyło nam pracę na tym etapie projektu. Udało nam się uzyskać mniej więcej stabilne połączenie między naszymi urządzeniami. Zrealizowaliśmy połączenia UNO, ESP8266, a także podłączyliśmy do układu czujnik wilgotności i temperatury powietrza i na płytce stykowej po czym przetestowaliśmy poprawność działania. 
+
+Przeniesienie projektu na płytkę uniwersalną okazało się niepraktyczne na tym etapie projektu, gdyż nie próbowaliśmy jeszcze połączyć ze sobą wszystkich modułów projektu i finalny kod do wgrania na UNO i ESP8266 nie był gotowy. Z powodu niewiedzy jak dokładnie będzie wyglądało nasze urządzenie na płytce uniwersalnej nie przygotowaliśmy planowanej obudowy. Nie zrealizowaliśmy również systemu doświetlania.
+
 \subsection{16.12}
 Wstępna prezentacja gotowego projektu i ocena błędów.
 

@@ -7,23 +7,29 @@
 \usepackage{polski}
 \usepackage{graphicx} 
 
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
 
 
-usepackage{polski}
-usepackage{graphicx}
-usepackage{graphics}
-usepackage{bbm}
-usepackage[utf8]{inputenc}
-usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=3.5cm, headsep=1.2cm]{geometry} 
-usepackage{setspace}
-usepackage{amsthm}
-usepackage{amsmath}
+
 
 \begin{document}
 
 \title{Plantie™}
 \author{Kamil Choiński, Oskar Stabla}
 \maketitle
+\begin{abstract}
+Your abstract.
+\end{abstract}
+\tableofcontents
+
+
+
 
 \section{Opis projektu}
 Nasza koncepcja opiera się na systemie zdalnego zarządzania rośliną. Chcemy mierzyć parametry
@@ -38,27 +44,37 @@ swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy do
 nic więcej.
 
 \section{Kosztorys}
+
+\begin{table}
+\centering
+\begin{tabular}{l|r}
+Item & Cena \\\hline
+Płytka rozwojowa UNO & 10 PLN \\
+Moduł ESP8266 & 18 PLN \\
+
+Czujnik wilgotności powietrza & 5 PLN \\
+
+Czujnik wilgotności gleby & 5 PLN \\
+
+Czujnik nasłonecznienia & 5 PLN \\
+
+Przetwornik & 5 PLN \\
+
+Żarówka & 5 PLN \\
+
+Kabelki, płytka uniwersalna, cyna, klej na gorąco & 10 PLN \\
+\end{tabular}
+\caption{\label{tab:widgets}An example table.}
+\end{table}
 Suma: 58 PLN
 
 Płytka rozwojowa UNO - 10 PLN
 
-Moduł ESP8266 - 18 PLN
-
-Czujnik wilgotności powietrza 5 PLN
-
-Czujnik wilgotności gleby 5 PLN
-
-Czujnik nasłonecznienia 5 PLN
-
-Przetwornik 5 PLN
-
-Żarówka 5 PLN
-
-Kabelki, płytka uniwersalna, cyna, klej na gorąco - 10 PLN
 
 
 
-\section{Raport prostępów prac na dzień 25.11}
+
+\section{Raport postępów prac na dzień 25.11}
 Podczas ostatnich tygodni skupiliśmy się na realizacji stabilnego połączenia między płytką rozwojową UNO i modułem ESP8266, a także między modułem ESP8266 i panelem sterowania na serwerze.
 
 Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
@@ -86,6 +102,15 @@ Wstępna prezentacja gotowego projektu i ocena błędów.
 
 \subsection{Plany na 20.01}
 Ostateczna prezentacja z poprawką błędów.
+
+\subsection{Wstępny schemat blokowy}
+\begin{figure}[!h]
+  \begin{center}
+    {\includegraphics[width=16cm]{schemat_blokowy.png}}
+  \end{center}
+  \caption{Wstępny schemat blokowy}
+\end{figure}
+
 
 \section{Zgodność z harmonogramem}
 \subsection{4.11}

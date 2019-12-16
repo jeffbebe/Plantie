@@ -1,11 +1,11 @@
 /*
 For node express usage (in project folder - cmd)
 
-npm install express --save
+npm install express 
 
 For bootstrap usage
 
-npm install --save bootstrap
+npm install bootstrap
 */
 
 var express = require("express");

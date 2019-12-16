@@ -6,7 +6,7 @@
 \usepackage{indentfirst}
 \usepackage{polski}
 \usepackage{graphicx} 
-
+\usepackage{float}
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
 \hypersetup{
@@ -18,15 +18,46 @@
 
 
 
-\begin{document}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\makeatletter
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+		\vspace*{1cm}
+		\begin{center}\small
+			Poliechnika Śląska\\
+			Wydział Automatyki, Elektroniki i Informatyki\\
+			Raport końcowy z Systemów Mikroprocesorowych
+		\end{center}
+		\vspace{3cm}
+		\noindent\linia
+		\begin{center}
+			\LARGE \textsc{\@title}
+		\end{center}
+		\linia
+		\vspace{0.5cm}
+		\begin{flushright}
+			\begin{minipage}{15cm}
+				\textit{\small Autorzy:}\\
+				\normalsize \textsc{Kamil Choiński} \par \textsc{Oskar Stabla} \par
+			\end{minipage}
+		
+			
+		\end{flushright}
+		\vspace*{\stretch{6}}
+		\begin{center}
+			\@date
+		\end{center}
+	\end{titlepage}%
+}
+\makeatother
 
 \title{Plantie™}
-\author{Kamil Choiński, Oskar Stabla}
+
+\begin{document}
 \maketitle
-\begin{abstract}
-Your abstract.
-\end{abstract}
+
 \tableofcontents
+
 
 
 
@@ -44,7 +75,7 @@ swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy do
 nic więcej.
 
 \section{Kosztorys}
-
+Przedstawiony na Tablicy 1.
 \begin{table}
 \centering
 \begin{tabular}{l|r}
@@ -62,15 +93,23 @@ Przetwornik & 5 PLN \\
 
 Żarówka & 5 PLN \\
 
-Kabelki, płytka uniwersalna, cyna, klej na gorąco & 10 PLN \\
+Kabelki, płytka uniwersalna, cyna, klej na gorąco & 10 PLN 
+\\ \hline
+Suma & 58 PLN
+
 \end{tabular}
-\caption{\label{tab:widgets}An example table.}
+\caption{\label{tab:widgets}Zakupione produkty}
 \end{table}
-Suma: 58 PLN
 
-Płytka rozwojowa UNO - 10 PLN
-
-
+\section{Przegląd używanych czujników}
+\subsection{Czujnik wilgotności i powietrza: DHT11}
+Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=10cm]{DHT11_photo.png}}
+	\end{center}
+	\caption{Czujnik DHT11}
+\end{figure}
 
 
 
@@ -89,6 +128,7 @@ Zaimplementowaliśmy testowy kod, aby pokazać postępy naszej dotychczasowej pr
 
 
 \section{Wstępny harmonogram}
+Przedstawiony na Rysunku 1.
 \subsection{4.11}
 Przeanalizowanie schematów płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza, czujnika nasłonecznienia oraz rozwiązanie techniczne doświetlania rośliny. Stworzenie schematu elektrycznego gotowego projektu. Testowanie poprawności działania posiadanych czujników w warunkach domowych. Implementacja komunikacji z modułem ESP8266. Dopasowywanie czasów działania. 
 Dokupienie brakujących komponentów gotowego projektu. 
@@ -97,10 +137,10 @@ Realizacja połączeń elektrycznych na płytce stykowej i ostateczne testowanie
 łania. Przeniesienie projektu na płytkę uniwersalną. Przygotowanie ewentualnej obudowy i realiza-
 cja montażu systemu doświetlania. Stworzenie prezentacji na zajęcia
 
-\subsection{Plany na 16.12}
+\subsection{16.12}
 Wstępna prezentacja gotowego projektu i ocena błędów.
 
-\subsection{Plany na 20.01}
+\subsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
 \subsection{Wstępny schemat blokowy}

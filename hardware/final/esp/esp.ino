@@ -13,15 +13,19 @@ String dataRecivedFromWeb = "";
 String dataToSend = "";
 
 char path[] = "/"; //identifier of this device
-
+/*
 const char *ssid = "Skynet";
 const char *password = "Ziemniak";
-char *host = "192.168.43.170"; //replace this ip address with the ip address of your Node.Js server
-/*
+char *host = "192.168.43.198"; //replace this ip address with the ip address of your Node.Js server
+
 const char *ssid = "Internet";
 const char *password = "dlink123";
 char *host = "192.168.1.4"; 
   */
+  const char *ssid = "RedmiX";
+const char *password = "kamilkamil12";
+char *host = "192.168.43.198"; //replace this ip address with the ip address of your Node.Js server
+
 
 const int espport = 3000;
 

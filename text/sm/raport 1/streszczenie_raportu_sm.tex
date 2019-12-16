@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{geometry}
+
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage[T1]{fontenc}
@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
+
 \hypersetup{
     colorlinks=true, %set true if you want colored links
     linktoc=all,     %set to all if you want both sections and subsections linked
@@ -19,6 +20,7 @@
 
 
 \usepackage[top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+
 \makeatletter
 \newcommand{\linia}{\rule{\linewidth}{0.4mm}}
 \renewcommand{\maketitle}{\begin{titlepage}
@@ -101,19 +103,30 @@ Suma & 58 PLN
 \caption{\label{tab:widgets}Zakupione produkty}
 \end{table}
 
-\section{Przegląd używanych czujników}
-\subsection{Czujnik wilgotności i powietrza: DHT11}
+\section{Przegląd modułów projektu}
+\subsection{Czujnik wilgotności i temperatury powietrza: DHT11}
 Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
-\begin{figure}[!h]
+\begin{figure}[!htb]
 	\begin{center}
 		{\includegraphics[width=10cm]{DHT11_photo.png}}
 	\end{center}
 	\caption{Czujnik DHT11}
 \end{figure}
 
+\subsection{Czujnik natężenia światła}
+xx
+\subsection{Czujnik wilgotności gleby}
+\subsection{Wyświetlacz OLED}
+xx
+\subsection{Pompka wodna}
+\subsection{Czujnik poziomu wody w zbiorniku}
+x
+\subsection{Panel sterowania przez Internet: ESP8266}
+Realizacja?
 
 
-\section{Raport postępów prac na dzień 25.11}
+
+\section{Postępy prac na dzień 25.11 @@@@@ do wyjebania sekcja chyba}
 Podczas ostatnich tygodni skupiliśmy się na realizacji stabilnego połączenia między płytką rozwojową UNO i modułem ESP8266, a także między modułem ESP8266 i panelem sterowania na serwerze.
 
 Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
@@ -173,6 +186,47 @@ Wstępna prezentacja gotowego projektu i ocena błędów.
 \subsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
+\section{Porównanie z podobnymi projektami}
+\subsection{Jakis z neta}
+x
+\subsection{Jakiś z neta 2}
+x
+
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{latexcompanion} 
+Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+\textit{The \LaTeX\ Companion}. 
+Addison-Wesley, Reading, Massachusetts, 1993.
+
+\bibitem{latexcompanion} 
+Ivan Grokhotkov
+\textit{ESP8266 Arduino Core’s documentation}. 
+2017
+
+\bibitem{latexcompanion} 
+Christian Klippel, Peter Andersson, Peter Lerup
+\textit{ESP8266 core for Arduino}. 
+2017
+
+\bibitem{latexcompanion} 
+guy
+\textit{w3schools.com}. 
+1999-2019
+ 
+\bibitem{einstein} 
+Albert Einstein. 
+\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+[\textit{On the electrodynamics of moving bodies}]. 
+Annalen der Physik, 322(10):891–921, 1905.
+ 
+\bibitem{knuthwebsite} 
+Knuth: Computers and Typesetting,
+\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\end{thebibliography}
 
 
 \end{document}

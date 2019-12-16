@@ -1,18 +1,27 @@
 \babel@toc {polish}{}
 \contentsline {section}{\numberline {1}Opis projektu}{1}{section.1}% 
-\contentsline {section}{\numberline {2}Cel}{1}{section.2}% 
+\contentsline {section}{\numberline {2}Cel}{2}{section.2}% 
 \contentsline {section}{\numberline {3}Kosztorys}{2}{section.3}% 
-\contentsline {section}{\numberline {4}Przegl\IeC {\k a}d u\IeC {\.z}ywanych czujnik\IeC {\'o}w}{2}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Czujnik wilgotno\IeC {\'s}ci i powietrza: DHT11}{2}{subsection.4.1}% 
-\contentsline {section}{\numberline {5}Raport post\IeC {\k e}p\IeC {\'o}w prac na dzie\IeC {\'n} 25.11}{2}{section.5}% 
-\contentsline {section}{\numberline {6}Wst\IeC {\k e}pny harmonogram}{3}{section.6}% 
+\contentsline {section}{\numberline {4}Przegląd modułów projektu}{2}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Czujnik wilgotności i temperatury powietrza: DHT11}{2}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Czujnik natężenia światła}{2}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Czujnik wilgotności gleby}{2}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Wyświetlacz OLED}{2}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Pompka wodna}{2}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}Czujnik poziomu wody w zbiorniku}{2}{subsection.4.6}% 
+\contentsline {subsection}{\numberline {4.7}Panel sterowania przez Internet: ESP8266}{3}{subsection.4.7}% 
+\contentsline {section}{\numberline {5}Postępy prac na dzień 25.11 @@@@@ do wyjebania sekcja chyba}{3}{section.5}% 
+\contentsline {section}{\numberline {6}Wstępny harmonogram}{4}{section.6}% 
 \contentsline {subsection}{\numberline {6.1}4.11}{4}{subsection.6.1}% 
 \contentsline {subsection}{\numberline {6.2}25.11}{4}{subsection.6.2}% 
 \contentsline {subsection}{\numberline {6.3}16.12}{4}{subsection.6.3}% 
 \contentsline {subsection}{\numberline {6.4}20.01}{4}{subsection.6.4}% 
-\contentsline {subsection}{\numberline {6.5}Wst\IeC {\k e}pny schemat blokowy}{4}{subsection.6.5}% 
-\contentsline {section}{\numberline {7}Zgodno\IeC {\'s}\IeC {\'c} z harmonogramem}{4}{section.7}% 
+\contentsline {subsection}{\numberline {6.5}Wstępny schemat blokowy}{4}{subsection.6.5}% 
+\contentsline {section}{\numberline {7}Zgodność z harmonogramem}{4}{section.7}% 
 \contentsline {subsection}{\numberline {7.1}4.11}{4}{subsection.7.1}% 
 \contentsline {subsection}{\numberline {7.2}25.11}{5}{subsection.7.2}% 
 \contentsline {subsection}{\numberline {7.3}16.12}{6}{subsection.7.3}% 
 \contentsline {subsection}{\numberline {7.4}20.01}{6}{subsection.7.4}% 
+\contentsline {section}{\numberline {8}Porównanie z podobnymi projektami}{6}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Jakis z neta}{6}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}Jakiś z neta 2}{6}{subsection.8.2}% 

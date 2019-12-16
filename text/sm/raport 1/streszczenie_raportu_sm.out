@@ -1,17 +1,26 @@
 \BOOKMARK [1][-]{section.1}{Opis projektu}{}% 1
 \BOOKMARK [1][-]{section.2}{Cel}{}% 2
 \BOOKMARK [1][-]{section.3}{Kosztorys}{}% 3
-\BOOKMARK [1][-]{section.4}{Przeglad uzywanych czujnik\363w}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Czujnik wilgotnosci i powietrza: DHT11}{section.4}% 5
-\BOOKMARK [1][-]{section.5}{Raport postep\363w prac na dzien 25.11}{}% 6
-\BOOKMARK [1][-]{section.6}{Wstepny harmonogram}{}% 7
-\BOOKMARK [2][-]{subsection.6.1}{4.11}{section.6}% 8
-\BOOKMARK [2][-]{subsection.6.2}{25.11}{section.6}% 9
-\BOOKMARK [2][-]{subsection.6.3}{16.12}{section.6}% 10
-\BOOKMARK [2][-]{subsection.6.4}{20.01}{section.6}% 11
-\BOOKMARK [2][-]{subsection.6.5}{Wstepny schemat blokowy}{section.6}% 12
-\BOOKMARK [1][-]{section.7}{Zgodnosc z harmonogramem}{}% 13
-\BOOKMARK [2][-]{subsection.7.1}{4.11}{section.7}% 14
-\BOOKMARK [2][-]{subsection.7.2}{25.11}{section.7}% 15
-\BOOKMARK [2][-]{subsection.7.3}{16.12}{section.7}% 16
-\BOOKMARK [2][-]{subsection.7.4}{20.01}{section.7}% 17
+\BOOKMARK [1][-]{section.4}{Przeglad modu\233\363w projektu}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Czujnik wilgotnosci i temperatury powietrza: DHT11}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Czujnik natezenia swiat\233a}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Czujnik wilgotnosci gleby}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Wyswietlacz OLED}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.5}{Pompka wodna}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.6}{Czujnik poziomu wody w zbiorniku}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.7}{Panel sterowania przez Internet: ESP8266}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Postepy prac na dzien 25.11 @@@@@ do wyjebania sekcja chyba}{}% 12
+\BOOKMARK [1][-]{section.6}{Wstepny harmonogram}{}% 13
+\BOOKMARK [2][-]{subsection.6.1}{4.11}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.2}{25.11}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.3}{16.12}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.4}{20.01}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.5}{Wstepny schemat blokowy}{section.6}% 18
+\BOOKMARK [1][-]{section.7}{Zgodnosc z harmonogramem}{}% 19
+\BOOKMARK [2][-]{subsection.7.1}{4.11}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.2}{25.11}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.3}{16.12}{section.7}% 22
+\BOOKMARK [2][-]{subsection.7.4}{20.01}{section.7}% 23
+\BOOKMARK [1][-]{section.8}{Por\363wnanie z podobnymi projektami}{}% 24
+\BOOKMARK [2][-]{subsection.8.1}{Jakis z neta}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.2}{Jakis z neta 2}{section.8}% 26

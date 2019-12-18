@@ -20,7 +20,6 @@
 
 
 \usepackage[top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
-
 \makeatletter
 \newcommand{\linia}{\rule{\linewidth}{0.4mm}}
 \renewcommand{\maketitle}{\begin{titlepage}
@@ -41,15 +40,13 @@
 			\begin{minipage}{15cm}
 				\textit{\small Autorzy:}\\
 				\normalsize \textsc{Kamil Choiński} \par \textsc{Oskar Stabla} \par
-			\end{minipage}
-		
-			
+			\end{minipage}	
 		\end{flushright}
 		\vspace*{\stretch{6}}
 		\begin{center}
 			\@date
 		\end{center}
-	\end{titlepage}%
+	\end{titlepage}
 }
 \makeatother
 
@@ -61,24 +58,25 @@
 \tableofcontents
 
 
+\section{Ogólny opis projektu}
 
 
+\subsection{Cel i zakres projektu}
+Nasz projekt ma na celu pomoc zabieganym ludziom, którzy nie mają czasu na zajmowanie się
+swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy dostęp do internetu,
+nic więcej.
 
-\section{Opis projektu}
 Nasza koncepcja opiera się na systemie zdalnego zarządzania rośliną. Chcemy mierzyć parametry
 gleby i otoczenia takie jak wilgotność, nasłonecznienie. W zależności od odczytanych wartości przez
 płytkę rozwojową UNO połączoną z modułem ESP8266 będzie możliwe sterowanie pompką wody,
 lampą. Mamy zamiar połączyć projekt z IT, dlatego panel sterowania będzie umieszczony na stronie
 internetowej.
 
-\section{Cel}
-Nasz projekt ma na celu pomoc zabieganym ludziom, którzy nie mają czasu na zajmowanie się
-swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy dostęp do internetu,
-nic więcej.
 
-\section{Kosztorys}
-Przedstawiony na Tablicy 1.
-\begin{table}
+\subsection{Kosztorys}
+Większość komponentów projektu została sprowadzona z chin, ze względu na ich niską cenę. Niestety czas oczekiwania na nie wydłużył się i spowodował nieoczekiwane opóźnienia w harmonogramie.
+
+\begin{table}[!h]
 \centering
 \begin{tabular}{l|r}
 Item & Cena \\\hline
@@ -103,28 +101,94 @@ Suma & 58 PLN
 \caption{\label{tab:widgets}Zakupione produkty}
 \end{table}
 
-\section{Przegląd modułów projektu}
-\subsection{Czujnik wilgotności i temperatury powietrza: DHT11}
-Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
-\begin{figure}[!htb]
+\subsection{Opis podobnych rozwiązań }
+\subsubsection{Jakis z neta}
+x
+\subsubsection{Jakiś z neta 2}
+x
+
+
+\section{Szczegółowy opis projektu}
+
+
+\subsection{Rozwiązania techniczne - Przegląd modułów projektu}
+\subsubsection{Czujnik wilgotności i temperatury powietrza: DHT11}
+ Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
+\begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=10cm]{DHT11_photo.png}}
 	\end{center}
 	\caption{Czujnik DHT11}
 \end{figure}
 
-\subsection{Czujnik natężenia światła}
-xx
-\subsection{Czujnik wilgotności gleby}
-\subsection{Wyświetlacz OLED}
-xx
-\subsection{Pompka wodna}
-\subsection{Czujnik poziomu wody w zbiorniku}
-x
-\subsection{Panel sterowania przez Internet: ESP8266}
+\subsubsection{Czujnik natężenia światła}
+ Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. 
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{light_sensor_photo.png}}
+	\end{center}
+	\caption{Czujnik natężenia światła}
+\end{figure}
+\subsubsection{Czujnik wilgotności gleby FC-28}
+ Pomiary aktualnej wilgotności gleby w glebie naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28.
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{FC-28_photo.png}}
+	\end{center}
+	\caption{Czujnik FC-28}
+\end{figure}
+\subsubsection{Czujnik poziomu wody w zbiorniku}
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{water_sensor_photo.png}}
+	\end{center}
+	\caption{Czujnik poziomu wody}
+\end{figure}
+
+\subsubsection{Wyświetlacz OLED}
+Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługiwane przez wyświetlacz OLED zamontowany na przodzie roślinki, aby była możliwość monitorowania jej stanu, gdy przebywamy w jej otoczeniu bez użycia połączenia internetowego. Do wypisywania danych na ekranie musieliśmy użyć bibliotek AdafruitGFX.h i  AdafruitSSD1306.h, aby poprawnie je wyświetlać. 
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{oled-display_photo.png}}
+	\end{center}
+	\caption{0.96 calowy wyświetlacz OLED}
+\end{figure}
+\subsubsection{Pompka wodna}
+
+
+\subsubsection{Panel sterowania przez Internet: ESP8266}
 Realizacja?
 
+\subsection{Szczególne rozwiązania warstwy programowej}
+\subsubsection{Płytka rozwojowa UNO}
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{uno_photo.png}}
+	\end{center}
+	\caption{Płytka rozwojowa UNO}
+\end{figure}
+\subsubsection{ESP8266}
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{esp8266_photo.png}}
+	\end{center}
+	\caption{ESP8266}
+\end{figure}
+\subsubsection{Panel sterowania na serwerze}
 
+\section{Realizacja projektu}
+\subsection{Problematyka projektu}
+Przed rozpoczęciem prac nad projektem .. 
+
+\subsection{Sposób wykonania}
+Postanowiliśmy połączyć płytkę rozwojową UNO obsługującą pompkę i monitorującą wartości naszych czujników z ESP8266, aby była możliwość sterowania poprzez Internet.
+\subsection{Problemy napotkane podczas realizacji}
+\subsubsection{Połączenie między UNO, a ESP8266}
+Próbowaliśmy różnych typów połączeń jak I2C, albo SPI jednak poprawność testowych danych jakie otrzymywaliśmy była nikła - albo dostawaliśmy tylko cześć danych albo były one w różny sposób powielone.
+Rozwiazaliśmy ten problem poprzez użycie wskaźników początku ''<'' i końca ''>'' przy wysyłaniu danej komendy, aby wykonać określoną czynność lub odesłać pomiary. 
 
 \section{Postępy prac na dzień 25.11 @@@@@ do wyjebania sekcja chyba}
 Podczas ostatnich tygodni skupiliśmy się na realizacji stabilnego połączenia między płytką rozwojową UNO i modułem ESP8266, a także między modułem ESP8266 i panelem sterowania na serwerze.
@@ -140,8 +204,20 @@ Zaimplementowaliśmy testowy kod, aby pokazać postępy naszej dotychczasowej pr
 
 
 
-\section{Wstępny harmonogram}
-Przedstawiony na Rysunku 1.
+\section{Harmonogram i podział obowiązków}
+
+\subsection{Podział obowiązków}
+
+\subsection{Wstępny schemat blokowy}
+Przed rozpoczęciem pracy nad projektem stworzyliśmy schemat, którego staraliśmy się trzymać jednak ze względu na pewne komplikacje w trakcie realizacji pewne aspekty zostały zmienione co zostało przedstawione na finalnym schemacie blokowym.
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=16cm]{schemat_blokowy.png}}
+	\end{center}
+	\caption{Wstępny schemat blokowy}
+\end{figure}
+
+
 \subsection{4.11}
 Przeanalizowanie schematów płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza, czujnika nasłonecznienia oraz rozwiązanie techniczne doświetlania rośliny. Stworzenie schematu elektrycznego gotowego projektu. Testowanie poprawności działania posiadanych czujników w warunkach domowych. Implementacja komunikacji z modułem ESP8266. Dopasowywanie czasów działania. 
 Dokupienie brakujących komponentów gotowego projektu. 
@@ -156,13 +232,6 @@ Wstępna prezentacja gotowego projektu i ocena błędów.
 \subsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
-\subsection{Wstępny schemat blokowy}
-\begin{figure}[!h]
-  \begin{center}
-    {\includegraphics[width=16cm]{schemat_blokowy.png}}
-  \end{center}
-  \caption{Wstępny schemat blokowy}
-\end{figure}
 
 
 \section{Zgodność z harmonogramem}
@@ -186,14 +255,10 @@ Wstępna prezentacja gotowego projektu i ocena błędów.
 \subsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
-\section{Porównanie z podobnymi projektami}
-\subsection{Jakis z neta}
-x
-\subsection{Jakiś z neta 2}
-x
 
 
-
+\section{Podsumowanie }
+\subsection{Pomysły na rozwój projektu }
 \begin{thebibliography}{9}
 
 

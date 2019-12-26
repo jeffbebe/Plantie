@@ -18,13 +18,14 @@ async function get_from_database() {
     $("#Air_temperature").text(response[0].Air_Temperature + "°");
     $("#Brightness_level").text(response[0].Brightness_Level + "%");
     $("#Water_tank_level").text(response[0].Water_Tank_Level + "%");
+    $("#Air_Humidity").text(response[0].Air_Humidity + "%");
     makeChart(response[1]);
   } catch (err) {
     console.error(`Error: ${err}`);
-    $("#Soil_moisture").text("null");
-    $("#Air_temperature").text("null");
-    $("#Brightness_level").text("null");
-    $("#Water_tank_level").text("null");
+    $("#Soil_moisture").text("err");
+    $("#Air_temperature").text("err");
+    $("#Brightness_level").text("err");
+    $("#Water_tank_level").text("err");
   }
 }
 var d, h, m, s, animate;
@@ -72,13 +73,13 @@ function makeChart(chartData) {
     type: "line",
     // The data for our dataset
     data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: ["January", "February", "March", "April", "May", "June", "July"], // date
       datasets: [
         {
           label: "My First dataset",
           backgroundColor: "rgb(255, 99, 132)",
           borderColor: "rgb(255, 99, 132)",
-          data: [0, 10, 5, 2, 20, 30, 45]
+          data: [0, 10, 5, 2, 20, 30, 45] // will be air or soil humidity
         }
       ]
     },

@@ -41,6 +41,10 @@ class Sensor_readings extends Model {}
 Sensor_readings.init(
   {
     // attributes
+    ID: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
     Soil_Moisture: {
       type: Sequelize.INTEGER,
       allowNull: false
@@ -57,7 +61,7 @@ Sensor_readings.init(
       type: Sequelize.INTEGER,
       allowNull: false
     },
-    ID: {
+    Air_Humidity: {
       type: Sequelize.INTEGER,
       allowNull: false
     },
@@ -111,7 +115,7 @@ app.get("/readings", async function(req, resp) {
       raw: true,
       order: [["ID"]]
     }); // datachart is an array of arrays, we can use datachart[] to show them in console
-    console.log(datachart[0]);
+    //console.log(datachart[0]); // i can see there what's inside
     /*  var str = "Apple, Banana, Kiwi";
     var res = str.slice(7, 13);    /// for future slicing some strings and pants
     var text1 = "Hello";
@@ -139,7 +143,7 @@ app.post("/control", (req, res) => {
   console.log(action);
 
   Sensor_readings.findAll({ raw: true }).then(Sensor_readings => {
-    console.log(Sensor_readings);
+    //console.log(Sensor_readings);
   });
 
   res.send("1");

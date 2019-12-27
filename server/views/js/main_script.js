@@ -19,13 +19,14 @@ async function get_from_database() {
     $("#Brightness_level").text(response[0].Brightness_Level + "%");
     $("#Water_tank_level").text(response[0].Water_Tank_Level + "%");
     $("#Air_Humidity").text(response[0].Air_Humidity + "%");
-    makeChart(response[1]);
+    makeChart(response[1], response[2]); // response 1 is data for chart, response 2 is amount of data
   } catch (err) {
     console.error(`Error: ${err}`);
     $("#Soil_moisture").text("err");
     $("#Air_temperature").text("err");
     $("#Brightness_level").text("err");
     $("#Water_tank_level").text("err");
+    $("#Air_Humidity").text("err");
   }
 }
 var d, h, m, s, animate;
@@ -64,27 +65,57 @@ function $(id, val) {
   document.getElementById(id).innerHTML = val;
 }
 
-function makeChart(chartData) {
+function makeChart(chartData, count) {
   var ctx = document.getElementById("myChart").getContext("2d");
+  var i;
+  let dataset = [];
+  let labels = [];
+  for (i = 0; i < count; i++) {
+    let date = new Date(chartData[i].Date);
+    dataset[i] = { x: date.toISOString(), y: chartData[i].Air_Humidity };
+    labels.push(date.toISOString());
+  }
 
-  console.log(chartData[0]);
   var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: "line",
     // The data for our dataset
     data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"], // date
+      labels: labels,
       datasets: [
         {
-          label: "My First dataset",
-          backgroundColor: "rgb(255, 99, 132)",
-          borderColor: "rgb(255, 99, 132)",
-          data: [0, 10, 5, 2, 20, 30, 45] // will be air or soil humidity
+          label: "Humidity",
+          data: dataset,
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ],
+          borderColor: [
+            "rgba(255,99,132,1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)"
+          ],
+          borderWidth: 1
         }
       ]
     },
-    // Configuration options go here
-    options: {}
+    options: {
+      scales: {
+        xAxes: [
+          {
+            type: "time",
+            distribution: "linear"
+          }
+        ]
+      }
+    }
   });
 }
 window.onload = init;

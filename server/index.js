@@ -16,6 +16,9 @@ var Sequelize = require("sequelize");
 var port = 3000;
 var bodyParser = require("body-parser"); //do wyjebania
 
+var moment = require("moment");
+moment().format();
+
 const server = http.createServer(app); //create a server
 
 app.use(bodyParser.urlencoded({ extended: false })); //do wyjebania
@@ -77,22 +80,6 @@ Sensor_readings.init(
   }
 );
 
-// Some table display read from database
-/* sequelize
-  .getQueryInterface()
-  .showAllSchemas()
-  .then(tableObj => {
-    console.log("// Tables in database", "==========================");
-    console.log(tableObj);
-  })
-  .catch(err => {
-    console.log("showAllSchemas ERROR", err);
-  }); */
-
-//getting current date for the table
-/* var datetime = new Date();
-console.log(datetime.toISOString()); */
-
 //Getting css file
 //app.use('/views/css',express.static(__dirname + '/views/css'));
 app.use(express.static(path.join(__dirname, "views")));
@@ -116,19 +103,8 @@ app.get("/readings", async function(req, resp) {
       order: [["ID"]]
     }); // datachart is an array of arrays, we can use datachart[] to show them in console
     //console.log(datachart[0]); // i can see there what's inside
-    /*  var str = "Apple, Banana, Kiwi";
-    var res = str.slice(7, 13);    /// for future slicing some strings and pants
-    var text1 = "Hello";
-    var text2 = "World";
-    var text3 = text1.concat(" ", text2); / concatenate strings
-    https://www.w3schools.com/js/js_string_methods.asp
-    for (var i = 0; i < arrayLength; i++) {
-    console.log(myStringArray[i]);
-    //Do something
-}
 
-    */
-    var resptable = [data, datachart];
+    var resptable = [data, datachart, data.ID];
     resp.send(JSON.stringify(resptable));
   } catch (err) {
     resp.sendStatus(500);

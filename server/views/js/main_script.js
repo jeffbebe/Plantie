@@ -114,7 +114,14 @@ function makeChart(chartData, count) {
             distribution: "linear"
           }
         ]
-      }
+      },
+      animation: {
+        duration: 0 // general animation time
+      },
+      hover: {
+        animationDuration: 0 // duration of animations when hovering an item
+      },
+      responsiveAnimationDuration: 0 // animation duration after a resize
     }
   });
 }

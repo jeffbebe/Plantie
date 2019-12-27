@@ -22,7 +22,7 @@
 
 <body onload="get_from_database()">
 <script>
-    setInterval(get_from_database, 5000);
+    setInterval(get_from_database, 10000);
     </script>
     <!-- Navigation -->
 
@@ -88,13 +88,13 @@
         <hr>
         <div class="col-12">
             <div class="padding">
-                <div class="d-inline-flex p-2 justify-content-center" style="max-width: 80%; min-width:300px">
+                <div class="d-inline-flex p-2 justify-content-center" style="max-width: 80%; min-width:250px">
                     <div class="card" style="align-content: center;"> 
-                        <div style="overflow:hidden; width:inherit; height:100px">
+                        <div style="overflow:hidden; width:inherit; height:6vw">
                         <img class ="card-img-top"  src="img/leaf_background.jpg" alt="Card image cap">
                         </div>
-                            <div class="card-img-overlay shadow p-4" style="height:60px;">
-                            <h3 class="card-title text-white m-b-0 dl " style ="font-size:3vw;">Management panel</h3> 
+                            <div class="card-img-overlay p-10" style="height:100px;padding: 0;">
+                            <h3 class="card-title text-white m-b-0 dl " style ="font-size:3vw;position:relative;margin-top: 1vw;">Management panel</h3> 
                         </div>
                         <div class="card-body weather-small" >
                             <div class="row">
@@ -121,10 +121,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm m-l-20">
-                                    <button id ="water_to_db" style="width:15vw; height:5vw;"class="btn btn-primary"  onclick="push_to_database('<Water>')">Water</button>
+                                    <button id ="water_to_db" style="width:15vw; height:5vw;font-size:2vw"class="btn btn-primary"  onclick="push_to_database('<Water>')">Water</button>
                                 </div>
                                 <div class="col-sm m-l-20">
-                                    <button id ="fertilise_to_db" style="width:15vw; height:5vw;" class="btn btn-primary"  onclick="push_to_database('<Fertilise>')">Fertilise</button>
+                                    <button id ="fertilise_to_db" style="width:15vw; height:5vw;font-size:2vw" class="btn btn-primary"  onclick="push_to_database('<Fertilise>')">Fertilise</button>
                                 </div>
                             </div>
                         </div>

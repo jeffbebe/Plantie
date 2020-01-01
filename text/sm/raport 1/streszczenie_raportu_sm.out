@@ -17,23 +17,26 @@
 \BOOKMARK [3][-]{subsubsection.2.2.1}{P\233ytka rozwojowa UNO}{subsection.2.2}% 17
 \BOOKMARK [3][-]{subsubsection.2.2.2}{ESP8266}{subsection.2.2}% 18
 \BOOKMARK [3][-]{subsubsection.2.2.3}{Panel sterowania na serwerze}{subsection.2.2}% 19
-\BOOKMARK [1][-]{section.3}{Realizacja projektu}{}% 20
-\BOOKMARK [2][-]{subsection.3.1}{Problematyka projektu}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.2}{Spos\363b wykonania}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.3}{Problemy napotkane podczas realizacji}{section.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Po\233aczenie miedzy UNO, a ESP8266}{subsection.3.3}% 24
-\BOOKMARK [1][-]{section.4}{Postepy prac na dzien 25.11 @@@@@ do wyjebania sekcja chyba}{}% 25
-\BOOKMARK [1][-]{section.5}{Harmonogram i podzia\233 obowiazk\363w}{}% 26
-\BOOKMARK [2][-]{subsection.5.1}{Podzia\233 obowiazk\363w}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.2}{Wstepny schemat blokowy}{section.5}% 28
-\BOOKMARK [2][-]{subsection.5.3}{4.11}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.4}{25.11}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.5}{16.12}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.6}{20.01}{section.5}% 32
-\BOOKMARK [1][-]{section.6}{Zgodnosc z harmonogramem}{}% 33
-\BOOKMARK [2][-]{subsection.6.1}{4.11}{section.6}% 34
-\BOOKMARK [2][-]{subsection.6.2}{25.11}{section.6}% 35
-\BOOKMARK [2][-]{subsection.6.3}{16.12}{section.6}% 36
-\BOOKMARK [2][-]{subsection.6.4}{20.01}{section.6}% 37
-\BOOKMARK [1][-]{section.7}{Podsumowanie }{}% 38
-\BOOKMARK [2][-]{subsection.7.1}{Pomys\233y na rozw\363j projektu }{section.7}% 39
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Obudowa}{subsection.2.2}% 20
+\BOOKMARK [1][-]{section.3}{Realizacja projektu}{}% 21
+\BOOKMARK [2][-]{subsection.3.1}{Problematyka projektu}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Spos\363b wykonania}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.3}{Problemy napotkane podczas realizacji}{section.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Po\233aczenie miedzy UNO, a ESP8266}{subsection.3.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Projektowanie i drukowanie obudowy}{subsection.3.3}% 26
+\BOOKMARK [1][-]{section.4}{Harmonogram i podzia\233 obowiazk\363w}{}% 27
+\BOOKMARK [2][-]{subsection.4.1}{Podzia\233 obowiazk\363w}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.2}{Wstepny schemat blokowy}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.3}{Harmonogram}{section.4}% 30
+\BOOKMARK [3][-]{subsubsection.4.3.1}{4.11}{subsection.4.3}% 31
+\BOOKMARK [3][-]{subsubsection.4.3.2}{25.11}{subsection.4.3}% 32
+\BOOKMARK [3][-]{subsubsection.4.3.3}{16.12}{subsection.4.3}% 33
+\BOOKMARK [3][-]{subsubsection.4.3.4}{20.01}{subsection.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.4}{Zgodnosc z harmonogramem}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.4.1}{4.11}{subsection.4.4}% 36
+\BOOKMARK [3][-]{subsubsection.4.4.2}{25.11}{subsection.4.4}% 37
+\BOOKMARK [3][-]{subsubsection.4.4.3}{16.12}{subsection.4.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.4.4}{20.01}{subsection.4.4}% 39
+\BOOKMARK [1][-]{section.5}{Podsumowanie }{}% 40
+\BOOKMARK [2][-]{subsection.5.1}{Osiagniete cele}{section.5}% 41
+\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu }{section.5}% 42

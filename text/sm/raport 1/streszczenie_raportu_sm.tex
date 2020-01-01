@@ -113,7 +113,7 @@ x
 
 \subsection{Rozwiązania techniczne - Przegląd modułów projektu}
 \subsubsection{Czujnik wilgotności i temperatury powietrza: DHT11}
- Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
+Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Do implementacji w ArduinoIDE została wykorzystana biblioteka DHT-sensor-library, aby pomiary wykonywały się poprawnie.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=10cm]{DHT11_photo.png}}
@@ -122,7 +122,7 @@ x
 \end{figure}
 
 \subsubsection{Czujnik natężenia światła}
- Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. 
+Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. 
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=12cm]{light_sensor_photo.png}}
@@ -130,7 +130,7 @@ x
 	\caption{Czujnik natężenia światła}
 \end{figure}
 \subsubsection{Czujnik wilgotności gleby FC-28}
- Pomiary aktualnej wilgotności gleby w glebie naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28.
+Pomiary aktualnej wilgotności gleby w glebie naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -148,8 +148,7 @@ x
 \end{figure}
 
 \subsubsection{Wyświetlacz OLED}
-Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługiwane przez wyświetlacz OLED zamontowany na przodzie roślinki, aby była możliwość monitorowania jej stanu, gdy przebywamy w jej otoczeniu bez użycia połączenia internetowego. Do wypisywania danych na ekranie musieliśmy użyć bibliotek AdafruitGFX.h i  AdafruitSSD1306.h, aby poprawnie je wyświetlać. 
-
+Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługiwane przez wyświetlacz OLED zamontowany na przodzie obudowy, aby była możliwość monitorowania jej stanu, gdy przebywamy w jej otoczeniu bez potrzeby połączenia internetowego. Do poprawnego wyświetlania danych na ekranie zostały wykorzystane biblioteki AdafruitGFX.h i AdafruitSSD1306.h.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=12cm]{oled-display_photo.png}}
@@ -179,28 +178,37 @@ Realizacja?
 \end{figure}
 \subsubsection{Panel sterowania na serwerze}
 
+\subsubsection{Obudowa}
+Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dyszy wielkości 0.8mm. Czas drukowania pokrywki i pudełka wyniósł 12 godzin.
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{obudowa_model.png}}
+	\end{center}
+	\caption{Model obudowy (Fusion360)}
+\end{figure}
+
 \section{Realizacja projektu}
 \subsection{Problematyka projektu}
 Przed rozpoczęciem prac nad projektem .. 
 
 \subsection{Sposób wykonania}
 Postanowiliśmy połączyć płytkę rozwojową UNO obsługującą pompkę i monitorującą wartości naszych czujników z ESP8266, aby była możliwość sterowania poprzez Internet.
-\subsection{Problemy napotkane podczas realizacji}
-\subsubsection{Połączenie między UNO, a ESP8266}
-Próbowaliśmy różnych typów połączeń jak I2C, albo SPI jednak poprawność testowych danych jakie otrzymywaliśmy była nikła - albo dostawaliśmy tylko cześć danych albo były one w różny sposób powielone.
-Rozwiazaliśmy ten problem poprzez użycie wskaźników początku ''<'' i końca ''>'' przy wysyłaniu danej komendy, aby wykonać określoną czynność lub odesłać pomiary. 
-
-\section{Postępy prac na dzień 25.11 @@@@@ do wyjebania sekcja chyba}
-Podczas ostatnich tygodni skupiliśmy się na realizacji stabilnego połączenia między płytką rozwojową UNO i modułem ESP8266, a także między modułem ESP8266 i panelem sterowania na serwerze.
-
-Zaimplementowaliśmy pomiary wilgotności i temperatury powietrza z użyciem czujnika DHT11. Musieliśmy użyć do implementacji w ArduinoIDE biblioteki DHT-sensor-library, aby pomiary wykonywały się poprawnie.
 
 Płytka rozwojowa UNO cały czas czeka na przychodzące dane które będą zawarte w wskaźnikach początku ''<'' i końca ''>'' danej komendy, aby wykonać określoną czynność lub odesłać pomiary wykonane przez czujnik wilgotności i temperatury do ESP8266, które jest połączone z UNO poprzez piny RX i TX. UNO odsyła swoje komendy również w wskaźnikach początku i końca, aby zapobiec ''gubieniu'' danych.
 
 ESP8266 jest naszym tzw. ''mostem'' i w każdym momencie czeka na dane czy to z UNO czy ze strony internetowej i w zależności od kogo dane otrzymuje przerzuca je do danego odbiorcy.
 Program na ESP jest zrealizowany z użyciem bibliotek ESP8266WiFi, WebSocketClient, SoftwareSerial, które kolejno służą do: umożliwieniu połączenia się ESP do sieci WiFi zadeklarowanej w naszym kodzie, połączeniu się poprzez websocket jako klient do naszego serwera postawionego na laptopie, połączenia się poprzez piny RX i TX do płytki rozwojowej UNO.
 
-Zaimplementowaliśmy testowy kod, aby pokazać postępy naszej dotychczasowej pracy. Po naciśnięciu przycisku Water na stronie przesyłana jest komenda do UNO, które zapala diodę LED. Po naciśniuęciu przycisku Fertilise gasi ją i wysyła obecne pomiary czujnika DHT11 do serwera poprzez websocket.
+\subsection{Problemy napotkane podczas realizacji}
+\subsubsection{Połączenie między UNO, a ESP8266}
+Próbowaliśmy różnych typów połączeń jak I2C, albo SPI jednak poprawność testowych danych jakie otrzymywaliśmy była nikła - albo dostawaliśmy tylko cześć danych albo były one w różny sposób powielone.
+Rozwiazaliśmy ten problem poprzez użycie wskaźników początku ''<'' i końca ''>'' przy wysyłaniu danej komendy, aby wykonać określoną czynność lub odesłać pomiary. 
+\subsubsection{Projektowanie i drukowanie obudowy}
+Dużym problemem była niewiedza związana z wielkością jaką powinna mieć obudowa, jednak zdecydowaliśmy że będzie ona większa niż będziemy potrzebować, aby umożliwić nam łatwe rozbudowanie projektu w przyszłości. 
+
+---wkleić zdjęcie zepsutej obudowy
+Przy początkach drukowania popełniliśmy błąd złej początkowej wysokości druku co spowodowało że model był drukowany w powietrzu a co za tym idzie druk się nie powiódł. Kalibracja drukarki 3D naprawiła nasz problem i druk został wykonany poprawnie
 
 
 
@@ -217,25 +225,25 @@ Przed rozpoczęciem pracy nad projektem stworzyliśmy schemat, którego starali�
 	\caption{Wstępny schemat blokowy}
 \end{figure}
 
-
-\subsection{4.11}
+\subsection{Harmonogram}
+\subsubsection{4.11}
 Przeanalizowanie schematów płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza, czujnika nasłonecznienia oraz rozwiązanie techniczne doświetlania rośliny. Stworzenie schematu elektrycznego gotowego projektu. Testowanie poprawności działania posiadanych czujników w warunkach domowych. Implementacja komunikacji z modułem ESP8266. Dopasowywanie czasów działania. 
 Dokupienie brakujących komponentów gotowego projektu. 
-\subsection{25.11}
+\subsubsection{25.11}
 Realizacja połączeń elektrycznych na płytce stykowej i ostateczne testowanie poprawności dzia-
 łania. Przeniesienie projektu na płytkę uniwersalną. Przygotowanie ewentualnej obudowy i realiza-
 cja montażu systemu doświetlania. Stworzenie prezentacji na zajęcia
 
-\subsection{16.12}
+\subsubsection{16.12}
 Wstępna prezentacja gotowego projektu i ocena błędów.
 
-\subsection{20.01}
+\subsubsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
 
 
-\section{Zgodność z harmonogramem}
-\subsection{4.11}
+\subsection{Zgodność z harmonogramem}
+\subsubsection{4.11}
 Rozpoczęliśmy prace nad naszym projektem. Postanowiliśmy skorzystać z aplikacji internetowej Trello do utworzenia tabel, które pozwoliły by nam na lepsze zarządzanie podziałem prac nad projektem.
 
 Przeanalizowaliśmy schematy płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza oraz czujnika nasłonecznienia. Przeanalizowaliśmy działanie każdego z czujników poprzez wykonanie przykładowych kodów na płytce rozwojowej UNO. Dowiedzieliśmy się jakich komponentów projektu nam brakuje i zamówiliśmy je w wybranych sklepach.
@@ -244,21 +252,22 @@ Stworzyliśmy wstępny schemat blokowy projektu, aby ukazać działanie poszczeg
 Ze względu na obszerność testowania i planowanie realizacji planu działania na nadchodzące tygodnie nie zajęliśmy się komunikacją z modułem ESP8266, ani problemem związanym z doświetlaniem naszej rośliny.
 
 
-\subsection{25.11}
-Do tego dnia zajmowaliśmy się komunikacją między płytką rozwojową UNO, ESP8266, a stroną internetową. Napotkaliśmy wiele problemów co nieplanowanie wydłużyło nam pracę na tym etapie projektu. Udało nam się uzyskać mniej więcej stabilne połączenie między naszymi urządzeniami. Zrealizowaliśmy połączenia UNO, ESP8266, a także podłączyliśmy do układu czujnik wilgotności i temperatury powietrza i na płytce stykowej po czym przetestowaliśmy poprawność działania. 
+\subsubsection{25.11}
+Do tego dnia zajmowaliśmy się komunikacją między płytką rozwojową UNO, ESP8266, a stroną internetową. Napotkaliśmy wiele problemów co nieplanowanie wydłużyło nam pracę na tym etapie projektu. Udało nam się uzyskać stabilne połączenie między naszymi urządzeniami. Zrealizowaliśmy połączenia UNO, ESP8266, a także podłączyliśmy do układu czujnik wilgotności i temperatury powietrza i na płytce stykowej po czym przetestowaliśmy poprawność działania. 
 
 Przeniesienie projektu na płytkę uniwersalną okazało się niepraktyczne na tym etapie projektu, gdyż nie próbowaliśmy jeszcze połączyć ze sobą wszystkich modułów projektu i finalny kod do wgrania na UNO i ESP8266 nie był gotowy. Z powodu niewiedzy jak dokładnie będzie wyglądało nasze urządzenie na płytce uniwersalnej nie przygotowaliśmy planowanej obudowy. Nie zrealizowaliśmy również systemu doświetlania.
 
-\subsection{16.12}
-Wstępna prezentacja gotowego projektu i ocena błędów.
+\subsubsection{16.12}
+Podłączyliśmy ze sobą wszystkie czujniki na płytce uniwersalnej i testowaliśmy poprawność działania. Zajęliśmy się projektowaniem obudowy w programie Fusion360, abyśmy mogli ją wydrukować na drukarce 3D i włożyć do obudowy komponenty naszego projektu. Wydrukowaliśmy obudowę i wsadziliśmy tam wszystkie rzeczyyy
 
-\subsection{20.01}
+\subsubsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
 
 
 \section{Podsumowanie }
-\subsection{Pomysły na rozwój projektu }
+\subsection{Osiągnięte cele}
+\subsection{Pomysły na rozwój projektu}
 \begin{thebibliography}{9}
 
 

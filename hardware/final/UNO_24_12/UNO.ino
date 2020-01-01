@@ -3,8 +3,6 @@ dht DHT;
 
 #define DHT11_PIN 2 //pin for temperature and hum sensor
 
-
-
 //stuff for display
 #include <SPI.h>
 #include <Wire.h>
@@ -18,17 +16,7 @@ dht DHT;
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-int waterLevelSensor = A1;
-int waterLevelSensorValue = 0; // variable to store the value coming from the sensor
 
-int lightSensor = A3;
-int lightSensorValue = 0; // variable to store the value coming from the sensor
-
-int soilSensor = A2;
-int soilSensorValue = 0; // variable to store the value coming from the sensor
-
-
-const int relayPin =9; //pin for pump relay
 
 //stuff for incomming messages
 String serialMessage = "";
@@ -39,8 +27,6 @@ void drawText(int temp, int humidity);
 void setup(){
 
   pinMode(LED_BUILTIN, OUTPUT);   // initialize digital pin LED_BUILTIN as an output.
-   pinMode(relayPin, OUTPUT);   // initialize digital pin relayPin as an output.
- digitalWrite(relayPin,HIGH);
   Serial.begin(9600);
 
   //###########display setup
@@ -67,11 +53,7 @@ void loop()
 {
 
 int chk = DHT.read11(DHT11_PIN); //reading from temp/humidity sensor
- //digitalWrite(relayPin,HIGH);
  drawText(DHT.temperature,DHT.humidity);
-    lightSensorValue = analogRead(lightSensor); // read the value from the sensor
-    waterLevelSensorValue = analogRead(waterLevelSensor); // read the value from the sensor
-    soilSensorValue = analogRead(soilSensor); // read the value from the sensor
 
 //When there is something in serial buffer
 while (Serial.available()) 
@@ -99,10 +81,6 @@ while (Serial.available())
       if( serialMessage == "Water")
       {
          digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-         
-         digitalWrite(relayPin,LOW);
-         delay(100);
-         digitalWrite(relayPin,HIGH);
       }
       if(serialMessage == "Fertilise")
       {
@@ -112,11 +90,7 @@ while (Serial.available())
       {
         //temperature and humidity
         Serial.print("<t"+ String(int(DHT.temperature))+ ";h"+ String(int(DHT.humidity))+ ">");
-
-     
-        Serial.println(lightSensorValue); //prints the values coming from the sensor on the screen
-        Serial.println(soilSensorValue); //prints the values coming from the sensor on the screen
-        Serial.println(waterLevelSensorValue); //prints the values coming from the sensor on the screen
+        
       }
       //Serial.println("<HelloFromUNO>");
 

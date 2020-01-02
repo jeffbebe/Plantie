@@ -1,3 +1,8 @@
+
+
+
+
+
 #include<dht.h> //library for temp/humidity sensor
 dht DHT;
 
@@ -22,13 +27,14 @@ int waterLevelSensor = A1;
 int waterLevelSensorValue = 0; // variable to store the value coming from the sensor
 
 int lightSensor = A3;
-int lightSensorValue = 0; // variable to store the value coming from the sensor
+int lightSensorValue = 0;
+// variable to store the value coming from the sensor
 
 int soilSensor = A2;
 int soilSensorValue = 0; // variable to store the value coming from the sensor
 
 
-const int relayPin =9; //pin for pump relay
+const int relayPin =12; //pin for pump relay
 
 //stuff for incomming messages
 String serialMessage = "";

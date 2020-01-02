@@ -12,32 +12,32 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Czujnik wilgotności gleby FC-28}{3}{subsubsection.2.1.3}% 
 \contentsline {subsubsection}{\numberline {2.1.4}Czujnik poziomu wody w zbiorniku}{3}{subsubsection.2.1.4}% 
 \contentsline {subsubsection}{\numberline {2.1.5}Wyświetlacz OLED}{3}{subsubsection.2.1.5}% 
-\contentsline {subsubsection}{\numberline {2.1.6}Pompka wodna}{4}{subsubsection.2.1.6}% 
-\contentsline {subsubsection}{\numberline {2.1.7}Panel sterowania przez Internet: ESP8266}{4}{subsubsection.2.1.7}% 
-\contentsline {subsection}{\numberline {2.2}Szczególne rozwiązania warstwy programowej}{6}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Płytka rozwojowa UNO}{6}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}ESP8266}{6}{subsubsection.2.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.3}Panel sterowania na serwerze}{6}{subsubsection.2.2.3}% 
-\contentsline {subsubsection}{\numberline {2.2.4}Obudowa}{6}{subsubsection.2.2.4}% 
-\contentsline {section}{\numberline {3}Realizacja projektu}{6}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Problematyka projektu}{6}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Sposób wykonania}{6}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Problemy napotkane podczas realizacji}{7}{subsection.3.3}% 
-\contentsline {subsubsection}{\numberline {3.3.1}Połączenie między UNO, a ESP8266}{7}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {2.1.6}Przekaźnik, Pompka wodna}{4}{subsubsection.2.1.6}% 
+\contentsline {subsubsection}{\numberline {2.1.7}Panel sterowania przez Internet: ESP8266}{6}{subsubsection.2.1.7}% 
+\contentsline {subsubsection}{\numberline {2.1.8}Obudowa}{6}{subsubsection.2.1.8}% 
+\contentsline {subsection}{\numberline {2.2}Szczególne rozwiązania warstwy programowej}{7}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Płytka rozwojowa UNO}{7}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}ESP8266}{7}{subsubsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.3}Panel sterowania na serwerze}{7}{subsubsection.2.2.3}% 
+\contentsline {section}{\numberline {3}Realizacja projektu}{7}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Problematyka projektu}{7}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Sposób wykonania}{7}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Problemy napotkane podczas realizacji}{8}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}Połączenie między UNO, a ESP8266}{8}{subsubsection.3.3.1}% 
 \contentsline {subsubsection}{\numberline {3.3.2}Projektowanie i drukowanie obudowy}{8}{subsubsection.3.3.2}% 
 \contentsline {section}{\numberline {4}Harmonogram i podział obowiązków}{9}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}Podział obowiązków}{9}{subsection.4.1}% 
 \contentsline {subsection}{\numberline {4.2}Wstępny schemat blokowy}{9}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}Harmonogram}{9}{subsection.4.3}% 
-\contentsline {subsubsection}{\numberline {4.3.1}4.11}{9}{subsubsection.4.3.1}% 
-\contentsline {subsubsection}{\numberline {4.3.2}25.11}{9}{subsubsection.4.3.2}% 
-\contentsline {subsubsection}{\numberline {4.3.3}16.12}{10}{subsubsection.4.3.3}% 
-\contentsline {subsubsection}{\numberline {4.3.4}20.01}{10}{subsubsection.4.3.4}% 
-\contentsline {subsection}{\numberline {4.4}Zgodność z harmonogramem}{10}{subsection.4.4}% 
-\contentsline {subsubsection}{\numberline {4.4.1}4.11}{10}{subsubsection.4.4.1}% 
-\contentsline {subsubsection}{\numberline {4.4.2}25.11}{10}{subsubsection.4.4.2}% 
-\contentsline {subsubsection}{\numberline {4.4.3}16.12}{10}{subsubsection.4.4.3}% 
-\contentsline {subsubsection}{\numberline {4.4.4}20.01}{11}{subsubsection.4.4.4}% 
-\contentsline {section}{\numberline {5}Podsumowanie }{11}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Osiągnięte cele}{11}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Pomysły na rozwój projektu }{11}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {4.3}Harmonogram}{11}{subsection.4.3}% 
+\contentsline {subsubsection}{\numberline {4.3.1}4.11}{11}{subsubsection.4.3.1}% 
+\contentsline {subsubsection}{\numberline {4.3.2}25.11}{11}{subsubsection.4.3.2}% 
+\contentsline {subsubsection}{\numberline {4.3.3}16.12}{11}{subsubsection.4.3.3}% 
+\contentsline {subsubsection}{\numberline {4.3.4}20.01}{11}{subsubsection.4.3.4}% 
+\contentsline {subsection}{\numberline {4.4}Zgodność z harmonogramem}{11}{subsection.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.1}4.11}{11}{subsubsection.4.4.1}% 
+\contentsline {subsubsection}{\numberline {4.4.2}25.11}{11}{subsubsection.4.4.2}% 
+\contentsline {subsubsection}{\numberline {4.4.3}16.12}{12}{subsubsection.4.4.3}% 
+\contentsline {subsubsection}{\numberline {4.4.4}20.01}{12}{subsubsection.4.4.4}% 
+\contentsline {section}{\numberline {5}Podsumowanie }{12}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Osiągnięte cele}{12}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Pomysły na rozwój projektu}{12}{subsection.5.2}% 

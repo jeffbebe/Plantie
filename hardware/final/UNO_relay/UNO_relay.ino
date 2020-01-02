@@ -1,4 +1,4 @@
-int relayPin = 3;
+int relayPin = 12;
 void setup(){
 
   pinMode(LED_BUILTIN, OUTPUT);   // initialize digital pin LED_BUILTIN as an output.

@@ -11,13 +11,13 @@
 \BOOKMARK [3][-]{subsubsection.2.1.3}{Czujnik wilgotnosci gleby FC-28}{subsection.2.1}% 11
 \BOOKMARK [3][-]{subsubsection.2.1.4}{Czujnik poziomu wody w zbiorniku}{subsection.2.1}% 12
 \BOOKMARK [3][-]{subsubsection.2.1.5}{Wyswietlacz OLED}{subsection.2.1}% 13
-\BOOKMARK [3][-]{subsubsection.2.1.6}{Pompka wodna}{subsection.2.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.6}{Przekaznik, Pompka wodna}{subsection.2.1}% 14
 \BOOKMARK [3][-]{subsubsection.2.1.7}{Panel sterowania przez Internet: ESP8266}{subsection.2.1}% 15
-\BOOKMARK [2][-]{subsection.2.2}{Szczeg\363lne rozwiazania warstwy programowej}{section.2}% 16
-\BOOKMARK [3][-]{subsubsection.2.2.1}{P\233ytka rozwojowa UNO}{subsection.2.2}% 17
-\BOOKMARK [3][-]{subsubsection.2.2.2}{ESP8266}{subsection.2.2}% 18
-\BOOKMARK [3][-]{subsubsection.2.2.3}{Panel sterowania na serwerze}{subsection.2.2}% 19
-\BOOKMARK [3][-]{subsubsection.2.2.4}{Obudowa}{subsection.2.2}% 20
+\BOOKMARK [3][-]{subsubsection.2.1.8}{Obudowa}{subsection.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.2}{Szczeg\363lne rozwiazania warstwy programowej}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.2.1}{P\233ytka rozwojowa UNO}{subsection.2.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.2.2}{ESP8266}{subsection.2.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Panel sterowania na serwerze}{subsection.2.2}% 20
 \BOOKMARK [1][-]{section.3}{Realizacja projektu}{}% 21
 \BOOKMARK [2][-]{subsection.3.1}{Problematyka projektu}{section.3}% 22
 \BOOKMARK [2][-]{subsection.3.2}{Spos\363b wykonania}{section.3}% 23
@@ -39,4 +39,4 @@
 \BOOKMARK [3][-]{subsubsection.4.4.4}{20.01}{subsection.4.4}% 39
 \BOOKMARK [1][-]{section.5}{Podsumowanie }{}% 40
 \BOOKMARK [2][-]{subsection.5.1}{Osiagniete cele}{section.5}% 41
-\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu }{section.5}% 42
+\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu}{section.5}% 42

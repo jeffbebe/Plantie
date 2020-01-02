@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
+\usepackage{subfig} %obrazki obok siebie
 
 \hypersetup{
     colorlinks=true, %set true if you want colored links
@@ -93,9 +94,11 @@ Przetwornik & 5 PLN \\
 
 Żarówka & 5 PLN \\
 
+Pompa wodna & 22 PLN \\
+
 Kabelki, płytka uniwersalna, cyna, klej na gorąco & 10 PLN 
 \\ \hline
-Suma & 58 PLN
+Suma & xxx PLN
 
 \end{tabular}
 \caption{\label{tab:widgets}Zakupione produkty}
@@ -155,11 +158,42 @@ Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługi
 	\end{center}
 	\caption{0.96 calowy wyświetlacz OLED}
 \end{figure}
-\subsubsection{Pompka wodna}
+
+\subsubsection{Przekaźnik, Pompka wodna}
+Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, gdyż było to tańsze rozwiązanie niż inne rodzaje pompek. Jej napięcie znamionowe wynosi 12 [V]. W projekcie do jej zasilania używamy baterii 9 [V]. Jej okresowe zasilanie jest realizowane za pomocą przekaźnika do którego z jednej strony wpięta jest bateria i pompka, a z drugiej zasilanie 5 [V] z płytki rozwojowej UNO, GND i sygnał sterujący.
+
+
+
+
+\begin{figure}
+%%obrazki
+\centering
+\subfloat[Przekaźnik~\cite{przekaznik}]{\label{odnosnik}
+\includegraphics[width=0.4\textwidth]{Przekaznik_photo.jpg}}
+\quad
+\subfloat[Pompa wodna~\cite{pompka}]{\label{odnosnik}
+\includegraphics[width=0.4\textwidth]{pompka_photo.png}}
+\quad
+\subfloat[Bateria 9V~\cite{bateria}]{\label{odnosnik}
+\includegraphics[width=0.4\textwidth]{9v.jpg}}
+\caption{Komponenty pompki}
+
+\end{figure}
+
 
 
 \subsubsection{Panel sterowania przez Internet: ESP8266}
 Realizacja?
+
+\subsubsection{Obudowa}
+Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dyszy wielkości 0.8mm. Czas drukowania pokrywki i pudełka wyniósł 12 godzin.
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{obudowa_model.png}}
+	\end{center}
+	\caption{Model obudowy (Fusion360)}
+\end{figure}
 
 \subsection{Szczególne rozwiązania warstwy programowej}
 \subsubsection{Płytka rozwojowa UNO}
@@ -178,15 +212,6 @@ Realizacja?
 \end{figure}
 \subsubsection{Panel sterowania na serwerze}
 
-\subsubsection{Obudowa}
-Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dyszy wielkości 0.8mm. Czas drukowania pokrywki i pudełka wyniósł 12 godzin.
-
-\begin{figure}[!h]
-	\begin{center}
-		{\includegraphics[width=12cm]{obudowa_model.png}}
-	\end{center}
-	\caption{Model obudowy (Fusion360)}
-\end{figure}
 
 \section{Realizacja projektu}
 \subsection{Problematyka projektu}
@@ -207,7 +232,14 @@ Rozwiazaliśmy ten problem poprzez użycie wskaźników początku ''<'' i końca
 \subsubsection{Projektowanie i drukowanie obudowy}
 Dużym problemem była niewiedza związana z wielkością jaką powinna mieć obudowa, jednak zdecydowaliśmy że będzie ona większa niż będziemy potrzebować, aby umożliwić nam łatwe rozbudowanie projektu w przyszłości. 
 
----wkleić zdjęcie zepsutej obudowy
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=12cm]{obudowa_broken.jpg}}
+	\end{center}
+	\caption{Nieudany druk pokrywki}
+\end{figure}
+
 Przy początkach drukowania popełniliśmy błąd złej początkowej wysokości druku co spowodowało że model był drukowany w powietrzu a co za tym idzie druk się nie powiódł. Kalibracja drukarki 3D naprawiła nasz problem i druk został wykonany poprawnie
 
 
@@ -296,6 +328,22 @@ Albert Einstein.
 \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
 [\textit{On the electrodynamics of moving bodies}]. 
 Annalen der Physik, 322(10):891–921, 1905.
+
+\bibitem{przekaznik} Relay Module
+\emph{},
+opencircuit.shop/Product/Relay-Module-1-relay.-5V
+
+\bibitem{pompka} Pompa spryskiwacza TOPRAN
+\emph{},
+www.autoczescionline24.pl/topran-2723484.html
+
+
+
+\bibitem{bateria} Bateria alkaliczna 9V 
+\emph{VARTA},
+www.elfadistrelec.pl/pl/alkaliczne-bateria-alkaliczna-9v-6lr61-varta-industrial-9v/p/16901614
+
+
  
 \bibitem{knuthwebsite} 
 Knuth: Computers and Typesetting,

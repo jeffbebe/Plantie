@@ -195,6 +195,6 @@ void loop()
                           serialMessage = "";
                         }
        
-        delay(1000);
+        //delay(100);
     
 }

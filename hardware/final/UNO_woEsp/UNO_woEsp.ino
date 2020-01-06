@@ -1,8 +1,5 @@
 
 
-
-
-
 #include<dht.h> //library for temp/humidity sensor
 dht DHT;
 
@@ -78,86 +75,54 @@ void loop()
 int chk = DHT.read11(DHT11_PIN); //reading from temp/humidity sensor
  //digitalWrite(relayPin,HIGH);
  drawText(DHT.temperature,DHT.humidity);
+    lightSensorValue = analogRead(lightSensor); // read the value from the sensor
+    percentageLightSensorValue = (lightSensorValue-65)*100L/(800-65); //(value-initialValue)*100/(maxValue-initialValue)
+    if(percentageLightSensorValue<0)
+    percentageLightSensorValue = 0;
+   /* Serial.print("Light sensor Analog: ");
+    Serial.println(lightSensorValue);
+    Serial.print("Light sensor in %:   " );
+     Serial.println(100-percentageLightSensorValue);
 
-         lightSensorValue = analogRead(lightSensor); // read the value from the sensor
-         percentageLightSensorValue = (lightSensorValue-65)*100L/(800-65); //(value-initialValue)*100/(maxValue-initialValue)
-         if(percentageLightSensorValue<0)
-         percentageLightSensorValue = 0;
-     //    Serial.print("Light sensor in %:   " );
-    //Serial.println(100-percentageLightSensorValue);
-
-
+*/
+      /*    
     soilSensorValue = analogRead(soilSensor); // read the value from the sensor
     percentageSoilSensorValue = (soilSensorValue-300)*100L/(1020-300); //(value-initialValue)*100/(maxValue-initialValue)
     if(percentageSoilSensorValue<0)
     percentageSoilSensorValue = 0;
+   
+    Serial.print("Soil sensor Analog: ");
+    Serial.println(soilSensorValue);
+    Serial.print("Soil sensor in %:   " );
+    Serial.println(100-percentageSoilSensorValue);
+*/
 
-    //Serial.print("Soil sensor in %:   " );
-   // Serial.println(100-percentageSoilSensorValue);
-
-   waterLevelSensorValue = analogRead(waterLevelSensor); // read the value from the sensor
+    waterLevelSensorValue = analogRead(waterLevelSensor); // read the value from the sensor
     percentageWaterLevelSensorValue = (waterLevelSensorValue-300)*100L/(1020-300); //(value-initialValue)*100/(maxValue-initialValue)
     if(percentageWaterLevelSensorValue<0)
     percentageWaterLevelSensorValue = 0;
-    //Serial.print("WaterLevel sensor in %:   " );
-    //Serial.println(100-percentageWaterLevelSensorValue);
-
-//When there is something in serial buffer
-while (Serial.available()) 
-    {
-        char serialChar = Serial.read(); //gets one byte from serial buffer
-        if (serialChar == '<')  //if < is the beginning of the received char reset the buffer
-        {
-            serialMessage = "";
-        }
-        else if (serialChar == '>')
-        {
-            stringComplete = true;
-        }
-        else
-        {
-            //Append the message within specified ascii section 
-            if ((serialChar >= 48 && serialChar <= 122) || serialChar == ',') 
-                serialMessage += serialChar;
-        }
-    }
-
-    //Things to do when we received a command
-    if( stringComplete == true)
-    {
-      if(serialMessage == "Water")
-      {
-         digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-         
-         digitalWrite(relayPin,LOW);
-         delay(100);
-         digitalWrite(relayPin,HIGH);
-      }
-
-      if(serialMessage == "Fertilise")
-      {
+        Serial.print("WaterLevel sensor Analog: ");
+    Serial.println(waterLevelSensorValue);
+    Serial.print("WaterLevel sensor in %:   " );
+     Serial.println(100-percentageWaterLevelSensorValue);
 
 
+      
 
-         
-        //<airt:;airh:;soil:;brig:;wat:>
-        
-        //temperature and humidity
-        //Serial.print("<t"+ String(int(DHT.temperature))+ ";h"+ String(int(DHT.humidity))+ ">");
-        Serial.print("<airt:"+ String(int(DHT.temperature))+ ";airh:"+ String(int(DHT.humidity))+";soil:"+(100-percentageSoilSensorValue)+";brig:"+(100-percentageLightSensorValue)+";wat:"+(100-percentageWaterLevelSensorValue)+">");
+    //Serial.print("<airt:"+ String(int(DHT.temperature))+ ";airh:"+ String(int(DHT.humidity))+";soil:"+soilSensorValue+";brig:"+lightSensorValue+";wat:"+waterLevelSensorValue+">\n");
+
+
 //TODO: Calibrate sensors to send values in %
 
 
        //  Serial.println(soilSensorValue); //prints the values coming from the sensor on the screen
        // Serial.println(lightSensorValue); //prints the values coming from the sensor on the screen
       //  Serial.println(waterLevelSensorValue); //prints the values coming from the sensor on the screen
-      }
-      //Serial.println("<HelloFromUNO>");
+    
+      
+      delay(1000);
 
-      stringComplete = false;
-      delay(100);
-
-    }
+   
 }
 void drawText(int temp, int humidity) {
 

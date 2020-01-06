@@ -158,8 +158,8 @@ wsServer.on("connection", function(ws, req) {
     if (
       message[0] == "<" &&
       message[message.length - 1] == ">" &&
-      Number.isInteger(readingsArray[0]) &&
-      message != "<Update>"
+      message != "<Update>" &&
+      message != "<Water>"
     ) {
       Sensor_readings.build({
         ID: data.ID + 1,

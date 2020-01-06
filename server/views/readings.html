@@ -22,8 +22,8 @@
 
 <body onload="get_from_database()">
 <script>
-    setInterval(get_from_database, 10000);
-    setInterval(update_database, 15000);
+    setInterval(get_from_database, 5000);
+    setInterval(update_database, 5000);
     </script>
     <!-- Navigation -->
 
@@ -125,14 +125,14 @@
                                     <button id ="water_to_db" style="width:15vw; height:5vw;font-size:2vw"class="btn btn-primary"  onclick="send_command('<Water>')">Water</button>
                                 </div>
                                 <div class="col-sm m-l-20">
-                                    <button id ="fertilise_to_db" style="width:15vw; height:5vw;font-size:2vw" class="btn btn-primary"  onclick="send_command('<Fertilise>')">Fertilise</button>
+                                    <button id ="fertilise_to_db" style="width:15vw; height:5vw;font-size:2vw" class="btn btn-primary"  onclick="send_command('<Update>')">Update</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <p class="lead">Air Humidity Chart(soil??, w/e)</p>
+        <p class="lead">Soil Moisture Chart</p>
         <canvas id="myChart"></canvas>
         </div> 
     </div>

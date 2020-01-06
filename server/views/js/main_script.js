@@ -76,7 +76,7 @@ function makeChart(chartData, count) {
   let labels = [];
   for (i = 0; i < count; i++) {
     let date = new Date(chartData[i].Date);
-    dataset[i] = { x: date.toISOString(), y: chartData[i].Air_Humidity };
+    dataset[i] = { x: date.toISOString(), y: chartData[i].Soil_Moisture };
     labels.push(date.toISOString());
   }
 
@@ -88,34 +88,40 @@ function makeChart(chartData, count) {
       labels: labels,
       datasets: [
         {
-          label: "Humidity",
+          label: "Soil Moisture",
           data: dataset,
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255,99,132,1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
+          backgroundColor: ["rgba(23, 96, 180, 0.5)"],
+          borderColor: ["rgba(255,99,132,1)"],
           borderWidth: 1
         }
       ]
     },
+
     options: {
       scales: {
         xAxes: [
           {
+            time: {
+              unit: "day",
+              displayFormats: {
+                day: "DD.MM.YYYY HH:mm"
+              }
+            },
+
             type: "time",
-            distribution: "linear"
+
+            distribution: "series"
+          }
+        ],
+        yAxes: [
+          {
+            display: true,
+            ticks: {
+              beginAtZero: true,
+              steps: 10,
+              stepValue: 5,
+              max: 100
+            }
           }
         ]
       },

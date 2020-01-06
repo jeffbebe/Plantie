@@ -1,7 +1,11 @@
 var sock = new WebSocket("ws://localhost:3000");
 
-async function push_to_database(data) {
+async function send_command(data) {
   sock.send(data);
+}
+
+async function update_database() {
+  sock.send("<Update>");
 }
 
 async function get_from_database() {

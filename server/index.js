@@ -135,6 +135,7 @@ wsServer.on("connection", function(ws, req) {
   /******* when server receives messsage from client trigger function with argument message *****/
   ws.on("message", function(message) {
     console.log("Received: " + message);
+    // TO DO: add to database received message <airt:;airh:;soil:;brig:;wat:> odczyt + save date
     wsServer.clients.forEach(function(client) {
       //broadcast incoming message to all clients (s.clients)
       if (client != ws && client.readyState) {

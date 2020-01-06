@@ -158,7 +158,7 @@ wsServer.on("connection", function(ws, req) {
     if (
       message[0] == "<" &&
       message[message.length - 1] == ">" &&
-      !Number.isInteger(readingsArray[0]) &&
+      Number.isInteger(readingsArray[0]) &&
       message != "<Update>"
     ) {
       Sensor_readings.build({

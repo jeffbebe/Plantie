@@ -14,15 +14,15 @@ var http = require("http");
 var app = express();
 var Sequelize = require("sequelize");
 var port = 3000;
-var bodyParser = require("body-parser"); //do wyjebania
+var bodyParser = require("body-parser");
 
 var moment = require("moment");
 moment().format();
 
 const server = http.createServer(app); //create a server
 
-app.use(bodyParser.urlencoded({ extended: false })); //do wyjebania
-app.use(bodyParser.json()); //do wyjebania
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const WebSocket = require("ws");
 const wsServer = new WebSocket.Server({ server });
@@ -136,6 +136,39 @@ wsServer.on("connection", function(ws, req) {
   ws.on("message", function(message) {
     console.log("Received: " + message);
     // TO DO: add to database received message <airt:;airh:;soil:;brig:;wat:> odczyt + save date
+    //var message = "<airt:35;airh:20;soil:10;brig:15;wat:40;>";
+    var n = message.length;
+    var i = 0;
+    var readingsArray = []; // array of read values
+    var colonPosition, semicolonPosition, temp, temp2;
+    var newMessage = message;
+    for (i = 0; i < 5; i++) {
+      colonPosition = newMessage.indexOf(":");
+      semicolonPosition = newMessage.indexOf(";");
+      temp = newMessage.substring(colonPosition + 1, semicolonPosition);
+      temp2 = temp.valueOf();
+      readingsArray.push(temp2);
+      newMessage = newMessage.slice(semicolonPosition + 1, n);
+    }
+    let data = Sensor_readings.findOne({
+      raw: true,
+      order: [["ID", "DESC"]]
+    });
+    Sensor_readings.build({
+      ID: data.ID + 1,
+      Air_Temperature: readingsArray[0],
+      Air_Humidity: readingsArray[1],
+      Soil_Moisture: readingsArray[2],
+      Brightness_Level: readingsArray[3],
+      Water_Tank_Level: readingsArray[4],
+      Date: new Date()
+    })
+      .save()
+      .then(anotherTask => {})
+      .catch(error => {
+        console.log("blad wpisu do bazy");
+      });
+
     wsServer.clients.forEach(function(client) {
       //broadcast incoming message to all clients (s.clients)
       if (client != ws && client.readyState) {

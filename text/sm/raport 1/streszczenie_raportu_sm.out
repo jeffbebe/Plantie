@@ -12,31 +12,30 @@
 \BOOKMARK [3][-]{subsubsection.2.1.4}{Czujnik poziomu wody w zbiorniku}{subsection.2.1}% 12
 \BOOKMARK [3][-]{subsubsection.2.1.5}{Wyswietlacz OLED}{subsection.2.1}% 13
 \BOOKMARK [3][-]{subsubsection.2.1.6}{Przekaznik, Pompka wodna}{subsection.2.1}% 14
-\BOOKMARK [3][-]{subsubsection.2.1.7}{Panel sterowania przez Internet: ESP8266}{subsection.2.1}% 15
-\BOOKMARK [3][-]{subsubsection.2.1.8}{Obudowa}{subsection.2.1}% 16
-\BOOKMARK [2][-]{subsection.2.2}{Szczeg\363lne rozwiazania warstwy programowej}{section.2}% 17
-\BOOKMARK [3][-]{subsubsection.2.2.1}{P\233ytka rozwojowa UNO}{subsection.2.2}% 18
-\BOOKMARK [3][-]{subsubsection.2.2.2}{ESP8266}{subsection.2.2}% 19
-\BOOKMARK [3][-]{subsubsection.2.2.3}{Panel sterowania na serwerze}{subsection.2.2}% 20
-\BOOKMARK [1][-]{section.3}{Realizacja projektu}{}% 21
-\BOOKMARK [2][-]{subsection.3.1}{Problematyka projektu}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.2}{Spos\363b wykonania}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.3}{Problemy napotkane podczas realizacji}{section.3}% 24
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Po\233aczenie miedzy UNO, a ESP8266}{subsection.3.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Projektowanie i drukowanie obudowy}{subsection.3.3}% 26
-\BOOKMARK [1][-]{section.4}{Harmonogram i podzia\233 obowiazk\363w}{}% 27
-\BOOKMARK [2][-]{subsection.4.1}{Podzia\233 obowiazk\363w}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.2}{Wstepny schemat blokowy}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.3}{Harmonogram}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.3.1}{4.11}{subsection.4.3}% 31
-\BOOKMARK [3][-]{subsubsection.4.3.2}{25.11}{subsection.4.3}% 32
-\BOOKMARK [3][-]{subsubsection.4.3.3}{16.12}{subsection.4.3}% 33
-\BOOKMARK [3][-]{subsubsection.4.3.4}{20.01}{subsection.4.3}% 34
-\BOOKMARK [2][-]{subsection.4.4}{Zgodnosc z harmonogramem}{section.4}% 35
-\BOOKMARK [3][-]{subsubsection.4.4.1}{4.11}{subsection.4.4}% 36
-\BOOKMARK [3][-]{subsubsection.4.4.2}{25.11}{subsection.4.4}% 37
-\BOOKMARK [3][-]{subsubsection.4.4.3}{16.12}{subsection.4.4}% 38
-\BOOKMARK [3][-]{subsubsection.4.4.4}{20.01}{subsection.4.4}% 39
-\BOOKMARK [1][-]{section.5}{Podsumowanie }{}% 40
-\BOOKMARK [2][-]{subsection.5.1}{Osiagniete cele}{section.5}% 41
-\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu}{section.5}% 42
+\BOOKMARK [3][-]{subsubsection.2.1.7}{Obudowa}{subsection.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.2}{Szczeg\363lne rozwiazania warstwy programowej}{section.2}% 16
+\BOOKMARK [3][-]{subsubsection.2.2.1}{P\233ytka rozwojowa UNO}{subsection.2.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.2.2}{ESP8266}{subsection.2.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Panel sterowania przez Internet}{subsection.2.2}% 19
+\BOOKMARK [1][-]{section.3}{Realizacja projektu}{}% 20
+\BOOKMARK [2][-]{subsection.3.1}{Problematyka projektu}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.2}{Spos\363b wykonania}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.3}{Problemy napotkane podczas realizacji}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Po\233aczenie miedzy UNO, a ESP8266}{subsection.3.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Projektowanie i drukowanie obudowy}{subsection.3.3}% 25
+\BOOKMARK [1][-]{section.4}{Harmonogram i podzia\233 obowiazk\363w}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{Podzia\233 obowiazk\363w}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Wstepny schemat blokowy}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.3}{Harmonogram}{section.4}% 29
+\BOOKMARK [3][-]{subsubsection.4.3.1}{4.11}{subsection.4.3}% 30
+\BOOKMARK [3][-]{subsubsection.4.3.2}{25.11}{subsection.4.3}% 31
+\BOOKMARK [3][-]{subsubsection.4.3.3}{16.12}{subsection.4.3}% 32
+\BOOKMARK [3][-]{subsubsection.4.3.4}{20.01}{subsection.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.4}{Zgodnosc z harmonogramem}{section.4}% 34
+\BOOKMARK [3][-]{subsubsection.4.4.1}{4.11}{subsection.4.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.4.2}{25.11}{subsection.4.4}% 36
+\BOOKMARK [3][-]{subsubsection.4.4.3}{16.12}{subsection.4.4}% 37
+\BOOKMARK [3][-]{subsubsection.4.4.4}{20.01}{subsection.4.4}% 38
+\BOOKMARK [1][-]{section.5}{Podsumowanie }{}% 39
+\BOOKMARK [2][-]{subsection.5.1}{Osiagniete cele}{section.5}% 40
+\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu}{section.5}% 41

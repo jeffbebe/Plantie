@@ -134,7 +134,7 @@ while (Serial.available())
          digitalWrite(relayPin,HIGH);
       }
 
-      if(serialMessage == "Fertilise")
+      if(serialMessage == "Update")
       {
 
 
@@ -144,9 +144,7 @@ while (Serial.available())
         
         //temperature and humidity
         //Serial.print("<t"+ String(int(DHT.temperature))+ ";h"+ String(int(DHT.humidity))+ ">");
-        Serial.print("<airt:"+ String(int(DHT.temperature))+ ";airh:"+ String(int(DHT.humidity))+";soil:"+(100-percentageSoilSensorValue)+";brig:"+(100-percentageLightSensorValue)+";wat:"+(100-percentageWaterLevelSensorValue)+">");
-//TODO: Calibrate sensors to send values in %
-
+        Serial.print("<airt:"+ String(int(DHT.temperature))+ ";airh:"+ String(int(DHT.humidity))+";soil:"+(100-percentageSoilSensorValue)+";brig:"+(100-percentageLightSensorValue)+";wat:"+(100-percentageWaterLevelSensorValue)+";>");
 
        //  Serial.println(soilSensorValue); //prints the values coming from the sensor on the screen
        // Serial.println(lightSensorValue); //prints the values coming from the sensor on the screen

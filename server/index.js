@@ -167,6 +167,7 @@ wsServer.on("connection", function(ws, req) {
       .then(anotherTask => {})
       .catch(error => {
         console.log("blad wpisu do bazy");
+        console.log(error);
       });
 
     wsServer.clients.forEach(function(client) {

@@ -154,22 +154,28 @@ wsServer.on("connection", function(ws, req) {
       raw: true,
       order: [["ID", "DESC"]]
     });
-    Sensor_readings.build({
-      ID: data.ID + 1,
-      Air_Temperature: readingsArray[0],
-      Air_Humidity: readingsArray[1],
-      Soil_Moisture: readingsArray[2],
-      Brightness_Level: readingsArray[3],
-      Water_Tank_Level: readingsArray[4],
-      Date: new Date()
-    })
-      .save()
-      .then(anotherTask => {})
-      .catch(error => {
-        console.log("blad wpisu do bazy");
-        console.log(error);
-      });
 
+    if (
+      message[0] == "<" &&
+      message[message.length - 1] == ">" &&
+      readingsArray[0] != null
+    ) {
+      Sensor_readings.build({
+        ID: data.ID + 1,
+        Air_Temperature: readingsArray[0],
+        Air_Humidity: readingsArray[1],
+        Soil_Moisture: readingsArray[2],
+        Brightness_Level: readingsArray[3],
+        Water_Tank_Level: readingsArray[4],
+        Date: new Date()
+      })
+        .save()
+        .then(anotherTask => {})
+        .catch(error => {
+          console.log("blad wpisu do bazy");
+          console.log(error);
+        });
+    }
     wsServer.clients.forEach(function(client) {
       //broadcast incoming message to all clients (s.clients)
       if (client != ws && client.readyState) {

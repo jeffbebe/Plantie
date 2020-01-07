@@ -171,10 +171,12 @@ void loop()
                         if (serialChar == '<') //if < is the beginning of the received char reset the buffer
                         {
                             serialMessage = "";
+                            serialMessage += serialChar;
                         }
                         else if (serialChar == '>') 
                         {
                             stringComplete = true;
+                            serialMessage += serialChar;
                         }
                         else
                         {

@@ -171,7 +171,9 @@ wsServer.on("connection", function(ws, req) {
         Date: new Date()
       })
         .save()
-        .then(anotherTask => {})
+        .then(anotherTask => {
+          Sensor_readings.reload();
+        })
         .catch(error => {
           console.log("blad wpisu do bazy");
           console.log(error);

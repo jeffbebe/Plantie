@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% IT Project Report template, v0.1
+%% 
+%% INSTRUCTIONS FOR COMPILING THIS DOCUMENT (using GNU/Linux command line)
+%% 
+%% pdflatex it-report.tex; bibtex it-report.aux
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[oneside,a4paper,11pt]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TYPESETTING OPTIONS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\TypesetInNonStopMode}{1}
+\newcommand{\TypesetInDraftMode}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{it-report-preamble.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Use Roman numerals (i, ii, iii, etc.) for page numbers.
+\pagenumbering{roman}
+
+\input{it-report-frontmatter.tex}
+
+% Use Arabic numerals (1, 2, 3, etc.) for page numbers.
+\pagenumbering{arabic}
+
+
+
+
+\chapter{Introduction and scope}
+
+We are living in times where everything is being automatized, people have less time for everyday tasks and became lazier. Having that in mind, we decided to create something useful, engaging and relatively complex for us to create, something that everyone with just a little knowledge of electronics would be able to implement having only the hardware and the source code. Also, we wanted to open up for some new technologies, which may be helpful in the future as well. This resulted in creating a remote plant-management system connected through WI-FI to hardware stuffed with sensors mainly based on Arduino IDE and Node.js server. With our product, people will be able to save their precious time \cite{sabine1922collected}.
+\chapter{Schedule}
+In almost every project there is a schedule in which we assume, that certain things should be done, but most of the time (it happened there too) the primal one needs correction.
+\section{Schedule approved at the beginning}
+Week 1:\\
+Creating site sketch in HTML\\
+Week 2:\\
+Creating CSS styles\\
+Week 3:\\
+Getting acquainted with Node.js technology\\
+Week 4:\\
+Setting up page on a server\\
+Week 5, 6\\
+Implementing our 2-way communication system\\
+Week 7, 8\\
+Final technical and visual modifications. Tests\\
+
+\section{Schedule reflecting actual work}
+\hspace{1cm}During the first week we were getting to know how everything works and what are the possible solutions and technologies for our project. Having the base, we decided to create a simple website in HTML on which we could learn the basics of CSS as well. \par
+\hspace{0.5cm}Second week was quite more resultful. Old-fashioned front-end was replaced with a new one written from scratch once again, but with a help of Bootstrap. Some icons were added using Fontawesome, everything started looking way better than we expected. Also we decided to work a little bit on back-end. Simple local server was started using Node.js, for now it was sufficient.\par
+\hspace{0.5cm}When third week began, there was a need to work on JavaScript together with requests to the server and a database, which was created using MySQL set on separate server from Oracle and a Sequelize framework simplifying database operations to working on JS objects. Unfortunately, MySQL appeared to be too complex and resource-consuming for a simple usage, so we changed it to SQLite on a single file. Also, long script code was replaced with a shorter one using jQuery.\par
+\hspace{0.5cm}During the rest of the time, we were working on two-way communication and minor (which appeared to be major) updates. Separate socket server was set using node (instead of ESP as we thought) and simple commands could be sent to ESP and Arduino like turning LED light on and off for a test purpose. With that solution, many other ESPs can be connected simultaneously if needed in the future. Everything was constantly being improved to work with current setup and sensors during the Christmas Holidays and database. 
+
+
+\chapter{Software and hardware implementation}
+\section{Defining the problem}
+\hspace{1cm}The main problem was that we were not in touch with any of the internet technologies. It took a while to do some research, which, to our surprise, is not that easy when you do not even know what to look for. Second one was to spare some time for tutorials, but eventually it was like a bottomless well, the more we knew, the more we needed to learn and with every idea came another technology.
+\section{Analysis of possible solutions}
+Thankfully, in XXI age, the knowledge is widely available and we were overwhelmed by the possibilities to accomplish our project. The first one was to create a mobile application for android to operate the Arduino and read sensor values. Then we had an idea to create a website, which is ...
+\section{The proposed solution} 
+\section{Implementation}
+\section{Problems during project development}
+
+\chapter{Summary}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibliographystyle{IEEEtran} % IEEE bibliographic/citation style.
+\bibliography{IEEEfull,it-bib}
+
+\end{document}
+
+

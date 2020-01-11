@@ -1,0 +1,427 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ANOTHER LATEX THESIS TEMPLATE.
+%% https://github.com/zachscrivena/another-latex-thesis-template
+%% This is free and unencumbered software released into the
+%% public domain; see <http://unlicense.org> for details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LATEX COMPILATION SETTINGS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Run LaTeX in non-stop mode.
+\ifnum\TypesetInNonStopMode=1
+\nonstopmode
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PAGE SIZE AND MARGINS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Letter-size (8.5in x 11in) single-sided pages,
+% with margins (top,right,bottom,left) = (1,1,1,1.5)in,
+% and header 0.25in above the text body.
+\usepackage[
+	paper=a4paper, % Default paper size, change to "letterpaper" for US Letter (you'll need to adjust margins after)
+	inner=1.5in, % The inner margin (beside binding)
+	outer=1in, % The outer margin (opposite binding)
+	top=.8in, % Top margin
+	bottom=.7in, % bottom margin
+	headheight=20pt, % Header height
+	headsep=.25in, % Header separation
+	includehead,
+	includefoot]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COLORS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[usenames]{color} % For colors.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MISCELLANEOUS PACKAGES.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} % For language-specific hyphenation.
+%\usepackage{polski}
+\usepackage{cite} % Automatically sort and range citations numbers.
+\usepackage{environ} % For easy definition of environments.
+\usepackage{rotating} % For rotating objects.
+\usepackage{framed} % For framed text.
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{placeins}
+\usepackage{lipsum}
+
+%\hyphenation{dźwię-ku}
+
+\usepackage{subfig}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,chains,decorations.markings,calc,shapes.geometric,intersections}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multicol}
+\newcommand{\inches}{$\mathrm{^{\prime\prime}}$}
+
+\graphicspath{
+	{Figures/}
+	{./}
+}
+
+\newcommand{\todo}{\mbox{\color{red} TODO!}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF OUTPUT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PDF settings and properties (set options with \hypersetup{}).
+\usepackage{hyperref} % For TEX --> DVI --> PDF.
+% \usepackage[pdftex]{hyperref} % For TEX --> PDF.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FONTS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % For Latin Modern fonts.
+\usepackage{times}
+
+% Sans-serif fonts.
+\usepackage[scaled=0.89]{helvet}
+\renewcommand{\sffamily}{\usefont{T1}{phv}{m}{n}}
+\newcommand{\UseLMSSBoldFont}{\usefont{T1}{lmss}{m}{n}\bfseries}
+
+% Monospace (typewriter) font.
+\usepackage[scaled=0.78]{beramono}
+\renewcommand{\ttfamily}{\usefont{T1}{fvm}{m}{n}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION HEADINGS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Section heading fonts.
+\usepackage{sectsty} % For selecting fonts for section headings.
+\allsectionsfont{\UseLMSSBoldFont}
+
+% Section numbering depth.
+\setcounter{secnumdepth}{10}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PARAGRAPHS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Line spacing.
+\usepackage{setspace}
+%\singlespacing
+%\onehalfspacing
+%\doublespacing
+\setstretch{1.35} % custom
+
+% Indented blocks.
+\newcommand{\IndentBlock}[1]{\noindent\hangafter=0\hangindent=#1\parindent\ignorespaces}
+\newcommand{\IndentHanging}{\noindent\hangafter=1\hangindent=\parindent\ignorespaces}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADERS AND FOOTERS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \includegraphics[height=0.5in]{ue.jpg}}
+% Header.
+\usepackage{fancyhdr}
+
+\fancypagestyle{empty}{%
+\fancyhf{}
+\fancyhead[L]{\parbox[b]{20mm}{}}
+\fancyhead[R]{\parbox[b]{48mm}{}}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}}
+
+\fancypagestyle{regular}{%
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{\parbox[b]{20mm}{}}
+\fancyhead[R]{\parbox[b]{48mm}{}}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\fancyhead[L]{\parbox[b]{20mm}{}}
+\fancyhead[R]{\parbox[b]{48mm}{}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}}
+
+\pagestyle{regular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FOOTNOTES.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Blank footnotes.
+\newcommand\BlankFootnote[1]{%
+\begingroup%
+\renewcommand{\thefootnote}{}%
+\footnotetext{#1}%
+\addtocounter{footnote}{-1}%
+\addtocounter{Hfootnote}{-1}%
+\endgroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LISTS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Numbered lists in IEEE style.
+% (Individual lists can be modified by redefining
+% these macros inside the enumerate environment.)
+\makeatletter
+% 1st level: 1), 2), 3)
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+% 2nd level: a), b), c)
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\theenumii)}
+\renewcommand\p@enumii{}
+% 3rd level: i), ii), iii)
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii)}
+\renewcommand\p@enumiii{}
+% 4th level: A), B), C)
+\renewcommand{\theenumiv}{\Alph{enumiv}}
+\renewcommand{\labelenumiv}{\theenumiv)}
+\renewcommand\p@enumiv{}
+\makeatother
+
+% Definition items.
+\newcommand{\DefineItem}[1]{%
+\IndentBlock{1}#1\nopagebreak
+\par\IndentBlock{2}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FIGURES AND TABLES.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx} % To support graphics in EPS format.
+\usepackage{multirow} % To support multi-row cells in tables.
+\usepackage{booktabs} % For making nice tables.
+
+% Adjust spacing between table rows.
+\renewcommand*\arraystretch{1.25}
+
+% Dashed lines in tables.
+\usepackage{arydshln}
+\def\dashvertical{;{2pt/3pt}}
+\def\dashhorizontal{\hdashline[2pt/3pt]}
+
+% Captions for figures and tables.
+\newcommand{\CaptionFontSize}{\small}
+
+\makeatletter
+\def\@figurestring{figure}
+\def\@tablestring{table}
+\def\@makecaption#1#2{%
+\CaptionFontSize
+\ifx\@captype\@figurestring
+\vskip1em
+\fi
+\sbox\@tempboxa{{\sffamily\bfseries{#1.}}\hspace{0.5em}#2}%
+\ifdim\wd\@tempboxa>\hsize
+{{\sffamily\bfseries{#1.}}\hspace{0.5em}#2}%
+\else
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+\fi
+\ifx\@captype\@tablestring
+\vskip1em
+\fi
+}
+\makeatother
+
+
+%% \definecolor{MyDarkBlue}{rgb}{0,0.08,0.45}
+%% {\color{MyDarkBlue}This text is dark blue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DATE AND TIME.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{datetime} % For dates and times.
+\renewcommand{\dateseparator}{-}
+\settimeformat{xxivtime}
+
+% Timestamp.
+\newcommand{\Timestamp}{{\yyyymmdddate\today}~{\currenttime}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMMENTS, MARKERS, HIDDEN TEXT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Comments, markers, hide.
+\newcommand{\BoxComment}[1]{{\color{red}\vskip1em\noindent\fbox{\parbox[c]{0.98\columnwidth}{#1}}\vskip1em}}
+\newcommand{\Hide}[1]{}
+
+\ifnum\TypesetInDraftMode=1
+\newcommand{\TODO}[1]{{\color{red}\fbox{\texttt{TODO}}~#1\color{black}}}
+\newcommand{\WIP}{{\BoxComment{~\hfill~\texttt{NOTE: Material below this point is work-in-progress.}~\hfill~}}}
+\fi
+
+\ifnum\TypesetInDraftMode=0
+\newcommand{\TODO}[1]{}
+\newcommand{\WIP}{}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MATHEMATICS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath,amsfonts,amsbsy,amsthm} % AMS packages.
+
+% Indicator function "1[.]" symbol.
+% Option 1: Use "\mathbf"
+%\newcommand{\one}[1]{{\mathbf{1}\left[#1\right]}}
+% Option 2: Use "bbold" package (install "bbold-type1" first)
+\DeclareSymbolFont{bbold}{U}{bbold}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbbold}{bbold}
+\newcommand{\one}[1]{{\mathbbold{1}\left[#1\right]}}
+% Option 3: Use "dsfont" package
+%\usepackage{dsfont}
+%\newcommand{\one}[1]{{\mathds{1}\left[#1\right]}}
+
+% Allow line breaks within math blocks.
+\allowdisplaybreaks
+
+% Prevent line breaks within math expressions.
+\relpenalty=10000
+\binoppenalty=10000
+
+% Theorems (cf. "amsthm.sty").
+\newtheoremstyle{MyPlain}%
+{0.4em}% space above
+{0.4em}% space below
+{\itshape}% body font
+{}% indent amount
+{\sffamily\bfseries}% theorem head font
+{.}% punctuation after theorem head
+{0.5em}% space after theorem head
+{}% theorem head spec
+
+\newtheoremstyle{MyDefinition}%
+{0.4em}% space above
+{0.4em}% space below
+{}% body font
+{}% indent amount
+{\sffamily\bfseries}% theorem head font
+{.}% punctuation after theorem head
+{0.5em}% space after theorem head
+{}% theorem head spec
+
+\theoremstyle{MyPlain}
+\newtheorem{Thm:Theorem}{Theorem}[chapter]
+\newtheorem{Thm:Lemma}[Thm:Theorem]{Lemma}
+\newtheorem{Thm:Corollary}[Thm:Theorem]{Corollary}
+\newtheorem{Thm:Claim}[Thm:Theorem]{Claim}
+\newtheorem{Thm:Proposition}[Thm:Theorem]{Proposition}
+\newtheorem{Thm:Conjecture}[Thm:Theorem]{Conjecture}
+
+\theoremstyle{MyDefinition}
+\newtheorem{Thm:Problem}[Thm:Theorem]{Problem}
+\newtheorem{Thm:Definition}[Thm:Theorem]{Definition}
+\newtheorem{Thm:Example}[Thm:Theorem]{Example}
+
+\renewenvironment{proof}[1][\proofname]{%
+{\par\vskip0.4em\noindent%
+\sffamily\bfseries\itshape{#1:}%
+\hspace{0.5em}}}%
+{\nopagebreak\hspace*{\fill}~\mbox{\rule[0pt]{1.3ex}{1.3ex}}\par}
+
+\newcommand{\qedmarker}{\nopagebreak\hspace*{\fill}~%
+\mbox{\rule[0pt]{1.3ex}{1.3ex}}\par}
+
+% Resized "align" environment.
+% (may not display correctly in DVI viewer)
+\NewEnviron{ResizedAlign}[2]{%
+\par\noindent
+\resizebox{#1}{!}{
+\parbox{#2}{
+\begin{align}
+\BODY
+\end{align}}}\par}
+
+% Resized "align*" environment.
+% (may not display correctly in DVI viewer)
+\NewEnviron{ResizedAlign*}[2]{%
+\par\noindent
+\resizebox{#1}{!}{
+\parbox{#2}{
+\begin{align*}
+\BODY
+\end{align*}}}\par}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CODE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Code blocks.
+\newcommand{\StartCode}{%
+\noindent\ignorespaces%
+\begin{framed}
+\small\ttfamily
+%\def\FrameCommand{{\color{black}{\vrule width 0.5pt\relax\hspace{5pt}}}}%
+%\MakeFramed{\advance\hsize-\width\FrameRestore}%
+}
+
+\newcommand{\StopCode}{%
+\ignorespaces\end{framed}
+%\ignorespaces\endMakeFramed%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE OF CONTENTS (TOC) SETTINGS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TOC depth.
+\setcounter{tocdepth}{10}
+
+% Suppress entries in the TOC.
+\newcommand{\DummyThree}[3]{}
+
+\newcommand{\DisableTOCUpdates}{%
+\let\tempaddcontentsline=\addcontentsline
+\let\addcontentsline=\DummyThree}
+
+\newcommand{\EnableTOCUpdates}{%
+\let\addcontentsline=\tempaddcontentsline}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SAMPLE/BLIND TEXT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifnum\TypesetInDraftMode=1
+\usepackage{lipsum} % For sample/blind text.
+\fi
+
+\ifnum\TypesetInDraftMode=0
+%\newcommand{\lipsum}[1][]{}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MISCELLANEOUS MACROS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\renewcommand{\binom}[2]{\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)}
+\newcommand{\ceil}[1]{{\left\lceil{#1}\right\rceil}}
+%\newcommand{\ffrac}[2]{{\nicefrac{#1}{#2}}}
+%\newcommand{\fffrac}[2]{{\left.{#1}\middle/{#2}\right.}}
+\newcommand{\floor}[1]{{\left\lfloor{#1}\right\rfloor}}
+\DeclareMathOperator{\lcm}{lcm}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+
+\usepackage{tabularx}

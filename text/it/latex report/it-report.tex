@@ -337,7 +337,7 @@
 
 We are living in times where everything is being automatized, people have less time for everyday tasks and became lazier. Having that in mind, we decided to create something useful, engaging and relatively complex for us to create, something that everyone with just a little knowledge of electronics would be able to implement having only the hardware and the source code. Also, we wanted to open up for some new technologies, which may be helpful in the future as well. This resulted in creating a remote plant-management system connected through WI-FI to hardware stuffed with sensors mainly based on Arduino IDE and Node.js server. With our product, people will be able to save their precious time \cite{sabine1922collected}.
 \chapter{Schedule}
-In almost every project there is a schedule in which we assume, that certain things should be done, but most of the time (it happened there too) the primal one needs correction.
+In almost every project there is a schedule in which we assume, that certain things should be done, but most of the time (it happened there too) the primal schedule needs correction. We did not really know how much time it takes to prepare certain things so we've made a very "safe" schedule not to be late with any of the parts.
 \section{Schedule approved at the beginning}
 Week 1:\\
 Creating site sketch in HTML\\
@@ -350,7 +350,7 @@ Setting up page on a server\\
 Week 5, 6\\
 Implementing our 2-way communication system\\
 Week 7, 8\\
-Final technical and visual modifications. Tests\\
+Final technical and visual modifications. Tests\\\newpage
 
 \section{Schedule reflecting actual work}
 \hspace{1cm}During the first week we were getting to know how everything works and what are the possible solutions and technologies for our project. Having the base, we decided to create a simple website in HTML on which we could learn the basics of CSS as well. \par
@@ -365,8 +365,9 @@ Final technical and visual modifications. Tests\\
 \section{Analysis of possible solutions}
 \hspace{1cm}Thankfully, in XXI age, the knowledge is widely available and we were overwhelmed by the possibilities to accomplish our project. The first one was to create a mobile application for android to operate the Arduino and read sensor values. Then we had an idea to create a website, which does not actually need a phone, but can also be used on it. Second option was more suitable for us, especially when we wanted to have everything on our computer and learn more about creating a fully functional one.
 \section{Implementation and problems during project development}
-\hspace{1cm}Everything was written using Visual Studio Code with a Prettier extention making the overall look of the code "prettier". Visual made writing the code way faster with his hints under the Tab button, colors and even descriptions of used functions. \par
-\hspace{0.5cm}As beginners, we encountered a lot of implementational and visual problems. We did not really know what "good looking website" means. First tries of doing the main page were a failure written using only CSS. Learning from mistakes and getting some more information about possible solutions for this problem, we decided to use a Bootstrap, which is an open source toolkit allowing as to insert already done objects in a class field, which appeared to be very helpful in almost everything like buttons, panels, indicators and navbar presented below.
+\hspace{1cm}Everything was written using Visual Studio Code with a Prettier extention making the overall look of the code "prettier". Visual made writing the code way faster with his hints under the Tab button, colors and even descriptions of used functions.
+\subsection{Front-end}
+\hspace{1cm}As beginners, we encountered a lot of implementational and visual problems. We did not really know what "good looking website" means. First tries of doing the main page were a failure written using only CSS. Learning from mistakes and getting some more information about possible solutions for this problem, we decided to use a Bootstrap, which is an open source toolkit allowing us to insert already done objects in a class field, which appeared to be very helpful in almost everything like buttons, panels, indicators and navbar presented below.
 \lstdefinelanguage{HTML5}{
  language=html,
         sensitive=true, 
@@ -413,16 +414,81 @@ Final technical and visual modifications. Tests\\
 	</div>
 </nav>
 \end{lstlisting}
-\hspace{1cm}Our front-end is quite simple and that is what was our priority.Basically just a main page describing used technologies and and a control panel on the "readings" endpoint with a chart underneath. We also spent a while for the website to be responsive. On the other hand, compared to front, back-end is more interesting to look at.\par
-\hspace{0.5cm}
+\hspace{1cm}Our front-end is quite simple and that is what was our priority. Basically just a main page describing used technologies and a control panel on the "readings" endpoint with a chart underneath. We also spent a while for the website to be responsive. On the other hand, compared to front, back-end is more interesting to look at.
+\subsection{Back-end}
+\hspace{1cm}Server was set using Node.js, which is a multi-platform environment used in creating server-side applications, and an Express.js framework providing a myriad of HTTP utility methods.
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+\begin{lstlisting}
+var express = require("express");
+var app = express();
+//create a server
+const server = http.createServer(app); 
+//Getting html file
+app.get("/", function(req, resp) {
+  resp.sendFile("index.html", { root: path.join(__dirname, "./views") });
+});
+//Server listens for requests comming from localhost
+app.listen(3000, "localhost", function() {
+  console.log("Application worker " + process.pid + " started...");
+});
+\end{lstlisting}
+\begin{center}
+An example showing the simplicity of used solution
+\end{center}
+\hspace{1cm}For fully functioning communication, we needed to make a connection between Hardware and Software. Keeping everything on a computer, we decided to make a socket server. It is used to manage connection requests from clients and is able to receive and send data. In our project, we decided to send data to every client, decision if the message is for certain board is made on Arduino and/or ESP software. The implementation in site's javascript is as follows.
+\begin{lstlisting}
+var sock = new WebSocket("ws://localhost:3000");
+//data is being sent to all clients currently connected to the server
+async function send_command(data) {
+  sock.send(data);
+}
+\end{lstlisting}
+\hspace{1cm}Most of the socket source code lies in Node.js file
+\begin{lstlisting}
+
+const WebSocket = require("ws");
+const wsServer = new WebSocket.Server({ server });
+
+
+wsServer.on("connection", function(ws, req) {
+  /******* when server receives messsage from client trigger function with argument message *****/
+	ws.on("message", function(message) {})
+	ws.on("close", function() {
+    	   console.log("lost one client");
+ 	 });
+	wsServer.clients.forEach(function(client) {
+	//broadcast incoming message to all clients (s.clients)
+	if (client != ws && client.readyState) {
+	//except to the same client (ws) that sent this message
+	client.send("broadcast: " + message);
+      }
+    });
+  });
+  ws.on("close", function() {
+    console.log("lost one client");
+  });
+  console.log("new client connected");
+});
 
 
 
 
 
-
-
-
+\end{lstlisting}
 
 
 (To przeniesc gdzies indziej) \hspace{0.5cm}Having a real-time system, there is always a question about synchronization and delays. We needed to create an optimal solution, in which for example data sent to the database, server and ESP is always complete. We decided to keep data in angle brackets (<>) as it allowed us to do certain actions under condition, that the message starts and ends within a bracket. (dotad).

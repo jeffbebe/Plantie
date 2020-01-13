@@ -16,6 +16,7 @@
     \usepackage{upquote}
     \usepackage{listings}
 \usepackage{bookmark}
+\usepackage{xcolor}
     \lstdefinelanguage{JavaScript}{
       morekeywords={break, case, catch, continue, debugger, default, delete,         do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
       morecomment=[s]{/*}{*/},
@@ -335,7 +336,7 @@
 
 \chapter{Introduction and scope}
 
-We are living in times where everything is being automatized, people have less time for everyday tasks and became lazier. Having that in mind, we decided to create something useful, engaging and relatively complex for us to create, something that everyone with just a little knowledge of electronics would be able to implement having only the hardware and the source code. Also, we wanted to open up for some new technologies, which may be helpful in the future as well. This resulted in creating a remote plant-management system connected through WI-FI to hardware stuffed with sensors mainly based on Arduino IDE and Node.js server. With our product, people will be able to save their precious time \cite{sabine1922collected}.
+We are living in times where everything is being automatized, people have less time for everyday tasks and became lazier. Having that in mind, we decided to create something useful, engaging and relatively complex for us to create, something that everyone with just a little knowledge of electronics would be able to implement having only the hardware and the source code. Also, we wanted to open up for some new technologies, which may be helpful in the future as well. This resulted in creating a remote plant-management system connected through WI-FI to hardware stuffed with sensors mainly based on Arduino IDE and Node.js server. With our product, people will be able to save their precious time.
 \chapter{Schedule}
 In almost every project there is a schedule in which we assume, that certain things should be done, but most of the time (it happened there too) the primal schedule needs correction. We did not really know how much time it takes to prepare certain things so we've made a very "safe" schedule not to be late with any of the parts.
 \section{Schedule approved at the beginning}
@@ -368,27 +369,9 @@ Final technical and visual modifications. Tests\\\newpage
 \hspace{1cm}Everything was written using Visual Studio Code with a Prettier extention making the overall look of the code "prettier". Visual made writing the code way faster with his hints under the Tab button, colors and even descriptions of used functions.
 \subsection{Front-end}
 \hspace{1cm}As beginners, we encountered a lot of implementational and visual problems. We did not really know what "good looking website" means. First tries of doing the main page were a failure written using only CSS. Learning from mistakes and getting some more information about possible solutions for this problem, we decided to use a Bootstrap, which is an open source toolkit allowing us to insert already done objects in a class field, which appeared to be very helpful in almost everything like buttons, panels, indicators and navbar presented below.
-\lstdefinelanguage{HTML5}{
- language=html,
-        sensitive=true, 
-        alsoletter={<>=-},
-        otherkeywords={
-        % HTML tags
-        <html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
-        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
-        },  
-        ndkeywords={
-        % General
-        =,
-        % HTML attributes
-        charset=, id=, width=, height=,
-        % CSS properties
-        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
-        },  
-        morecomment=[s]{<!--}{-->},
-        tag=[s]
-}
-\begin{lstlisting}
+
+
+\begin{lstlisting}[style=HTML5]
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	<a class="navbar-brand nav-item" href="index.html"><img src="img/logo_plantie2_green_2.png" alt="logo" style="width:160px"></a>
 	<!-- logo display and go back to home  -->
@@ -418,21 +401,8 @@ Final technical and visual modifications. Tests\\\newpage
 \subsection{Back-end}
 \hspace{1cm}Server was set using Node.js, which is a multi-platform environment used in creating server-side applications, and an Express.js framework providing a myriad of HTTP utility methods.
 
-\lstdefinelanguage{JavaScript}{
-  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]',
-  morestring=[b]",
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  sensitive=true
-}
-\begin{lstlisting}
+
+\begin{lstlisting}[style=JavaScript]
 var express = require("express");
 var app = express();
 //create a server
@@ -449,8 +419,23 @@ app.listen(3000, "localhost", function() {
 \begin{center}
 An example showing the simplicity of used solution
 \end{center}
-\hspace{1cm}For fully functioning communication, we needed to make a connection between Hardware and Software. Keeping everything on a computer, we decided to make a socket server. It is used to manage connection requests from clients and is able to receive and send data. In our project, we decided to send data to every client, decision if the message is for certain board is made on Arduino and/or ESP software. The implementation in site's javascript is as follows.
-\begin{lstlisting}
+\hspace{1cm}Previously, we had an idea to use MySQL database which we already had on our computer as a result of education purposes. Unfortunately, there was no point in setting another server for a single database, single table and several attributes, it would be just triumph of form over content. Also, project was being tested on at least 3 notebooks depending on the time and some organisation issues, it just needed to be a simple as that. Eventually, database was made in SQLite and operated on with promise-based Node.js ORM - Sequelize, allowing to work on objects instead of writing raw queries. We used it to both fetch from and insert into database our readings. Here is a fragment of code containing important declarations and creating Sensor\_Readings object:
+
+\begin{lstlisting}[style=JavaScript]
+const sequelize = new Sequelize({
+	dialect: "sqlite",
+	storage: "database/baza.sqlite",
+	define: {
+	 timestamps: false,
+	 id: false
+	}
+});
+const Model = Sequelize.Model;
+class Sensor_readings extends Model {}
+Sensor_readings.init(OUR TABLES);
+\end{lstlisting}
+\hspace{1cm}For fully functioning communication, we needed to make a connection between Hardware and Software. Keeping everything on a computer, we decided to make a socket server. It is used to manage connection requests from clients and is able to receive and send data. In our project, we send data to every client, decision if the message is for certain board is made on Arduino and/or ESP software. The implementation in site's javascript is as follows.
+\begin{lstlisting}[style=JavaScript]
 var sock = new WebSocket("ws://localhost:3000");
 //data is being sent to all clients currently connected to the server
 async function send_command(data) {
@@ -458,11 +443,9 @@ async function send_command(data) {
 }
 \end{lstlisting}
 \hspace{1cm}Most of the socket source code lies in Node.js file
-\begin{lstlisting}
-
+\begin{lstlisting}[style=JavaScript]
 const WebSocket = require("ws");
 const wsServer = new WebSocket.Server({ server });
-
 
 wsServer.on("connection", function(ws, req) {
   /******* when server receives messsage from client trigger function with argument message *****/
@@ -475,26 +458,74 @@ wsServer.on("connection", function(ws, req) {
 	if (client != ws && client.readyState) {
 	//except to the same client (ws) that sent this message
 	client.send("broadcast: " + message);
+     	 }
+   	 });
+ 	 });
+	console.log("new client connected");
+});
+\end{lstlisting}
+\hspace{1cm}In simplification, when socket server gets a message, it triggers a function called ws.on with "message" argument. Then, after checking if message is complete (starts and ends within brackets) and contains readings (is other than any of commands), we divide it into separate values and write into the database object using Sequelize methods. If the whole process is a success, we update the database.\newpage
+\hspace{0.5cm}Being able to collect and operate on given data, we created asynchronous function in javascript responsible for making "get" request to the server, which in response provided whole database data as an array consisting of three elements: first containing last record of the database, second one with every element in the table and third one with the amount of data.
+A single javascript function could update readings on the control panel and make a chart underneath. A chart was done using Charts.js, an open source JavaScript library that allowed us to draw different types of charts by using the HTML5 canvas element. We decided to keep it in a function of Soil Moisture in a certain Time, which caused a lot of trouble. For example. time must be saved in certain ISO format, also the scale must have been changed into "series", so every day has his own space now and looks way better than a linear one. A website has a regulable timer performing "Update" and "Get from database" actions periodically every certain amount of time.The asynchronous function is shown below:
+\begin{lstlisting}[style=JavaScript]
+async function get_from_database() {
+  try {
+    let response = await fetch("/readings", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json"
       }
     });
-  });
-  ws.on("close", function() {
-    console.log("lost one client");
-  });
-  console.log("new client connected");
-});
+    response = await response.json();
+    console.log("Got response!", response);
+    $("#Soil_moisture").text(response[0].Soil_Moisture + "%");
+    $("#Air_temperature").text(response[0].Air_Temperature + "o");
+    $("#Brightness_level").text(response[0].Brightness_Level + "%");
+    $("#Water_tank_level").text(response[0].Water_Tank_Level + "%");
+    $("#Air_Humidity").text(response[0].Air_Humidity + "%");
+    makeChart(response[1], response[2]); // response 1 is data for chart, response 2 is amount of data
+  } catch (err) {
+    console.error(`Error: \${err}`);
+    $("#Soil_moisture").text("err");
+    $("#Air_temperature").text("err");
+    $("#Brightness_level").text("err");
+    $("#Water_tank_level").text("err");
+    $("#Air_Humidity").text("err");
+  }
+}
+\end{lstlisting}\newpage
 
 
 
-
-
+\hspace{0.5cm}Describing the whole process of connecting and sending, we should take a look at how the ESP, which is actually a microprocessor board with build-in WiFi controller, works in this project. There are, to be precise, three parameters which it needs: SSID and password for the Hotspot or router connecton and socket server's IP address being also IPv4 of the computer with local server. It tries to join the network and restart till it reached. After creating a successful connection with both router/hotspot and server, it waits for the message which is then processed. Currently there are two possible messages: only asking Arduino for updated sensor readings or turning on the water pump. Every action ends with response to the server.\par
+\hspace{0.5cm}In a real-time system, there is always a question about synchronization and delays. We needed to create an optimal solution, in which for example data sent to the database, server and ESP is always complete. We decided to keep data in angle brackets (<>) as it allowed us to do certain actions under condition, that the message starts and ends within a bracket, also the readings in the response message were separated with semicolons. ESP before sending given data, concatenates string values with brackets and semicolons.
+\begin{lstlisting}[style=CStyle]
+ //When there is something in serial buffer
+	while (NodeMCU.available()) 
+	{
+	//Serial.println("NodeMCU available !@");
+		char serialChar = NodeMCU.read();  //gets one byte from serial buffer
+		if (serialChar == '<') //if < is the beginning of the received char reset the buffer
+		{
+			serialMessage = "";
+			serialMessage += serialChar;
+		}
+		else if (serialChar == '>') 
+		{
+			stringComplete = true;
+			serialMessage += serialChar;
+		}
+		else
+		{
+		//Append the message within specified ascii section 
+			if ((serialChar >= 48 && serialChar <= 122) || serialChar == ',') 
+			serialMessage += serialChar;
+		}               
+	}
 \end{lstlisting}
 
-
-(To przeniesc gdzies indziej) \hspace{0.5cm}Having a real-time system, there is always a question about synchronization and delays. We needed to create an optimal solution, in which for example data sent to the database, server and ESP is always complete. We decided to keep data in angle brackets (<>) as it allowed us to do certain actions under condition, that the message starts and ends within a bracket. (dotad).
 \chapter{Summary}
-
-
+\hspace{1cm}To our surprise, the project in general was more time consuming that we could ever expect. The lack of knowledge makes it hard to even get one, because we did not really know what to look for. Thankfully, the Internet nowadays provides lots of resources and tutorials. In general, we are proud of the outcome. The project forces to think out of the box as there are neither imposed technologies nor the way we write our code. Project was based on tutorials and documentation from the given websites: \cite{how2html}\cite{StackOverflow} \cite{schoolNODEJS}\cite{schoolHTML}\cite{schoolJS}\cite{schoolBOOTSTRAP}\cite{Sequelize}\cite{Devjs}\cite{Charts}\cite{Bootstrap}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BIBLIOGRAPHY.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

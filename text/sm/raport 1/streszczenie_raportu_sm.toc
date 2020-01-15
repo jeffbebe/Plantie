@@ -1,42 +1,42 @@
 \babel@toc {polish}{}
-\contentsline {section}{\numberline {1}Ogólny opis projektu}{2}{section.1}% 
+\contentsline {section}{\numberline {1}Og\IeC {\'o}lny opis projektu}{2}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}Cel i zakres projektu}{2}{subsection.1.1}% 
 \contentsline {subsection}{\numberline {1.2}Kosztorys}{2}{subsection.1.2}% 
-\contentsline {subsection}{\numberline {1.3}Opis podobnych rozwiązań }{2}{subsection.1.3}% 
-\contentsline {subsubsection}{\numberline {1.3.1}Jakis z neta}{2}{subsubsection.1.3.1}% 
-\contentsline {subsubsection}{\numberline {1.3.2}Jakiś z neta 2}{2}{subsubsection.1.3.2}% 
-\contentsline {section}{\numberline {2}Szczegółowy opis projektu}{3}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Rozwiązania techniczne - Przegląd modułów projektu}{3}{subsection.2.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1}Czujnik wilgotności i temperatury powietrza: DHT11}{3}{subsubsection.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.1.2}Czujnik natężenia światła}{3}{subsubsection.2.1.2}% 
-\contentsline {subsubsection}{\numberline {2.1.3}Czujnik wilgotności gleby FC-28}{3}{subsubsection.2.1.3}% 
-\contentsline {subsubsection}{\numberline {2.1.4}Czujnik poziomu wody w zbiorniku}{3}{subsubsection.2.1.4}% 
-\contentsline {subsubsection}{\numberline {2.1.5}Wyświetlacz OLED}{3}{subsubsection.2.1.5}% 
-\contentsline {subsubsection}{\numberline {2.1.6}Przekaźnik, Pompka wodna}{4}{subsubsection.2.1.6}% 
-\contentsline {subsubsection}{\numberline {2.1.7}Obudowa}{6}{subsubsection.2.1.7}% 
-\contentsline {subsection}{\numberline {2.2}Szczególne rozwiązania warstwy programowej}{6}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Płytka rozwojowa UNO}{6}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}ESP8266}{8}{subsubsection.2.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.3}Panel sterowania przez Internet}{8}{subsubsection.2.2.3}% 
-\contentsline {section}{\numberline {3}Realizacja projektu}{8}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Problematyka projektu}{8}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Sposób wykonania}{8}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Problemy napotkane podczas realizacji}{9}{subsection.3.3}% 
-\contentsline {subsubsection}{\numberline {3.3.1}Połączenie między UNO, a ESP8266}{9}{subsubsection.3.3.1}% 
-\contentsline {subsubsection}{\numberline {3.3.2}Projektowanie i drukowanie obudowy}{10}{subsubsection.3.3.2}% 
-\contentsline {section}{\numberline {4}Harmonogram i podział obowiązków}{10}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Podział obowiązków}{10}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}Wstępny schemat blokowy}{10}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}Harmonogram}{11}{subsection.4.3}% 
-\contentsline {subsubsection}{\numberline {4.3.1}4.11}{11}{subsubsection.4.3.1}% 
-\contentsline {subsubsection}{\numberline {4.3.2}25.11}{11}{subsubsection.4.3.2}% 
-\contentsline {subsubsection}{\numberline {4.3.3}16.12}{11}{subsubsection.4.3.3}% 
-\contentsline {subsubsection}{\numberline {4.3.4}20.01}{11}{subsubsection.4.3.4}% 
-\contentsline {subsection}{\numberline {4.4}Zgodność z harmonogramem}{12}{subsection.4.4}% 
-\contentsline {subsubsection}{\numberline {4.4.1}4.11}{12}{subsubsection.4.4.1}% 
-\contentsline {subsubsection}{\numberline {4.4.2}25.11}{12}{subsubsection.4.4.2}% 
-\contentsline {subsubsection}{\numberline {4.4.3}16.12}{12}{subsubsection.4.4.3}% 
-\contentsline {subsubsection}{\numberline {4.4.4}20.01}{12}{subsubsection.4.4.4}% 
-\contentsline {section}{\numberline {5}Podsumowanie }{13}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Osiągnięte cele}{13}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Pomysły na rozwój projektu}{13}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {1.3}Opis podobnych rozwi\IeC {\k a}za\IeC {\'n} }{3}{subsection.1.3}% 
+\contentsline {subsubsection}{\numberline {1.3.1}Trutina}{3}{subsubsection.1.3.1}% 
+\contentsline {subsubsection}{\numberline {1.3.2}Arduino Irrigator System }{4}{subsubsection.1.3.2}% 
+\contentsline {section}{\numberline {2}Szczeg\IeC {\'o}\IeC {\l }owy opis projektu}{4}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Rozwi\IeC {\k a}zania techniczne - Przegl\IeC {\k a}d modu\IeC {\l }\IeC {\'o}w projektu}{4}{subsection.2.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Czujnik wilgotno\IeC {\'s}ci i temperatury powietrza: DHT11}{4}{subsubsection.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Czujnik nat\IeC {\k e}\IeC {\.z}enia \IeC {\'s}wiat\IeC {\l }a}{5}{subsubsection.2.1.2}% 
+\contentsline {subsubsection}{\numberline {2.1.3}Czujnik wilgotno\IeC {\'s}ci gleby FC-28}{5}{subsubsection.2.1.3}% 
+\contentsline {subsubsection}{\numberline {2.1.4}Czujnik poziomu wody w zbiorniku}{6}{subsubsection.2.1.4}% 
+\contentsline {subsubsection}{\numberline {2.1.5}Wy\IeC {\'s}wietlacz OLED}{6}{subsubsection.2.1.5}% 
+\contentsline {subsubsection}{\numberline {2.1.6}Przeka\IeC {\'z}nik, Pompka wodna}{7}{subsubsection.2.1.6}% 
+\contentsline {subsubsection}{\numberline {2.1.7}Obudowa}{8}{subsubsection.2.1.7}% 
+\contentsline {subsection}{\numberline {2.2}Szczeg\IeC {\'o}lne rozwi\IeC {\k a}zania warstwy programowej}{8}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}P\IeC {\l }ytka rozwojowa UNO}{8}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}ESP8266}{9}{subsubsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.3}Panel sterowania przez Internet}{10}{subsubsection.2.2.3}% 
+\contentsline {section}{\numberline {3}Realizacja projektu}{10}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Problematyka projektu}{10}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Spos\IeC {\'o}b wykonania}{10}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Problemy napotkane podczas realizacji}{11}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}Po\IeC {\l }\IeC {\k a}czenie mi\IeC {\k e}dzy UNO, a ESP8266}{11}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2}Projektowanie i drukowanie obudowy}{11}{subsubsection.3.3.2}% 
+\contentsline {section}{\numberline {4}Harmonogram i podzia\IeC {\l } obowi\IeC {\k a}zk\IeC {\'o}w}{11}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Podzia\IeC {\l } obowi\IeC {\k a}zk\IeC {\'o}w}{11}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Wst\IeC {\k e}pny schemat blokowy}{11}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Harmonogram}{13}{subsection.4.3}% 
+\contentsline {subsubsection}{\numberline {4.3.1}4.11}{13}{subsubsection.4.3.1}% 
+\contentsline {subsubsection}{\numberline {4.3.2}25.11}{13}{subsubsection.4.3.2}% 
+\contentsline {subsubsection}{\numberline {4.3.3}16.12}{13}{subsubsection.4.3.3}% 
+\contentsline {subsubsection}{\numberline {4.3.4}20.01}{13}{subsubsection.4.3.4}% 
+\contentsline {subsection}{\numberline {4.4}Zgodno\IeC {\'s}\IeC {\'c} z harmonogramem}{13}{subsection.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.1}4.11}{13}{subsubsection.4.4.1}% 
+\contentsline {subsubsection}{\numberline {4.4.2}25.11}{14}{subsubsection.4.4.2}% 
+\contentsline {subsubsection}{\numberline {4.4.3}16.12}{14}{subsubsection.4.4.3}% 
+\contentsline {subsubsection}{\numberline {4.4.4}20.01}{14}{subsubsection.4.4.4}% 
+\contentsline {section}{\numberline {5}Podsumowanie }{14}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{14}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Pomys\IeC {\l }y na rozw\IeC {\'o}j projektu}{14}{subsection.5.2}% 

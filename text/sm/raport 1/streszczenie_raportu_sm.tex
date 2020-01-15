@@ -128,49 +128,81 @@ Suma & xxx PLN
 \end{tabular}
 \caption{\label{tab:widgets}Zakupione produkty}
 \end{table}
-
+\newpage
 \subsection{Opis podobnych rozwiązań }
-\subsubsection{Jakis z neta}
-x
-\subsubsection{Jakiś z neta 2}
-x
+\subsubsection{Trutina}
+‘Trutina’ z Gremon Systems pozwala na automatyczne podlewanie danej rośliny, a także na pomiary parametrów za pomocą sensorów wbudowanych w urządzenie takich jak: pyranometer, E-box, GS3 które wysyłając pomiary, kontroluje system i wybiera kiedy podlać roślinę. 
 
+System posiada także aplikację na telefon, dzięki której możemy podglądać graficznie mierzone parametry, a także kontrolować system podlewający. 
+
+
+Różni sie od naszego projektu aplikacją, gdyż my otrzymujemy wszystkie pomiary na stronę internetową i samoistnym wyborem kiedy będzie włączone podlewanie. Jest to także dużo większy projekt od naszego gdyż jest przystosowany do pracy w warunkach terenowych, a nasz do bardziej domowych warunków.
+
+
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=10cm]{auto_water1.jpg}}
+	\end{center}
+	\caption{Trutina ~\cite{Trutina}}
+\end{figure}
+
+
+\newpage
+\subsubsection{Arduino Irrigator System }
+
+Ten projekt bazuje na płytce rozwojowej arduino UNO i ma na celu automatyzacje procesu pomiarów parametrów rośliny i jej podlewaniu. System czyta wilgotność gleby i włącza pompę wodną jeśli wilgotność spadnie poniżej pewnego poziomu. Kiedy system wykryje wartość powyżej ustalonej wyłączy pompę. System posiada także wyświetlacz LCD 16x2 na którym są wyświetlane: poziom wody w zbiorniku, status czy pompka jest włączona, wilgotność gleby.
+
+Projekt różni się od naszego sposobem wyświetlania danych - różnica wyświetlaczy, a także brakiem zapisywania pomiarów i połączeniem z siecią Wi-Fi.
+
+
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=8cm]{arduino_przyklad2.jpg}}
+	\end{center}
+	\caption{Arduino Irrigator System ~\cite{ArduinoIS}}
+\end{figure}
 
 \section{Szczegółowy opis projektu}
 
 
 \subsection{Rozwiązania techniczne - Przegląd modułów projektu}
 \subsubsection{Czujnik wilgotności i temperatury powietrza: DHT11}
-Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Do implementacji w ArduinoIDE została wykorzystana biblioteka DHT-sensor-library, aby pomiary wykonywały się poprawnie.
+Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Do implementacji w ArduinoIDE została wykorzystana biblioteka DHT-sensor-library, aby pomiary wykonywały się poprawnie, dzięki czemu ręczna kalibracja nie była potrzebna.
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=10cm]{DHT11_photo.png}}
+		{\includegraphics[width=5cm]{DHT11_photo.png}}
 	\end{center}
 	\caption{Czujnik DHT11}
 \end{figure}
 
+
+\newpage
 \subsubsection{Czujnik natężenia światła}
-Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. 
+Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik zakryty ciemnym materiałem, 100 procent - czujnik oświecony mocnym źródłem światła.
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=12cm]{light_sensor_photo.png}}
+		{\includegraphics[width=7cm]{light_sensor_photo.png}}
 	\end{center}
 	\caption{Czujnik natężenia światła}
 \end{figure}
 \subsubsection{Czujnik wilgotności gleby FC-28}
-Pomiary aktualnej wilgotności gleby w glebie naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28.
+Pomiary wilgotności gleby naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik w powietrzu - brak powierzchni styku, 100 procent - czujnik zanurzony w wodzie.
 
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=12cm]{FC-28_photo.png}}
+		{\includegraphics[width=7cm]{FC-28_photo.png}}
 	\end{center}
 	\caption{Czujnik FC-28}
 \end{figure}
-\subsubsection{Czujnik poziomu wody w zbiorniku}
 
+\newpage
+\subsubsection{Czujnik poziomu wody w zbiorniku}
+Pomiary aktualnego poziomu wody w zbiorniku z wodą do podlewania są wykonywane z użyciem czujnika poziomu wody. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik suchy, nie zanurzony w wodzie, 100 procent - czujnik w całości zanurzony w wodzie.
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=12cm]{water_sensor_photo.png}}
+		{\includegraphics[width=6cm]{water_sensor_photo.png}}
 	\end{center}
 	\caption{Czujnik poziomu wody}
 \end{figure}
@@ -179,7 +211,7 @@ Pomiary aktualnej wilgotności gleby w glebie naszej rośliny są wykonywane z u
 Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługiwane przez wyświetlacz OLED zamontowany na przodzie obudowy, aby była możliwość monitorowania jej stanu, gdy przebywamy w jej otoczeniu bez potrzeby połączenia internetowego. Do poprawnego wyświetlania danych na ekranie zostały wykorzystane biblioteki AdafruitGFX.h i AdafruitSSD1306.h.
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=12cm]{oled-display_photo.png}}
+		{\includegraphics[width=8cm]{oled-display_photo.png}}
 	\end{center}
 	\caption{0.96 calowy wyświetlacz OLED}
 \end{figure}
@@ -190,7 +222,7 @@ Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, 
 
 
 
-\begin{figure}
+\begin{figure}[!h]
 %%obrazki
 \centering
 \subfloat[Przekaźnik~\cite{przekaznik}]{\label{odnosnik}
@@ -207,13 +239,13 @@ Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, 
 
 
 
-
+\newpage
 \subsubsection{Obudowa}
 Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dyszy wielkości 0.8mm. Czas drukowania pokrywki i pudełka wyniósł 12 godzin, nie licząc nieudanych druków i czasu spędzonego na dostrajanie drukarki.
 
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=12cm]{obudowa_model.png}}
+		{\includegraphics[width=9cm]{obudowa_model.png}}
 	\end{center}
 	\caption{Model obudowy (Fusion360)}
 \end{figure}
@@ -274,6 +306,8 @@ Tak jak w płytce rozwojowej UNO, odbieranie i wysyłanie danych jest realizowan
 Przed rozpoczęciem prac nad projektem utworzyliśmy tabele w programie internetowym Trello, na których zapisaliśmy rzeczy potrzebne do zrobienia, a także podział kto jaką cześcią projektu się zajmie. Najtrudniejszą częścią wydawała nam się implementacja połączeń pomiędzy płyką rozwojową UNO, ESP8266, a serwerem, więc postanowiliśmy zacząć od tego, a dopiero później przejść do następnych aspektów projektu. 
 
 \subsection{Sposób wykonania}
+
+
 Postanowiliśmy połączyć płytkę rozwojową UNO obsługującą pompkę i monitorującą wartości naszych czujników z ESP8266, aby była możliwość sterowania poprzez Internet.
 
 Płytka rozwojowa UNO cały czas czeka na przychodzące dane które będą zawarte w wskaźnikach początku ''<'' i końca ''>'' danej komendy, aby wykonać określoną czynność lub odesłać pomiary wykonane przez czujnik wilgotności i temperatury do ESP8266, które jest połączone z UNO poprzez piny RX i TX. UNO odsyła swoje komendy również w wskaźnikach początku i końca, aby zapobiec ''gubieniu'' danych.
@@ -331,6 +365,8 @@ Ostateczna prezentacja z poprawką błędów.
 
 
 \subsection{Zgodność z harmonogramem}
+Okazało się że założony harmonogram był zbyt optymistyczny, założyliśmy za dużo rzeczy do zrobienia w początkowej części harmonogramu, a nie ustaliliśmy dużo na końcową część. Jednak dzięki temu mieliśmy czas na dokończenie zaplanowanych aspektów projektu i nie przekroczeniu danego czasu na ukończenie projektu.
+
 \subsubsection{4.11}
 Rozpoczęliśmy prace nad naszym projektem. Postanowiliśmy skorzystać z aplikacji internetowej Trello do utworzenia tabel, które pozwoliły by nam na lepsze zarządzanie podziałem prac nad projektem.
 
@@ -346,17 +382,30 @@ Do tego dnia zajmowaliśmy się komunikacją między płytką rozwojową UNO, ES
 Przeniesienie projektu na płytkę uniwersalną okazało się niepraktyczne na tym etapie projektu, gdyż nie próbowaliśmy jeszcze połączyć ze sobą wszystkich modułów projektu i finalny kod do wgrania na UNO i ESP8266 nie był gotowy. Z powodu niewiedzy jak dokładnie będzie wyglądało nasze urządzenie na płytce uniwersalnej nie przygotowaliśmy planowanej obudowy. Nie zrealizowaliśmy również systemu doświetlania.
 
 \subsubsection{16.12}
-Podłączyliśmy ze sobą wszystkie czujniki na płytce uniwersalnej i testowaliśmy poprawność działania. Zajęliśmy się projektowaniem obudowy w programie Fusion360, abyśmy mogli ją wydrukować na drukarce 3D i włożyć do obudowy komponenty naszego projektu. Wydrukowaliśmy obudowę i wsadziliśmy tam wszystkie rzeczyyy
+Podłączyliśmy ze sobą wszystkie czujniki na płytce uniwersalnej i testowaliśmy poprawność działania. Zajęliśmy się projektowaniem obudowy w programie Fusion360, abyśmy mogli ją wydrukować na drukarce 3D i włożyć do obudowy komponenty naszego projektu. Wydrukowaliśmy obudowę i wsadziliśmy tam wszystkie moduły projektu.
 
 \subsubsection{20.01}
-Ostateczna prezentacja z poprawką błędów.
+Ostateczna prezentacja.
 
 
 
 \section{Podsumowanie }
 \subsection{Osiągnięte cele}
+To our surprise, the project in general was more time consuming that we could ever expect. The lack of knowledge makes it hard to even get one, because we did not really know what to look for. Thankfully, the Internet nowadays provides lots of resources and tutorials that helped us in comming up with solutions and finding out why they do not work. In conclusion we are proud of the outcome, not everything went as expected but we managed to combine software and hardware solutions and make them work together. 
+The project forced us to think outside of the box as there were neither imposed technologies nor the way to write our code. It was good practise to come up with something of our own, develop that one idea and bring it to the end.
 \subsection{Pomysły na rozwój projektu}
+Automatyzacja procesu podlewania
+Aplikacja
+Domena i działanie projektu w chmurze bez potrzeby włączania serwera na laptopie. Do tego było by potrzebne przeniesienie naszej bazy danych na bazę danych w chmurze (np. Azure), a także implementacja ESP8266 jako serwera.
 \begin{thebibliography}{9}
+
+
+
+\bibitem{Trutina} Trutina z Gremon Systems
+gremonsystems.com/blog-en/things-you-didnt-know-about-automatic-watering-systems/
+
+\bibitem{ArduinoIS} Arduino Irrigator System
+http://www.circuitstoday.com/arduino-irrigation-plant-watering-using-soil-moisture-sensor
 
 
 \bibitem{latexcompanion} 
@@ -398,6 +447,7 @@ www.autoczescionline24.pl/topran-2723484.html
 \bibitem{bateria} Bateria alkaliczna 9V 
 \emph{VARTA},
 www.elfadistrelec.pl/pl/alkaliczne-bateria-alkaliczna-9v-6lr61-varta-industrial-9v/p/16901614
+
 
 
  

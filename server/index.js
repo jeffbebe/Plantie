@@ -1,13 +1,3 @@
-/*
-For node express usage (in project folder - cmd)
-
-npm install express 
-
-For bootstrap usage
-
-npm install bootstrap
-*/
-
 var express = require("express");
 var path = require("path");
 var http = require("http");
@@ -31,7 +21,6 @@ const wsServer = new WebSocket.Server({ server });
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "database/baza.sqlite",
-  //logging: (...msg) => console.log(msg), // tells what's going on in the database
   define: {
     timestamps: false,
     id: false
@@ -102,7 +91,6 @@ app.get("/readings", async function(req, resp) {
       raw: true,
       order: [["ID"]]
     }); // datachart is an array of arrays, we can use datachart[] to show them in console
-    //console.log(datachart[0]); // i can see there what's inside
 
     var resptable = [data, datachart, data.ID];
     resp.send(JSON.stringify(resptable));
@@ -135,7 +123,6 @@ wsServer.on("connection", function(ws, req) {
   /******* when server receives messsage from client trigger function with argument message *****/
   ws.on("message", function(message) {
     console.log("Received: " + message);
-    // TO DO: add to database received message <airt:;airh:;soil:;brig:;wat:> odczyt + save date
     //var message = "<airt:35;airh:20;soil:10;brig:15;wat:40;>";
     var n = message.length;
     var i = 0;

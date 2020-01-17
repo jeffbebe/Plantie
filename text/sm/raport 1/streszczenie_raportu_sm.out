@@ -2,8 +2,8 @@
 \BOOKMARK [2][-]{subsection.1.1}{Cel i zakres projektu}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Kosztorys}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Opis podobnych rozwiazan }{section.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.3.1}{Jakis z neta}{subsection.1.3}% 5
-\BOOKMARK [3][-]{subsubsection.1.3.2}{Jakis z neta 2}{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Trutina}{subsection.1.3}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Arduino Irrigator System }{subsection.1.3}% 6
 \BOOKMARK [1][-]{section.2}{Szczeg\363\233owy opis projektu}{}% 7
 \BOOKMARK [2][-]{subsection.2.1}{Rozwiazania techniczne - Przeglad modu\233\363w projektu}{section.2}% 8
 \BOOKMARK [3][-]{subsubsection.2.1.1}{Czujnik wilgotnosci i temperatury powietrza: DHT11}{subsection.2.1}% 9
@@ -26,16 +26,17 @@
 \BOOKMARK [1][-]{section.4}{Harmonogram i podzia\233 obowiazk\363w}{}% 26
 \BOOKMARK [2][-]{subsection.4.1}{Podzia\233 obowiazk\363w}{section.4}% 27
 \BOOKMARK [2][-]{subsection.4.2}{Wstepny schemat blokowy}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.3}{Harmonogram}{section.4}% 29
-\BOOKMARK [3][-]{subsubsection.4.3.1}{4.11}{subsection.4.3}% 30
-\BOOKMARK [3][-]{subsubsection.4.3.2}{25.11}{subsection.4.3}% 31
-\BOOKMARK [3][-]{subsubsection.4.3.3}{16.12}{subsection.4.3}% 32
-\BOOKMARK [3][-]{subsubsection.4.3.4}{20.01}{subsection.4.3}% 33
-\BOOKMARK [2][-]{subsection.4.4}{Zgodnosc z harmonogramem}{section.4}% 34
-\BOOKMARK [3][-]{subsubsection.4.4.1}{4.11}{subsection.4.4}% 35
-\BOOKMARK [3][-]{subsubsection.4.4.2}{25.11}{subsection.4.4}% 36
-\BOOKMARK [3][-]{subsubsection.4.4.3}{16.12}{subsection.4.4}% 37
-\BOOKMARK [3][-]{subsubsection.4.4.4}{20.01}{subsection.4.4}% 38
-\BOOKMARK [1][-]{section.5}{Podsumowanie }{}% 39
-\BOOKMARK [2][-]{subsection.5.1}{Osiagniete cele}{section.5}% 40
-\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu}{section.5}% 41
+\BOOKMARK [2][-]{subsection.4.3}{Koncowy schemat blokowy}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.4}{Harmonogram}{section.4}% 30
+\BOOKMARK [3][-]{subsubsection.4.4.1}{4.11}{subsection.4.4}% 31
+\BOOKMARK [3][-]{subsubsection.4.4.2}{25.11}{subsection.4.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.4.3}{16.12}{subsection.4.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.4.4}{20.01}{subsection.4.4}% 34
+\BOOKMARK [2][-]{subsection.4.5}{Zgodnosc z harmonogramem}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.5.1}{4.11}{subsection.4.5}% 36
+\BOOKMARK [3][-]{subsubsection.4.5.2}{25.11}{subsection.4.5}% 37
+\BOOKMARK [3][-]{subsubsection.4.5.3}{16.12}{subsection.4.5}% 38
+\BOOKMARK [3][-]{subsubsection.4.5.4}{20.01}{subsection.4.5}% 39
+\BOOKMARK [1][-]{section.5}{Podsumowanie }{}% 40
+\BOOKMARK [2][-]{subsection.5.1}{Osiagniete cele}{section.5}% 41
+\BOOKMARK [2][-]{subsection.5.2}{Pomys\233y na rozw\363j projektu}{section.5}% 42

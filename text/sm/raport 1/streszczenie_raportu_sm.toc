@@ -29,14 +29,14 @@
 \contentsline {subsection}{\numberline {4.2}Wstępny schemat blokowy}{14}{subsection.4.2}% 
 \contentsline {subsection}{\numberline {4.3}Końcowy schemat blokowy}{15}{subsection.4.3}% 
 \contentsline {subsection}{\numberline {4.4}Schemat elektryczny}{16}{subsection.4.4}% 
-\contentsline {subsection}{\numberline {4.5}Harmonogram}{16}{subsection.4.5}% 
-\contentsline {subsubsection}{\numberline {4.5.1}4.11}{16}{subsubsection.4.5.1}% 
-\contentsline {subsubsection}{\numberline {4.5.2}25.11}{16}{subsubsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5}Harmonogram}{17}{subsection.4.5}% 
+\contentsline {subsubsection}{\numberline {4.5.1}4.11}{17}{subsubsection.4.5.1}% 
+\contentsline {subsubsection}{\numberline {4.5.2}25.11}{17}{subsubsection.4.5.2}% 
 \contentsline {subsubsection}{\numberline {4.5.3}16.12}{17}{subsubsection.4.5.3}% 
 \contentsline {subsubsection}{\numberline {4.5.4}20.01}{17}{subsubsection.4.5.4}% 
-\contentsline {subsection}{\numberline {4.6}Zgodność z harmonogramem}{17}{subsection.4.6}% 
-\contentsline {subsubsection}{\numberline {4.6.1}4.11}{17}{subsubsection.4.6.1}% 
-\contentsline {subsubsection}{\numberline {4.6.2}25.11}{17}{subsubsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6}Zgodność z harmonogramem}{18}{subsection.4.6}% 
+\contentsline {subsubsection}{\numberline {4.6.1}4.11}{18}{subsubsection.4.6.1}% 
+\contentsline {subsubsection}{\numberline {4.6.2}25.11}{18}{subsubsection.4.6.2}% 
 \contentsline {subsubsection}{\numberline {4.6.3}16.12}{18}{subsubsection.4.6.3}% 
 \contentsline {subsubsection}{\numberline {4.6.4}20.01}{18}{subsubsection.4.6.4}% 
 \contentsline {section}{\numberline {5}Podsumowanie }{19}{section.5}% 

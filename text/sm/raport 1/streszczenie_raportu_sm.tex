@@ -100,6 +100,7 @@ internetowej.
 
 
 \subsection{Kosztorys}
+Kosztorys przedstawiony w Tabeli nr 1. 
 Większość komponentów projektu została sprowadzona z chin ze względu na ich niską cenę. Niestety, czas oczekiwania na nie wydłużył się i spowodował nieoczekiwane opóźnienia w harmonogramie.
 
 \begin{table}[!h]
@@ -137,7 +138,8 @@ Suma & 97 PLN
 \newpage
 \subsection{Opis podobnych rozwiązań }
 \subsubsection{Trutina}
-‘Trutina’ z Gremon Systems pozwala na automatyczne podlewanie danej rośliny, a także na pomiary parametrów za pomocą sensorów wbudowanych w urządzenie takich jak: pyranometer, E-box, GS3 które wysyłając pomiary, kontroluje system i wybiera kiedy podlać roślinę. 
+‘Trutina’ z Gremon Systems przedstawiony na Rysunku nr \ref{fig:Trutina},
+ pozwala na automatyczne podlewanie danej rośliny, a także na pomiary parametrów za pomocą sensorów wbudowanych w urządzenie takich jak: pyranometer, E-box, GS3 które wysyłając pomiary, kontroluje system i wybiera kiedy podlać roślinę. 
 
 System posiada także aplikację na telefon, dzięki której możemy podglądać graficznie mierzone parametry, a także kontrolować system podlewający. 
 
@@ -151,13 +153,14 @@ Różni sie od naszego projektu aplikacją, gdyż my otrzymujemy wszystkie pomia
 		{\includegraphics[width=10cm]{auto_water1.jpg}}
 	\end{center}
 	\caption{Trutina ~\cite{Trutina}}
+	\label{fig:Trutina}
 \end{figure}
 
 
 \newpage
 \subsubsection{Arduino Irrigator System }
 
-Ten projekt bazuje na płytce rozwojowej Arduino UNO i ma na celu automatyzację procesu pomiarów parametrów rośliny i jej podlewaniu. System bada wilgotność gleby i włącza pompę wodną jeśli wilgotność spadnie poniżej pewnego poziomu. Kiedy system wykryje wartość powyżej ustalonej wyłączy pompę. System posiada także wyświetlacz LCD 16x2 na którym są wyświetlane: poziom wody w zbiorniku, status czy pompka jest włączona, wilgotność gleby.
+Ten projekt przedstawiony na Rysunku nr \ref{fig:ArduinoIS}, bazuje na płytce rozwojowej Arduino UNO i ma na celu automatyzację procesu pomiarów parametrów rośliny i jej podlewaniu. System bada wilgotność gleby i włącza pompę wodną jeśli wilgotność spadnie poniżej pewnego poziomu. Kiedy system wykryje wartość powyżej ustalonej wyłączy pompę. System posiada także wyświetlacz LCD 16x2 na którym są wyświetlane: poziom wody w zbiorniku, status czy pompka jest włączona, wilgotność gleby.
 
 Projekt różni się od naszego sposobem wyświetlania danych - różnica wyświetlaczy, a także brakiem zapisywania pomiarów i połączeniem z siecią Wi-Fi.
 
@@ -168,6 +171,7 @@ Projekt różni się od naszego sposobem wyświetlania danych - różnica wyświ
 		{\includegraphics[width=8cm]{arduino_przyklad2.jpg}}
 	\end{center}
 	\caption{Arduino Irrigator System ~\cite{ArduinoIS}}
+	\label{fig:ArduinoIS}
 \end{figure}
 
 \section{Szczegółowy opis projektu}
@@ -175,55 +179,61 @@ Projekt różni się od naszego sposobem wyświetlania danych - różnica wyświ
 
 \subsection{Rozwiązania techniczne - Przegląd modułów projektu}
 \subsubsection{Czujnik wilgotności i temperatury powietrza: DHT11}
-Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Do implementacji w ArduinoIDE została wykorzystana biblioteka DHT-sensor-library, aby pomiary wykonywały się poprawnie, dzięki czemu ręczna kalibracja nie była potrzebna.
+Pomiary wilgotności i temperatury powietrza są wykonywane z użyciem czujnika DHT11. Do implementacji w ArduinoIDE została wykorzystana biblioteka DHT-sensor-library, aby pomiary wykonywały się poprawnie, dzięki czemu ręczna kalibracja nie była potrzebna. Czujnik przedstawiony na Rysunku nr \ref{fig:dht11}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=5cm]{DHT11_photo.png}}
 	\end{center}
 	\caption{Czujnik DHT11}
+	\label{fig:dht11}
 \end{figure}
 
 
 \newpage
 \subsubsection{Czujnik natężenia światła}
-Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik zakryty ciemnym materiałem, 100 procent - czujnik oświecony mocnym źródłem światła.
+Pomiary natężenia aktualnego oświetlenia w otoczeniu rośliny są wykonywane z użyciem czujnika natężenia światła. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik zakryty ciemnym materiałem, 100 procent - czujnik oświecony mocnym źródłem światła. Czujnik przedstawiony na Rysunku nr \ref{fig:Czujnikswiatla}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=7cm]{light_sensor_photo.png}}
 	\end{center}
 	\caption{Czujnik natężenia światła}
+		\label{fig:Czujnikswiatla}
 \end{figure}
 \subsubsection{Czujnik wilgotności gleby FC-28}
-Pomiary wilgotności gleby naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik w powietrzu - brak powierzchni styku, 100 procent - czujnik zanurzony w wodzie.
+Pomiary wilgotności gleby naszej rośliny są wykonywane z użyciem czujnika wilgotności gleby FC-28. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik w powietrzu - brak powierzchni styku, 100 procent - czujnik zanurzony w wodzie. Czujnik przedstawiony na Rysunku nr \ref{fig:28}.
 
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=7cm]{FC-28_photo.png}}
 	\end{center}
 	\caption{Czujnik FC-28}
+	\label{fig:fc28}
 \end{figure}
 
 \newpage
 \subsubsection{Czujnik poziomu wody w zbiorniku}
-Pomiary aktualnego poziomu wody w zbiorniku z wodą do podlewania są wykonywane z użyciem czujnika poziomu wody. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik suchy, nie zanurzony w wodzie, 100 procent - czujnik w całości zanurzony w wodzie.
+Pomiary aktualnego poziomu wody w zbiorniku z wodą do podlewania są wykonywane z użyciem czujnika poziomu wody. Jego parametry były skonfigurowane na podstawie własnych doświadczeń: 0 procent - czujnik suchy, nie zanurzony w wodzie, 100 procent - czujnik w całości zanurzony w wodzie. Czujnik przedstawiony na Rysunku nr \ref{fig:waterlevel}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=6cm]{water_sensor_photo.png}}
 	\end{center}
 	\caption{Czujnik poziomu wody}
+	\label{fig:waterlevel}
 \end{figure}
 
 \subsubsection{Wyświetlacz OLED}
 Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługiwane przez wyświetlacz OLED zamontowany na przodzie obudowy, aby była możliwość monitorowania jej stanu, gdy przebywamy w jej otoczeniu bez potrzeby połączenia internetowego. Do poprawnego wyświetlania danych na ekranie zostały wykorzystane biblioteki AdafruitGFX.h i AdafruitSSD1306.h.
+Wyświetlacz przedstawiony na Rysunku nr \ref{fig:oled}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=8cm]{oled-display_photo.png}}
 	\end{center}
 	\caption{0.96 calowy wyświetlacz OLED}
+	\label{fig:oled}
 \end{figure}
 
 \subsubsection{Przekaźnik, Pompka wodna}
-Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, gdyż było to tańsze rozwiązanie niż inne rodzaje pompek. Jej napięcie znamionowe wynosi 12 [V], jednak w projekcie do jej zasilania używamy baterii 9 [V], które w zupełności spełnia wymagania stawiane przez dotyczące jej wydajności. Okresowe zasilanie jest realizowane za pomocą przekaźnika, do którego z jednej strony wpięta jest bateria i pompka, a z drugiej zasilanie 5 [V] z płytki rozwojowej UNO zasilające sam przekaźnik, GND i sygnał sterujący.
+Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, gdyż było to tańsze rozwiązanie niż inne rodzaje pompek. Jej napięcie znamionowe wynosi 12 [V], jednak w projekcie do jej zasilania używamy baterii 9 [V], które w zupełności spełnia wymagania stawiane przez dotyczące jej wydajności. Okresowe zasilanie jest realizowane za pomocą przekaźnika, do którego z jednej strony wpięta jest bateria i pompka, a z drugiej zasilanie 5 [V] z płytki rozwojowej UNO zasilające sam przekaźnik, GND i sygnał sterujący. Komponenty przedstawione na Rysunku nr \ref{fig:komponenty}.
 
 
 
@@ -240,6 +250,7 @@ Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, 
 \subfloat[Bateria 9V~\cite{bateria}]{\label{odnosnik}
 \includegraphics[width=0.4\textwidth]{9v.jpg}}
 \caption{Komponenty pompki}
+\label{fig:komponenty}
 
 \end{figure}
 
@@ -249,18 +260,21 @@ Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, 
 \subsubsection{Obudowa}
 Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dysza drukująca wielkości 0.8mm, co jak na standardy drukowania 3D jest dosyć dużo, jednak nie była wymagana duża dokładność. Prędkosć drukowania elementów była ustawiona na 40 [mm/s] i chłodzenie na 100 [\%]
 Czas drukowania pokrywki i pudełka wyniósł 12 godzin, nie licząc nieudanych druków i czasu spędzonego na dostrajanie drukarki.
-
+Model obudowy przedstawiony na Rysunku nr \ref{fig:modelobudowy}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=9cm]{obudowa_model.png}}
 	\end{center}
 	\caption{Model obudowy (Fusion360)}
+	\label{fig:modelobudowy}
 \end{figure}
 
 \newpage
 \subsection{Szczególne rozwiązania warstwy programowej}
 \subsubsection{Płytka rozwojowa UNO}
 Realizacja oczekiwania płytki rozwojowej UNO na sygnał sterujący z ESP8266 została wykonana poprzez ciągłe sprawdzanie czy jej bufor przechowuje jakąś informację. Gdy wykryjemy, że bufor nie jest pusty to zczytujemy jego zawartość. Dane, które są odbierane będą zawarte we wskaźnikach początku ''<'' i końca ''>'' danej komendy. Dzięki temu rozwiązaniu możemy wykryć kiedy zaczyna się nowa instrukcja i wyczyścić pozostałości, jakie mogły pozostać w buforze, a także wykryć jej zakończenie. Zapobiega to "gubieniu danych" i otrzymywaniu powielonych instrukcji.
+
+Płytka rozwojowa UNO przedstawiona na Rysunku nr \ref{fig:uno}.
 \begin{spverbatim}
 	Część kodu płytki rozwojowej UNO odbierająca dane
 \end{spverbatim}
@@ -289,9 +303,10 @@ while (Serial.available())
 
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=8cm]{uno_photo.png}}
+		{\includegraphics[width=7cm]{uno_photo.png}}
 	\end{center}
 	\caption{Płytka rozwojowa UNO}
+	\label{fig:uno}
 \end{figure}
 
 \newpage
@@ -301,11 +316,14 @@ Będąc w tej samej sieci Wi-Fi, łączymy się z naszym serwerem na wcześniej 
 Aby ułatwić testowanie, po każdym nieudanym połaczeniu restertujemy ESP, aby próbowało cały czas się połączyć.
 
 Tak jak w płytce rozwojowej UNO, odbieranie i wysyłanie danych jest realizowane we wskaźnikach początku ''<'' i końca ''>''.
+
+ESP8266 przedstawiona na Rysunku nr \ref{fig:esp}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=12cm]{esp8266_photo.png}}
 	\end{center}
 	\caption{ESP8266}
+	\label{fig:esp}
 \end{figure}
 
 \newpage
@@ -313,13 +331,15 @@ Tak jak w płytce rozwojowej UNO, odbieranie i wysyłanie danych jest realizowan
 Panel sterowania został napisany z wykorzystaniem języka HTML i styli CSS wraz z różnego rozdaju frameworkami takimi jak Bootstrap. Zależało nam na prostocie, możliwości łatwej rozbudowy i szybkim dostępie do wszystkich potrzebnych parametrów danej roślinki. Pozwala on na sterowanie nawadnianiem i innymi, możliwymi do impementacji czynnościami poprzez kliknięcie przycisku na stronie z nazwą funkcji nawet przez osoby, które z internetem mają mało wspólnego.
 
 
-Dzięki skryptom, strona automatycznie pobiera informacje z płytki ESP8266, obrazuje je w postaci tabeli, a następnie tworzy wykres w oparciu o wszystkie zebrane dotychczas dane. Wstępny okres między aktualizacjami wynosi 5 sekund, jednak w razie zaistniałej potrzeby jest możliwość bardzo łatwej zmiany tego parametru nawet w edytorze tekstowym. Na poniższym rysunku przedstawiony został panel sterowania
+Dzięki skryptom, strona automatycznie pobiera informacje z płytki ESP8266, obrazuje je w postaci tabeli, a następnie tworzy wykres w oparciu o wszystkie zebrane dotychczas dane. Wstępny okres między aktualizacjami wynosi 5 sekund, jednak w razie zaistniałej potrzeby jest możliwość bardzo łatwej zmiany tego parametru nawet w edytorze tekstowym. 
 
+Panel sterowania przedstawiony na Rysunku nr \ref{fig:panel} wraz z przykładowymi pomiarami.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=16cm]{front panel.png}}
 	\end{center}
 	\caption{Panel sterowania}
+	\label{fig:panel}
 \end{figure}
 
 \newpage
@@ -349,15 +369,17 @@ Rozwiazaliśmy ten problem poprzez użycie wskaźników początku ''<'' i końca
 Dużym problemem była niewiedza związana z rozmiarem, jaki powinna mieć obudowa, jednak zdecydowaliśmy, że będzie ona większa niż nasze potrzeby, aby umożliwić łatwe rozbudowanie projektu w przyszłości. 
 
 
+
+Przy początkach drukowania popełniliśmy błąd złej początkowej wysokości druku co spowodowało że model był drukowany w powietrzu a co za tym idzie druk się nie powiódł. Kalibracja drukarki 3D naprawiła nasz problem i druk został wykonany poprawnie
+
+Nieudany druk pokrywki przedstawiony na Rysunku nr \ref{fig:drukfailed}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=12cm]{obudowa_broken.jpg}}
 	\end{center}
 	\caption{Nieudany druk pokrywki}
+	\label{fig:drukfailed}
 \end{figure}
-
-Przy początkach drukowania popełniliśmy błąd złej początkowej wysokości druku co spowodowało że model był drukowany w powietrzu a co za tym idzie druk się nie powiódł. Kalibracja drukarki 3D naprawiła nasz problem i druk został wykonany poprawnie
-
 
 \newpage
 \section{Harmonogram i podział obowiązków}
@@ -379,35 +401,43 @@ Oskar zajął się:\\
 
 \subsection{Wstępny schemat blokowy}
 Przed rozpoczęciem pracy nad projektem stworzyliśmy schemat za pomocą programu draw.io, którego staraliśmy się trzymać, jednak ze względu na pewne komplikacje w trakcie realizacji pewne aspekty zostały zmienione, co zostało przedstawione na finalnym schemacie blokowym.
+
+Wstępny schemat blokowy przedstawiony na Rysunku nr \ref{fig:wstepnyschemat}.
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=16cm]{schemat_blokowy.png}}
+		{\includegraphics[width=14cm]{schemat_blokowy.png}}
 	\end{center}
 	\caption{Wstępny schemat blokowy}
+	\label{fig:wstepnyschemat}
 \end{figure}
 
 \newpage
 \subsection{Końcowy schemat blokowy}
-Można zauważyć, że nasz schemat zmienił się, jednak różnice nie są duże, a koncepcja projektu została zachowana. Zmiany zostały wprowadzone w trakcie budowy projektu ze względu na problemy z implementacją oświetlenia, a także poprzez decyzję o zasilaniu pompki wodnej z użyciem baterii 9V, gdyż płytka rozwojowa UNO nie była w stanie dostarczyć dostatecznie dużego natężenia prądu.
+Można zauważyć, że nasz schemat zmienił się, jednak różnice nie są duże, a koncepcja projektu została zachowana. Zmiany zostały wprowadzone w trakcie budowy projektu ze względu na problemy z implementacją oświetlenia, a także poprzez decyzję o zasilaniu pompki wodnej z użyciem baterii 9 [V], gdyż płytka rozwojowa UNO nie była w stanie dostarczyć dostatecznie dużego natężenia prądu.
+
+Końcowy schemat blokowy przedstawiony na Rysunku nr \ref{fig:koncowyschemat}.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=16cm]{schemat_blokowy_koncowy.png}}
 	\end{center}
 	\caption{Końcowy schemat blokowy}
+	\label{fig:koncowyschemat}
 \end{figure}
 
 \newpage
 \subsection{Schemat elektryczny}
 Z użyciem programu EasyEDA został utworzony schemat elektryczny projektu.
+Schemat elektryczny przedstawiony na Rysunku nr \ref{fig:elekschemat}.
 \begin{figure}[!h]
 	\begin{center}
-		{\includegraphics[width=16cm]{schemat_elek.png}}
+		{\includegraphics[width=17cm]{schemat_elek.png}}
 	\end{center}
 	\caption{Końcowy schemat blokowy}
+	\label{fig:elekschemat}
 \end{figure}
 
 
-
+\newpage
 \subsection{Harmonogram}
 \subsubsection{4.11}
 Przeanalizowanie schematów płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza, czujnika nasłonecznienia oraz rozwiązanie techniczne doświetlania rośliny. Stworzenie schematu elektrycznego gotowego projektu. Testowanie poprawności działania posiadanych czujników w warunkach domowych. Implementacja komunikacji z modułem ESP8266. Dopasowywanie czasów działania. 
@@ -423,7 +453,7 @@ Wstępna prezentacja gotowego projektu i ocena błędów.
 \subsubsection{20.01}
 Ostateczna prezentacja z poprawką błędów.
 
-
+\newpage
 
 \subsection{Zgodność z harmonogramem}
 Okazało się, że założony harmonogram był zbyt optymistyczny. Założyliśmy zbyt wiele rzeczy do zrobienia w początkowej części harmonogramu, a nie ustaliliśmy dużo na końcową część, jednak dzięki temu mieliśmy czas na dokończenie zaplanowanych aspektów projektu i nie przekroczeniu danego czasu na ukończenie go.
@@ -446,7 +476,7 @@ Przeniesienie projektu na płytkę uniwersalną okazało się niepraktyczne na t
 Podłączyliśmy ze sobą wszystkie czujniki na płytce uniwersalnej i testowaliśmy poprawność działania. Zajęliśmy się projektowaniem obudowy w programie Fusion360, abyśmy mogli ją wydrukować na drukarce 3D i włożyć do obudowy komponenty naszego projektu. Wydrukowaliśmy obudowę i wsadziliśmy tam wszystkie moduły projektu.
 
 \subsubsection{20.01}
-Stworzyliśmy techniczno-reklamową prezentację projektu, a także rozległy raport końcowy z projektu. 
+Stworzyliśmy techniczno-reklamową prezentację projektu, a także rozległy raport końcowy. 
 
 
 \newpage
@@ -456,15 +486,15 @@ Ku naszemu zdziwieniu, projekt zajął zdecydowanie więcej czasu niż mogliśmy
 
 Podsumowując, jesteśmy bardzo zadowoleni z ogólnego rezultatu. Niestety, nie wszystko poszło zgodnie z planem, lecz połączenie rozwiązań technicznych i cyfrowych oraz sprawienie, by działały wspólnie spowodowały powstanie ciekawego dla nas projektu oraz zdobycie bardzo cennej wiedzy. Realizacja własnego projektu mikroprocesorowego, który zmusza do samodzielnego myślenia, swoboda w jego tworzeniu oraz doprowadzenie całości do finalnego produktu jest z pewnością bardzo satysfakcjonująca i pomimo czasu, który trzeba w to włożyc, powinno być ich więcej.
 \subsection{Pomysły na rozwój projektu}
-Pomysłów na dalszy rozwój projektu jest wiele, ponieważ w trakcie prac przychodziło nam do głowy ich dużo jednak postanowiliśmy je tymczasowo zignorować i spróbować zrealizować postawione przez nas na początku cele. Nie zrealizowaliśmy również jednego aspektu projektu co też stało się naszym planem na przyszłość.
+Pomysłów na dalszy rozwój projektu jest wiele, ponieważ w trakcie prac przychodziło nam do głowy ich dużo jednak postanowiliśmy je tymczasowo zignorować i spróbować zrealizować postawione przez nas na początku cele. Nie zrealizowaliśmy również jednego aspektu projektu co też stało się naszym planem na przyszłość. \\
 
-	Oświetlenie roślinki przy wykryciu za małej ilości światła.
+Oświetlenie roślinki przy wykryciu za małej ilości światła.\\
 	
-	Automatyzacja procesu podlewania po zczytaniu ustawionej dolnej granicy czujnika wiglotności gleby.
+Automatyzacja procesu podlewania po odczytaniu ustawionej dolnej granicy czujnika wiglotności gleby.\\
+
+Aplikacja umozliwiająca podgląd parametrów roślinki i zdalne sterowanie.\\
 	
-	Aplikacja umozliwiająca podgląd parametrów roślinki i zdalne sterowanie.
-	
-Domena i działanie projektu w chmurze bez potrzeby włączania serwera na laptopie. Do tego było by potrzebne przeniesienie naszej bazy danych na bazę danych w chmurze (np. Azure), a także implementacja ESP8266 jako serwera.
+Domena i działanie projektu w chmurze bez potrzeby włączania serwera na laptopie. Do tego było by potrzebne przeniesienie naszej bazy danych na bazę danych w chmurze (np. Azure), a także implementacja ESP8266 jako serwera.\\
 
 
 \newpage
@@ -479,10 +509,6 @@ gremonsystems.com/blog-en/things-you-didnt-know-about-automatic-watering-systems
 http://www.circuitstoday.com/arduino-irrigation-plant-watering-using-soil-moisture-sensor
 
 
-\bibitem{latexcompanion} 
-Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
-\textit{The \LaTeX\ Companion}. 
-Addison-Wesley, Reading, Massachusetts, 1993.
 
 \bibitem{latexcompanion} 
 Ivan Grokhotkov
@@ -495,36 +521,33 @@ Christian Klippel, Peter Andersson, Peter Lerup
 2017
 
 \bibitem{latexcompanion} 
-guy
+
 \textit{w3schools.com}. 
 1999-2019
  
-\bibitem{einstein} 
-Albert Einstein. 
-\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
-[\textit{On the electrodynamics of moving bodies}]. 
-Annalen der Physik, 322(10):891–921, 1905.
-
 \bibitem{przekaznik} Relay Module
-\emph{},
-opencircuit.shop/Product/Relay-Module-1-relay.-5V
+\emph{}
+opencircuit.shop
 
 \bibitem{pompka} Pompa spryskiwacza TOPRAN
 \emph{},
 www.autoczescionline24.pl/topran-2723484.html
 
+\bibitem{pompka} Dokumentacja ArduinoIDE 
+\emph{},
+forum.arduino.cc
 
+\bibitem{pompka} Testowanie obwodów elektrycznych 
+\emph{},
+www.circuitlab.com
 
 \bibitem{bateria} Bateria alkaliczna 9V 
 \emph{VARTA},
-www.elfadistrelec.pl/pl/alkaliczne-bateria-alkaliczna-9v-6lr61-varta-industrial-9v/p/16901614
+elfadistrelec.pl/pl/alkaliczne-bateria-alkaliczna-9v-6lr61-varta-industrial-9v/p/16901614
 
 
 
- 
-\bibitem{knuthwebsite} 
-Knuth: Computers and Typesetting,
-\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+
 \end{thebibliography}
 
 

@@ -89,18 +89,18 @@
 
 
 \subsection{Cel i zakres projektu}
-Nasz projekt ma na celu pomoc zabieganym ludziom, którzy nie mają czasu na zajmowanie się
+Nasz projekt ma na celu pomóc zabieganym ludziom, którzy nie mają czasu na zajmowanie się
 swoją ukochaną roślinką przez swój częsty brak pobytu w domu. Wystarczy dostęp do internetu,
 nic więcej.
 
-Nasza koncepcja opiera się na systemie zdalnego zarządzania rośliną. Chcemy mierzyć parametry
-gleby i otoczenia takie jak wilgotność, nasłonecznienie. W zależności od odczytanych wartości przez
-płytkę rozwojową UNO połączoną z modułem ESP8266 będzie możliwe sterowanie pompką wody. Ponieważ koncepcja projeku nie jest rozległa postanowiliśmy utworzyć panel sterowania na stronie
+Powstała koncepcja opiera się na systemie zdalnego zarządzania rośliną. Chcemy mierzyć parametry
+gleby i otoczenia takie jak wilgotność, nasłonecznienie, a nawet poziom wody w zbiorniku do podlewania. W zależności od odczytanych wartości przez
+płytkę rozwojową UNO połączoną z modułem ESP8266, będzie możliwe sterowanie pompką wody. Ponieważ koncepcja projeku nie jest rozległa, postanowiliśmy utworzyć panel sterowania na stronie
 internetowej.
 
 
 \subsection{Kosztorys}
-Większość komponentów projektu została sprowadzona z chin, ze względu na ich niską cenę. Niestety czas oczekiwania na nie wydłużył się i spowodował nieoczekiwane opóźnienia w harmonogramie.
+Większość komponentów projektu została sprowadzona z chin ze względu na ich niską cenę. Niestety, czas oczekiwania na nie wydłużył się i spowodował nieoczekiwane opóźnienia w harmonogramie.
 
 \begin{table}[!h]
 \centering
@@ -142,7 +142,7 @@ Suma & 97 PLN
 System posiada także aplikację na telefon, dzięki której możemy podglądać graficznie mierzone parametry, a także kontrolować system podlewający. 
 
 
-Różni sie od naszego projektu aplikacją, gdyż my otrzymujemy wszystkie pomiary na stronę internetową i samoistnym wyborem kiedy będzie włączone podlewanie. Jest to także dużo większy projekt od naszego gdyż jest przystosowany do pracy w warunkach terenowych, a nasz do bardziej domowych warunków.
+Różni sie od naszego projektu aplikacją, gdyż my otrzymujemy wszystkie pomiary na stronę internetową i samoistnym wyborem kiedy będzie włączone podlewanie. Jest to także dużo większy projekt od naszego gdyż jest przystosowany do pracy w warunkach terenowych, nasz zaś do domowych.
 
 
 
@@ -157,7 +157,7 @@ Różni sie od naszego projektu aplikacją, gdyż my otrzymujemy wszystkie pomia
 \newpage
 \subsubsection{Arduino Irrigator System }
 
-Ten projekt bazuje na płytce rozwojowej arduino UNO i ma na celu automatyzacje procesu pomiarów parametrów rośliny i jej podlewaniu. System czyta wilgotność gleby i włącza pompę wodną jeśli wilgotność spadnie poniżej pewnego poziomu. Kiedy system wykryje wartość powyżej ustalonej wyłączy pompę. System posiada także wyświetlacz LCD 16x2 na którym są wyświetlane: poziom wody w zbiorniku, status czy pompka jest włączona, wilgotność gleby.
+Ten projekt bazuje na płytce rozwojowej Arduino UNO i ma na celu automatyzację procesu pomiarów parametrów rośliny i jej podlewaniu. System bada wilgotność gleby i włącza pompę wodną jeśli wilgotność spadnie poniżej pewnego poziomu. Kiedy system wykryje wartość powyżej ustalonej wyłączy pompę. System posiada także wyświetlacz LCD 16x2 na którym są wyświetlane: poziom wody w zbiorniku, status czy pompka jest włączona, wilgotność gleby.
 
 Projekt różni się od naszego sposobem wyświetlania danych - różnica wyświetlaczy, a także brakiem zapisywania pomiarów i połączeniem z siecią Wi-Fi.
 
@@ -223,7 +223,7 @@ Zewnętrzne wyświetlanie pomiarów wilgotności gleby i powietrza jest obsługi
 \end{figure}
 
 \subsubsection{Przekaźnik, Pompka wodna}
-Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, gdyż było to tańsze rozwiązanie niż inne rodzaje pompek. Jej napięcie znamionowe wynosi 12 [V], jednak w projekcie do jej zasilania używamy baterii 9 [V], gdyż po testach była to wystarczająca moc zasilania do naszych potrzeb. Jej okresowe zasilanie jest realizowane za pomocą przekaźnika do którego z jednej strony wpięta jest bateria i pompka, a z drugiej zasilanie 5 [V] z płytki rozwojowej UNO zasilające sam przekaźnik, GND i sygnał sterujący.
+Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, gdyż było to tańsze rozwiązanie niż inne rodzaje pompek. Jej napięcie znamionowe wynosi 12 [V], jednak w projekcie do jej zasilania używamy baterii 9 [V], które w zupełności spełnia wymagania stawiane przez dotyczące jej wydajności. Okresowe zasilanie jest realizowane za pomocą przekaźnika, do którego z jednej strony wpięta jest bateria i pompka, a z drugiej zasilanie 5 [V] z płytki rozwojowej UNO zasilające sam przekaźnik, GND i sygnał sterujący.
 
 
 
@@ -247,7 +247,7 @@ Do układu została zamontowana samochodowa pompka do spyskiwaczy firmy TOPRAN, 
 
 \newpage
 \subsubsection{Obudowa}
-Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dysza drukująca wielkości 0.8mm, co jak na standardy drukowania 3D jest dosyć dużo jednak nie była wymagana duża dokładność. Prędkosć drukowania elementów była ustawiona na 40 [mm/s] i chłodzenie na 100 [\%]
+Obudowa na komponenty naszego projektu została zaprojektowana w programie Fusion360. Model ten został ''pocięty'' (przygotowany do druku) przy użyciu programu Cura i wydrukowany na drukarce 3D Ultimaker 2+. Został użyty materiał do drukowania o nazwie PLA (Polilaktyd) i dysza drukująca wielkości 0.8mm, co jak na standardy drukowania 3D jest dosyć dużo, jednak nie była wymagana duża dokładność. Prędkosć drukowania elementów była ustawiona na 40 [mm/s] i chłodzenie na 100 [\%]
 Czas drukowania pokrywki i pudełka wyniósł 12 godzin, nie licząc nieudanych druków i czasu spędzonego na dostrajanie drukarki.
 
 \begin{figure}[!h]
@@ -260,7 +260,7 @@ Czas drukowania pokrywki i pudełka wyniósł 12 godzin, nie licząc nieudanych 
 \newpage
 \subsection{Szczególne rozwiązania warstwy programowej}
 \subsubsection{Płytka rozwojowa UNO}
-Realizacja oczekiwania płytki rozwojowej UNO na sygnał sterujący z ESP8266 została wykonana poprzez ciągłe sprawdzanie czy mamy coś w jej buforze. Gdy wykryjemy że jest coś do odczyania zczytujemy ten znak. Dane które są odbierane będą zawarte w wskaźnikach początku ''<'' i końca ''>'' danej komendy, dzięki temu możemy wykryć kiedy zaczyna się nowa instrukcja i wyczyścić pozostałości jakie mogły pozostać w buforze, a także wykryć zakończenie danej instrukcji. Zapobiega to "gubieniu danych" i otrzymywaniu powielonych instrukcji.
+Realizacja oczekiwania płytki rozwojowej UNO na sygnał sterujący z ESP8266 została wykonana poprzez ciągłe sprawdzanie czy jej bufor przechowuje jakąś informację. Gdy wykryjemy, że bufor nie jest pusty to zczytujemy jego zawartość. Dane, które są odbierane będą zawarte we wskaźnikach początku ''<'' i końca ''>'' danej komendy. Dzięki temu rozwiązaniu możemy wykryć kiedy zaczyna się nowa instrukcja i wyczyścić pozostałości, jakie mogły pozostać w buforze, a także wykryć jej zakończenie. Zapobiega to "gubieniu danych" i otrzymywaniu powielonych instrukcji.
 \begin{spverbatim}
 	Część kodu płytki rozwojowej UNO odbierająca dane
 \end{spverbatim}
@@ -296,9 +296,9 @@ while (Serial.available())
 
 \newpage
 \subsubsection{ESP8266}
-Połączenie płytki ESP8266 z Internetem jest realizowane z pomocą biblioteki ESP8266WiFi.h która ułatwia nam połączenie poprzez dodanie klasy WiFiClient, która przyjmując argumenty nazwy sieci Wi-Fi i hasła łączy się automatycznie z internetem.
-Gdy już uzyskamy połączenie z siecią Wi-Fi łączymy się z naszym serwerem na wcześniej zadeklarowanym IP i porcie za pomocą metody stworzonej z użyciem biblioteki WebSocketClient.h.
-Aby ułatwić testowanie po każdym nieudanym połaczeniu restertujemy ESP, aby próbowało cały czas się połączyć.
+Połączenie płytki ESP8266 z Internetem jest realizowane z pomocą biblioteki ESP8266WiFi.h, która ułatwia nam połączenie poprzez dodanie klasy WiFiClient przyjmującej argumenty nazwy sieci Wi-Fi i hasła oraz łączącej się automatycznie z Internetem.
+Będąc w tej samej sieci Wi-Fi, łączymy się z naszym serwerem na wcześniej zadeklarowanym IP i porcie za pomocą metody stworzonej z użyciem biblioteki WebSocketClient.h.
+Aby ułatwić testowanie, po każdym nieudanym połaczeniu restertujemy ESP, aby próbowało cały czas się połączyć.
 
 Tak jak w płytce rozwojowej UNO, odbieranie i wysyłanie danych jest realizowane we wskaźnikach początku ''<'' i końca ''>''.
 \begin{figure}[!h]
@@ -310,32 +310,43 @@ Tak jak w płytce rozwojowej UNO, odbieranie i wysyłanie danych jest realizowan
 
 \newpage
 \subsubsection{Panel sterowania przez Internet}
+Panel sterowania został napisany z wykorzystaniem języka HTML i styli CSS wraz z różnego rozdaju frameworkami takimi jak Bootstrap. Zależało nam na prostocie, możliwości łatwej rozbudowy i szybkim dostępie do wszystkich potrzebnych parametrów danej roślinki. Pozwala on na sterowanie nawadnianiem i innymi, możliwymi do impementacji czynnościami poprzez kliknięcie przycisku na stronie z nazwą funkcji nawet przez osoby, które z internetem mają mało wspólnego.
+
+
+Dzięki skryptom, strona automatycznie pobiera informacje z płytki ESP8266, obrazuje je w postaci tabeli, a następnie tworzy wykres w oparciu o wszystkie zebrane dotychczas dane. Wstępny okres między aktualizacjami wynosi 5 sekund, jednak w razie zaistniałej potrzeby jest możliwość bardzo łatwej zmiany tego parametru nawet w edytorze tekstowym. Na poniższym rysunku przedstawiony został panel sterowania
+
+\begin{figure}[!h]
+	\begin{center}
+		{\includegraphics[width=16cm]{front panel.png}}
+	\end{center}
+	\caption{Panel sterowania}
+\end{figure}
 
 \newpage
 
 \section{Realizacja projektu}
 \subsection{Problematyka projektu}
-Przed rozpoczęciem prac nad projektem utworzyliśmy tabele w programie internetowym Trello, na których zapisaliśmy rzeczy potrzebne do zrobienia, a także podział kto jaką cześcią projektu się zajmie. Najtrudniejszą częścią wydawała nam się implementacja połączeń pomiędzy płyką rozwojową UNO, ESP8266, a serwerem, więc postanowiliśmy zacząć od tego, a dopiero później przejść do następnych aspektów projektu. Wyzwaniem dla nas była również współpraca nad tak rozległym projektem, gdyż większość prac jakie do tej pory wykonywaliśmy nie byly takie rozległe.
+Przed rozpoczęciem prac nad projektem utworzyliśmy tabele w programie internetowym Trello, na których zapisaliśmy rzeczy potrzebne do zrobienia, a także podział kto jakimi elementami projektu się zajmie. Najtrudniejszą częścią wydawała nam się implementacja połączeń pomiędzy płyką rozwojową UNO, ESP8266 oraz serwerem, więc postanowiliśmy zacząć od tego, a dopiero później przejść do następnych aspektów. Wyzwaniem dla nas była również współpraca nad tak rozległym projektem, w którym wymagane było poprawne i integralne działanie zarówno części hardware'u, jak i tej internetowej. Zdecydowanie z pomocą przyszedł nam GitHub, ułatwiający zarówno równoległą pracę, jak i ewentualne poprawy błędów. 
 
 \subsection{Sposób wykonania}
 
 
 Postanowiliśmy połączyć płytkę rozwojową UNO obsługującą pompkę i monitorującą wartości naszych czujników z ESP8266, aby była możliwość sterowania poprzez Internet.
 
-Płytka rozwojowa UNO cały czas czeka na przychodzące dane które będą zawarte w wskaźnikach początku ''<'' i końca ''>'' danej komendy, aby wykonać określoną czynność lub odesłać pomiary wykonane przez czujnik wilgotności i temperatury do ESP8266, które jest połączone z UNO poprzez piny RX i TX. UNO odsyła swoje komendy również w wskaźnikach początku i końca, aby zapobiec ''gubieniu'' danych.
+Płytka rozwojowa UNO cały czas oczekuje na przychodzące dane które będą zawarte we wskaźnikach początku ''<'' i końca ''>'' danej komendy, aby wykonać określoną czynność lub odesłać pomiary wykonane przez czujnik wilgotności i temperatury do ESP8266, które jest połączone z UNO poprzez piny RX i TX. UNO odsyła swoje komendy również w wskaźnikach początku i końca, aby zapobiec ''gubieniu'' danych.
 
 ESP8266 jest naszym tzw. ''mostem'' i w każdym momencie czeka na dane czy to z UNO czy ze strony internetowej i w zależności od kogo dane otrzymuje przerzuca je do danego odbiorcy.
 Program na ESP jest zrealizowany z użyciem bibliotek ESP8266WiFi, WebSocketClient, SoftwareSerial, które kolejno służą do: umożliwieniu połączenia się ESP do sieci WiFi zadeklarowanej w naszym kodzie, połączeniu się poprzez websocket jako klient do naszego serwera postawionego na laptopie, połączenia się poprzez wyprowadzenie RX i TX do płytki rozwojowej UNO.
 
-Serwer do którego łączy się ESP8266 działa na laptopie. Połączenie jest realizowane z użyciem websocketów. Dzięki takiemu rozwiązaniu możemy wpisać adres na którym działa nasz serwer do przegladarki i zobaczyć stronę, dzięki której możemy kontrolować nasze urządzenie. Kontrola odbywa się za pomocą przycisków na tej stronie, które po naciśnięciu wysyłają daną komendę do podłączonych klientów - w tym przypadku naszego ESP8266. Dane pomiarowe przychodzące do serwera są zapisywane w stworzonej na potrzeby projektu bazie danych i przedstawiane graficznie w postaci wykresów na stronie.
+Serwer do którego łączy się ESP8266 działa na laptopie. Połączenie jest realizowane z użyciem websocketów. Dzięki takiemu rozwiązaniu możemy wpisać adres na którym działa nasz serwer do przegladarki i ujrzeć stronę pozwalającą na kontrolowanie naszego urządzenia. Sterowanie odbywa się za pomocą przycisków umieszczonych na głównym panelu, które po naciśnięciu wysyłają daną komendę do podłączonych klientów - w tym przypadku naszego ESP8266. Dane pomiarowe przychodzące do serwera są zapisywane w stworzonej na potrzeby projektu bazie danych i przedstawiane graficznie w postaci wykresów na stronie.
 
 \newpage
 \subsection{Problemy napotkane podczas realizacji}
 \subsubsection{Połączenie między UNO, a ESP8266}
-Próbowaliśmy różnych typów połączeń jak I2C, albo SPI jednak poprawność testowych danych jakie otrzymywaliśmy była nikła - albo dostawaliśmy tylko cześć danych albo były one w różny sposób powielone.
+Próbowaliśmy różnych typów połączeń jak I2C, albo SPI jednak poprawność testowych danych jakie otrzymywaliśmy była nikła - albo dostawaliśmy tylko część danych, albo były one w różny sposób powielone.
 Rozwiazaliśmy ten problem poprzez użycie wskaźników początku ''<'' i końca ''>'' przy wysyłaniu danej komendy, aby wykonać określoną czynność lub odesłać pomiary. 
 \subsubsection{Projektowanie i drukowanie obudowy}
-Dużym problemem była niewiedza związana z wielkością jaką powinna mieć obudowa, jednak zdecydowaliśmy że będzie ona większa niż będziemy potrzebować, aby umożliwić nam łatwe rozbudowanie projektu w przyszłości. 
+Dużym problemem była niewiedza związana z rozmiarem, jaki powinna mieć obudowa, jednak zdecydowaliśmy, że będzie ona większa niż nasze potrzeby, aby umożliwić łatwe rozbudowanie projektu w przyszłości. 
 
 
 \begin{figure}[!h]
@@ -352,30 +363,22 @@ Przy początkach drukowania popełniliśmy błąd złej początkowej wysokości 
 \section{Harmonogram i podział obowiązków}
 
 \subsection{Podział obowiązków}
-Kamil zajął się xxxxxx
-Oskar zajął się xxxxxxx
+Kamil zajął się:\\
+- Uruchomieniem i szczegółowym zaznajomieniem się z plytką UNO wraz z modułem ESP8266,\\
+- Testowaniem i implementacją czujników oraz innych komponentów elektrycznych,\\
+- Implementacją połączenia między płytką rozwojową, a ESP8266,\\
+- Zaprojektowaniem ułożenia elementów na płytce PCB wraz ze stworzeniem obudowy metodą druku 3D,\\
+- Przeniesieniem projektu na płytkę  i włożeniem do obudowy\\
 
-Budowa projektu na płytce stykowej, testowanie osobnych czujników i modułów projektu.
+Oskar zajął się:\\
+- Dostarczeniem potrzebnych materiałów i komponentów,\\
+- Stworzeniem serwera i panelu sterowania,\\
+- Implementacją połączeń między ESP8266, a serwerem,\\
+- Stworzeniem bazy danych wraz z graficznym przedstawieniem odczytów,\\
+- Testowaniem
 
-Implementacja połączeń między płytką rozwojową, a ESP8266.
-
-Stworzenie serwera i panelu sterowania. 
-
-Baza danych i graficzne ich przedstawienie.
-
-Implementacja połączeń między ESP8266, a serwerem.
-
-Projekt i druk obudowy.
-
-Przeniesienie projektu na płytkę uniwersalną i włożenie do obudowy.
- 
-Testowanie
-
-x
-
-x
 \subsection{Wstępny schemat blokowy}
-Przed rozpoczęciem pracy nad projektem stworzyliśmy schemat za pomocą programu draw.io, którego staraliśmy się trzymać jednak ze względu na pewne komplikacje w trakcie realizacji pewne aspekty zostały zmienione co zostało przedstawione na finalnym schemacie blokowym.
+Przed rozpoczęciem pracy nad projektem stworzyliśmy schemat za pomocą programu draw.io, którego staraliśmy się trzymać, jednak ze względu na pewne komplikacje w trakcie realizacji pewne aspekty zostały zmienione, co zostało przedstawione na finalnym schemacie blokowym.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=16cm]{schemat_blokowy.png}}
@@ -385,7 +388,7 @@ Przed rozpoczęciem pracy nad projektem stworzyliśmy schemat za pomocą program
 
 \newpage
 \subsection{Końcowy schemat blokowy}
-Można zaobserwować że nasz schemat zmienił się jednak jego zmiany nie są duże, a koncepcja projektu została zachowana. Zmiany zostały wprowadzone w trakcie budowy projektu ze względu na problemy z implementacją oświetlenia, a także poprzez postanowienie zasilania pompki wodnej z użyciem baterii 9V, gdyż zasilanie płytki rozwojowej UNO nie było wystarczające do dostatecznie dużego poboru wody.
+Można zauważyć, że nasz schemat zmienił się, jednak różnice nie są duże, a koncepcja projektu została zachowana. Zmiany zostały wprowadzone w trakcie budowy projektu ze względu na problemy z implementacją oświetlenia, a także poprzez decyzję o zasilaniu pompki wodnej z użyciem baterii 9V, gdyż płytka rozwojowa UNO nie była w stanie dostarczyć dostatecznie dużego natężenia prądu.
 \begin{figure}[!h]
 	\begin{center}
 		{\includegraphics[width=16cm]{schemat_blokowy_koncowy.png}}
@@ -423,15 +426,15 @@ Ostateczna prezentacja z poprawką błędów.
 
 
 \subsection{Zgodność z harmonogramem}
-Okazało się że założony harmonogram był zbyt optymistyczny, założyliśmy za dużo rzeczy do zrobienia w początkowej części harmonogramu, a nie ustaliliśmy dużo na końcową część. Jednak dzięki temu mieliśmy czas na dokończenie zaplanowanych aspektów projektu i nie przekroczeniu danego czasu na ukończenie projektu.
+Okazało się, że założony harmonogram był zbyt optymistyczny. Założyliśmy zbyt wiele rzeczy do zrobienia w początkowej części harmonogramu, a nie ustaliliśmy dużo na końcową część, jednak dzięki temu mieliśmy czas na dokończenie zaplanowanych aspektów projektu i nie przekroczeniu danego czasu na ukończenie go.
 
 \subsubsection{4.11}
-Rozpoczęliśmy prace nad naszym projektem. Postanowiliśmy skorzystać z aplikacji internetowej Trello do utworzenia tabel, które pozwoliły by nam na lepsze zarządzanie podziałem prac nad projektem.
+Rozpoczęliśmy prace nad projektem. Postanowiliśmy skorzystać z aplikacji internetowej Trello do utworzenia tabel, które umożliwiły lepsze zarządzanie podziałem prac.
 
-Przeanalizowaliśmy schematy płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza oraz czujnika nasłonecznienia. Przeanalizowaliśmy działanie każdego z czujników poprzez wykonanie przykładowych kodów na płytce rozwojowej UNO. Dowiedzieliśmy się jakich komponentów projektu nam brakuje i zamówiliśmy je w wybranych sklepach.
+Przeanalizowaliśmy schematy płytki rozwojowej UNO, modułu komunikacyjnego ESP8266, czujnika wilgotności gleby, czujnika wilgotności powietrza oraz czujnika nasłonecznienia. Przetestowaliśmy również działanie każdego z czujników poprzez wykonanie przykładowych kodów na płytce rozwojowej UNO. Dowiedzieliśmy się, jakich komponentów projektu nam brakuje i zamówiliśmy je w wybranych sklepach.
 Stworzyliśmy wstępny schemat blokowy projektu, aby ukazać działanie poszczególnych elementów zawartych w naszym projekcie. Na ten moment postanowiliśmy nie tworzyć schematu elektrycznego, gdyż nie wiedzieliśmy jak dokładnie zrealizujemy poszczególne połączenia.
 
-Ze względu na obszerność testowania i planowanie realizacji planu działania na nadchodzące tygodnie nie zajęliśmy się komunikacją z modułem ESP8266, ani problemem związanym z doświetlaniem naszej rośliny.
+Ze względu na obszerność testowania i planowanie realizacji planu działania na nadchodzące tygodnie, nie zajęliśmy się komunikacją z modułem ESP8266  ani problemem związanym z doświetlaniem rośliny.
 
 
 \subsubsection{25.11}
@@ -449,8 +452,9 @@ Stworzyliśmy techniczno-reklamową prezentację projektu, a także rozległy ra
 \newpage
 \section{Podsumowanie }
 \subsection{Osiągnięte cele}
-To our surprise, the project in general was more time consuming that we could ever expect. The lack of knowledge makes it hard to even get one, because we did not really know what to look for. Thankfully, the Internet nowadays provides lots of resources and tutorials that helped us in comming up with solutions and finding out why they do not work. In conclusion we are proud of the outcome, not everything went as expected but we managed to combine software and hardware solutions and make them work together. 
-The project forced us to think outside of the box as there were neither imposed technologies nor the way to write our code. It was good practise to come up with something of our own, develop that one idea and bring it to the end.
+Ku naszemu zdziwieniu, projekt zajął zdecydowanie więcej czasu niż mogliśmy się spodziewać. Brak wiedzy skutkował tym, że nie wiedzieliśmy nawet gdzie i czego szukać. Na szczęście internet w dzisiejszych czasach jest bardzo obszerny w różnego rodzaju poradniki i źródła, które pomogły nam zrealizować cele i wyjaśnić czemu poprzednie próby musiały zakończyć się fiaskiem. 
+
+Podsumowując, jesteśmy bardzo zadowoleni z ogólnego rezultatu. Niestety, nie wszystko poszło zgodnie z planem, lecz połączenie rozwiązań technicznych i cyfrowych oraz sprawienie, by działały wspólnie spowodowały powstanie ciekawego dla nas projektu oraz zdobycie bardzo cennej wiedzy. Realizacja własnego projektu mikroprocesorowego, który zmusza do samodzielnego myślenia, swoboda w jego tworzeniu oraz doprowadzenie całości do finalnego produktu jest z pewnością bardzo satysfakcjonująca i pomimo czasu, który trzeba w to włożyc, powinno być ich więcej.
 \subsection{Pomysły na rozwój projektu}
 Pomysłów na dalszy rozwój projektu jest wiele, ponieważ w trakcie prac przychodziło nam do głowy ich dużo jednak postanowiliśmy je tymczasowo zignorować i spróbować zrealizować postawione przez nas na początku cele. Nie zrealizowaliśmy również jednego aspektu projektu co też stało się naszym planem na przyszłość.
 
